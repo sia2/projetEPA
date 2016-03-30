@@ -6,6 +6,6 @@ $DBname='minibb'; "Base de données où le forum sera installé, ce doit être la mê
 $DBusr='root'; Utilisateur
 $DBpwd=''; Mot de passe
 
-2/ Créer les tables dans la base de données que vous avez indiqué précédemment via le fichier 
+2/ Créer les tables dans la base de données que vous avez indiqué précédemment via le fichier minibb.sql.
 
 3/ Lancer le site /localhost/projetEPA/groupe1/minibb/index.php
