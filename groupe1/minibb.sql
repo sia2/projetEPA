@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 30 Mars 2016 à 11:25
+-- Généré le :  Jeu 31 Mars 2016 à 03:08
 -- Version du serveur :  5.6.17
 -- Version de PHP :  5.5.12
 
@@ -56,9 +56,9 @@ CREATE TABLE IF NOT EXISTS `minibbtable_forums` (
 --
 
 INSERT INTO `minibbtable_forums` (`forum_id`, `forum_name`, `forum_desc`, `forum_order`, `forum_icon`, `topics_count`, `posts_count`, `forum_group`) VALUES
-(2, 'Action sociale et solidaritÃ©', 'Discussion Ã  propos des actions de EPA', 2, 'rose.gif', 0, 0, 'Action sociale et solidaritÃ©'),
-(3, 'SantÃ© et mutuelle', '', 3, 'default.gif', 0, 0, 'SantÃ© et mutuelle'),
-(4, 'Accueil des Ã©tudiants en France', 'Discussion Ã  propos de l''accueil des Ã©tudiants en France.', 1, 'orange.gif', 1, 2, 'Accueil des Ã©tudiants en France');
+(2, 'Action sociale et solidaritÃ©', 'Discussion Ã  propos des actions de EPA', 2, 'rose.gif', 1, 1, ''),
+(3, 'SantÃ© et mutuelle', 'Toutes les questions concernant la santÃ© et la mutuelle.', 3, 'default.gif', 1, 1, ''),
+(4, 'Accueil des Ã©tudiants en France', 'Discussion Ã  propos de l''accueil des Ã©tudiants en France.', 1, 'orange.gif', 1, 1, '');
 
 -- --------------------------------------------------------
 
@@ -81,15 +81,16 @@ CREATE TABLE IF NOT EXISTS `minibbtable_posts` (
   KEY `topic_id` (`topic_id`),
   KEY `poster_id` (`poster_id`),
   KEY `poster_ip` (`poster_ip`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 --
 -- Contenu de la table `minibbtable_posts`
 --
 
 INSERT INTO `minibbtable_posts` (`post_id`, `forum_id`, `topic_id`, `poster_id`, `poster_name`, `post_text`, `post_time`, `poster_ip`, `post_status`) VALUES
-(6, 4, 4, 2, 'dauphinois', 'Aller sur le site principal', '2016-03-30 02:36:36', '0.0.0.0', 0),
-(5, 4, 4, 2, 'dauphinois', 'Comment faire pour adhÃ©rer?', '2016-03-30 02:35:25', '0.0.0.0', 0);
+(5, 4, 4, 2, 'dauphinois', 'Comment faire pour adhÃ©rer?', '2016-03-30 02:35:25', '0.0.0.0', 0),
+(7, 3, 5, 1, 'admin', 'Question santÃ©', '2016-03-31 02:45:09', '0.0.0.0', 0),
+(8, 2, 6, 1, 'admin', 'Action sociale et solidaritÃ©', '2016-03-31 02:46:21', '0.0.0.0', 0);
 
 -- --------------------------------------------------------
 
@@ -135,14 +136,16 @@ CREATE TABLE IF NOT EXISTS `minibbtable_topics` (
   KEY `posts_count` (`posts_count`),
   KEY `topic_last_post_time` (`topic_last_post_time`),
   KEY `topic_views` (`topic_views`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8 ;
 
 --
 -- Contenu de la table `minibbtable_topics`
 --
 
 INSERT INTO `minibbtable_topics` (`topic_id`, `topic_title`, `topic_poster`, `topic_poster_name`, `topic_time`, `topic_views`, `forum_id`, `topic_status`, `topic_last_post_id`, `posts_count`, `sticky`, `topic_last_post_time`, `topic_last_poster`) VALUES
-(4, 'Comment faire pour adhÃ©rer?', 2, 'dauphinois', '2016-03-30 02:35:25', 5, 4, 0, 6, 2, 0, '2016-03-30 02:36:36', 'dauphinois');
+(4, 'Comment faire pour adhÃ©rer?', 2, 'dauphinois', '2016-03-30 02:35:25', 11, 4, 0, 5, 1, 0, '2016-03-30 02:35:25', 'dauphinois'),
+(5, 'Question santÃ©', 1, 'admin', '2016-03-31 02:45:09', 2, 3, 0, 7, 1, 0, '2016-03-31 02:45:09', 'admin'),
+(6, 'Action sociale et solidaritÃ©', 1, 'admin', '2016-03-31 02:46:21', 1, 2, 0, 8, 1, 0, '2016-03-31 02:46:21', 'admin');
 
 -- --------------------------------------------------------
 
@@ -181,8 +184,8 @@ CREATE TABLE IF NOT EXISTS `minibbtable_users` (
 --
 
 INSERT INTO `minibbtable_users` (`user_id`, `username`, `user_regdate`, `user_password`, `user_email`, `user_icq`, `user_website`, `user_occ`, `user_from`, `user_interest`, `user_viewemail`, `user_sorttopics`, `user_newpwdkey`, `user_newpasswd`, `language`, `activity`, `num_topics`, `num_posts`, `user_custom1`, `user_custom2`, `user_custom3`) VALUES
-(1, 'admin', '2016-03-21 19:57:12', '63a65625faeb9eaa389529847ef7eb83', 'dramane.bamba@gmail.com', '', '', '', '', '', 0, 0, '', '', 'eng', 1, 0, 0, 'usflag.gif', '', ''),
-(2, 'dauphinois', '2016-03-21 20:17:53', '63a65625faeb9eaa389529847ef7eb83', 'dramane.dauphine@gmail.com', '', '', '', '', '', 0, 0, 'e62e2d36692a3b3a4b1e7c75232cc174', 'a578c8d0', 'fre', 1, 1, 2, 'dog.gif', '', '');
+(1, 'admin', '2016-03-21 19:57:12', '63a65625faeb9eaa389529847ef7eb83', 'dramane.bamba@gmail.com', '', '', '', '', '', 0, 0, '', '', 'eng', 1, 2, 2, 'usflag.gif', '', ''),
+(2, 'dauphinois', '2016-03-21 20:17:53', '63a65625faeb9eaa389529847ef7eb83', 'dramane.dauphine@gmail.com', '', '', '', '', '', 0, 0, 'e62e2d36692a3b3a4b1e7c75232cc174', 'a578c8d0', 'fre', 1, 1, 1, 'dog.gif', '', '');
 
 -- --------------------------------------------------------
 
