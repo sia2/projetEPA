@@ -9,13 +9,13 @@ document.regform.from.value = ind;
 //-->
 </script>
 
-<table class="forumsmb">
+<table class="table-responsive">
 <tr>
 <td class="caption3"><a href="{$main_url}/{$startIndex}">{$sitename}</a> / {$userTitle}</td>
 </tr>
 </table>
 
-<table class="tbTransparent">
+<table class="table-responsive">
 <tr>
 <td class="tbTransparentCell"><!--INITMSG--><span class="txtNr">{$l_fillRegisterForm} * - {$l_necessaryFields}</span><!--/INITMSG--><span class="warning"><!--INITMSG--><br /><!--/INITMSG-->{$warning}</span></td>
 </tr>
@@ -24,7 +24,7 @@ document.regform.from.value = ind;
 <form action="{$main_url}/{$indexphp}" name="regform" method="post" class="formStyle">
 <input type="hidden" name="action" value="{$actionName}" />
 
-<table class="forumsmb">
+<table class="table-responsive">
 <tr>
 <td class="tbClCp">* <b>{$l_sub_name}</b></td>
 <td class="caption5" style="width:100%"><input type="text" name="login" maxlength="{$uname_maxlength}" size="20" value="{$login}" class="textForm" {$editable} style="width:200px;" /><span class="txtSm">{$profileLink}&nbsp;{$deleteProfileLnk}</span></td>
@@ -326,5 +326,8 @@ document.regform.from.value = ind;
 </tr>
 </table>
 {$adminEditField}
-{$avatarForm}
+<table class="responsive">
+	{$avatarForm}
+</table>
+
 </form>
