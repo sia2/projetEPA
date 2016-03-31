@@ -86,7 +86,7 @@ return keynum;
 //-->
 </script>
 
-<table class="table table-striped">
+<table class="table table-hover">
 <tr>
 <td class="caption3"><a href="{$main_url}/{$startIndex}">{$sitename}</a> / <a href="{$main_url}/{$indexphp}action=search" rel="nofollow">{$l_searchSite}</a></td>
 </tr>
@@ -94,38 +94,38 @@ return keynum;
 
 <form action="{$main_url}/{$indexphp}" method="get" class="formStyle" id="searchform" name="searchform">
 
-<table class="table table-striped">
+<table class="table table-hover">
 
 <tr>
 <td class="tbClCp" style="width:25%">{$l_search[0]}</td>
-<td class="caption5" style="width:75%"><input name="phrase" type="text" size="50" maxlength="50" class="textForm" value="{$phrase}" onkeydown="JavaScript:handleEnter(event);" />
+<td class="caption5" style="width:75%"><input name="phrase" type="text" maxlength="50" class="textForm" value="{$phrase}" onkeydown="JavaScript:handleEnter(event);" />
 <span class="txtSm">
 <br />
 <span id="tbSearchTypeSign">[+]&nbsp;</span><a href="JavaScript:elLay('tbSearchType');">{$l_search[2]}</a>
-&nbsp;<span id="tbSearchWhereSign">[+]&nbsp;</span><a href="JavaScript:elLay('tbSearchWhere');">{$l_search[1]}</a>
-&nbsp;<span id="tbSearchForumSign">[+]&nbsp;</span><a href="JavaScript:elLay('tbSearchForum');">{$l_forum}</a>
-&nbsp;<span id="tbSearchDateSign">[+]&nbsp;</span><a href="JavaScript:elLay('tbSearchDate');">{$l_search[8]}</a>
-&nbsp;<span id="tbSearchPosterSign">[+]&nbsp;</span><a href="JavaScript:elLay('tbSearchPoster');">{$l_search[6]}</a>
+<br /><span id="tbSearchWhereSign">[+]&nbsp;</span><a href="JavaScript:elLay('tbSearchWhere');">{$l_search[1]}</a>
+<br /><span id="tbSearchForumSign">[+]&nbsp;</span><a href="JavaScript:elLay('tbSearchForum');">{$l_forum}</a>
+<br /><span id="tbSearchDateSign">[+]&nbsp;</span><a href="JavaScript:elLay('tbSearchDate');">{$l_search[8]}</a>
+<br /><span id="tbSearchPosterSign">[+]&nbsp;</span><a href="JavaScript:elLay('tbSearchPoster');">{$l_search[6]}</a>
 </span>
 </td>
 </tr>
 </table>
 
-<table id="tbSearchType" class="table table-striped">
+<table id="tbSearchType" class="table table-hover">
 <tr>
 <td class="tbClCp" style="width:25%">{$l_search[2]}</td>
 <td class="caption5" style="width:75%">{$searchTypeDroDown}</td>
 </tr>
 </table>
 
-<table id="tbSearchWhere" class="table table-striped">
+<table id="tbSearchWhere" class="table table-hover">
 <tr>
 <td class="tbClCp" style="width:25%">{$l_search[1]}</td>
 <td class="caption5" style="width:75%">{$whereDropDown}</td>
 </tr>
 </table>
 
-<table id="tbSearchForum" class="table table-striped">
+<table id="tbSearchForum" class="table table-hover">
 <tr>
 <td class="tbClCp" style="width:25%">{$l_forum}</td>
 <td class="caption5" style="width:75%"><select class="selectTxt" name="forum" id="forum"><option value="">&mdash;</option>{$listForums}</select>
@@ -133,7 +133,7 @@ return keynum;
 </tr>
 </table>
 
-<table id="tbSearchDate" class="table table-striped">
+<table id="tbSearchDate" class="table table-hover">
 <tr>
 <td class="tbClCp" style="width:25%">{$l_search[8]}</td>
 <td class="caption5" style="width:75%">
@@ -142,21 +142,21 @@ return keynum;
 </tr>
 </table>
 
-<table id="tbSearchPoster" class="table table-striped">
+<table id="tbSearchPoster" class="table table-hover">
 <tr>
 <td class="tbClCp" style="width:25%">{$l_search[6]}</td>
 <td class="caption5" style="width:75%"><input type="text" name="posterName" id="posterName" class="textForm" value="{$posterName}" onkeydown="JavaScript:handleEnter(event);" /></td>
 </tr>
 </table>
 
-<table id="tbSearchTopic" class="table table striped">
+<table id="tbSearchTopic" class="table table-hover">
 <tr>
 <td class="tbClCp" style="width:25%">{$l_topic}</td>
 <td class="caption5" style="width:75%">{$topic_name}</td>
 </tr>
 </table>
 
-<table class="table table-striped">
+<table class="table table-hover">
 <tr>
 <td style="width:25%">&nbsp;</td> 
 <td style="width:75%" class="caption5">
@@ -175,13 +175,13 @@ document.write('<input type="button" value="{$l_search[3]}" class="inputButton" 
 {$topicIdField}
 </form>
 
-<table class="table table-striped"><tr><td class="tbTransparentCell">{$warning}&nbsp;</td></tr></table>
+<table class="table table-hover"><tr><td class="tbTransparentCell">{$warning}&nbsp;</td></tr></table>
 
-<table class="table table-striped">
+<table class="table table-hover">
 <tr><td class="tbTransparentCell"><span class="txtSm"><b>{$pageNav}&nbsp;</b></span></td></tr>
 </table>
 
-<table class="tbTransparent">
+<table class="table table-hover">
 <tr>
 <td width="1%">&nbsp;</td>
 <td width="99%">
@@ -190,7 +190,7 @@ document.write('<input type="button" value="{$l_search[3]}" class="inputButton" 
 </tr>
 </table>
 
-<table class="table table-striped">
+<table class="table table-hover">
 <tr><td class="tbTransparentCell"><span class="txtSm"><b>{$pageNav}&nbsp;</b></span></td></tr>
 </table>
 

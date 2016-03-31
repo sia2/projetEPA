@@ -27,40 +27,40 @@ document.regform.from.value = ind;
 <table class="table-responsive">
 <tr>
 <td class="tbClCp">* <b>{$l_sub_name}</b></td>
-<td class="caption5" style="width:100%"><input type="text" name="login" maxlength="{$uname_maxlength}" size="20" value="{$login}" class="textForm" {$editable} style="width:200px;" /><span class="txtSm">{$profileLink}&nbsp;{$deleteProfileLnk}</span></td>
+<td class="caption5" style="width:100%"><input type="text" name="login" maxlength="{$uname_maxlength}"  value="{$login}" class="textForm" {$editable}  /><span class="txtSm">{$profileLink}&nbsp;{$deleteProfileLnk}</span></td>
 </tr>
 <!--PASSWORD-->
 <tr>
 <td class="tbClCp">* <b>{$l_sub_pass}</b></td>
-<td class="caption5"><input type="password" name="passwd" maxlength="32" size="20" value="{$passwd}" class="textForm" style="width:200px;" autocomplete="off" /></td>
+<td class="caption5"><input type="password" name="passwd" maxlength="32"  value="{$passwd}" class="textForm"  autocomplete="off" /></td>
 </tr>
 <tr>
 <td class="tbClCp">* <b>{$l_passOnceAgain}</b></td>
-<td class="caption5"><input type="password" name="passwd2" maxlength="32" size="20" value="{$passwd2}" class="textForm" style="width:200px;" autocomplete="off" /></td>
+<td class="caption5"><input type="password" name="passwd2" maxlength="32"  value="{$passwd2}" class="textForm"  autocomplete="off" /></td>
 </tr>
 <!--/PASSWORD-->
 <tr>
 <td class="tbClCp">* <b>{$l_email}</b></td>
-<td class="caption5"><input type="text" name="email" maxlength="50" size="20" value="{$email}" class="textForm" style="width:200px;" /></td>
+<td class="caption5"><input type="text" name="email" maxlength="50"  value="{$email}" class="textForm"  /></td>
 </tr>
 <tr>
 <td class="tbClCp">{$l_im}</td>
-<td class="caption5"><input type="text" name="icq" maxlength="15" size="20" value="{$icq}" class="textForm" style="width:200px;" /></td>
+<td class="caption5"><input type="text" name="icq" maxlength="15"  value="{$icq}" class="textForm"  /></td>
 </tr>
 <!--WEBSITE-->
 <tr>
 <td class="tbClCp">{$l_websiteUrl}</td>
-<td class="caption5"><input type="text" name="website" maxlength="100" size="20" value="{$website}" class="textForm" style="width:200px;" /></td>
+<td class="caption5"><input type="text" name="website" maxlength="100"  value="{$website}" class="textForm"  /></td>
 </tr>
 <!--/WEBSITE-->
 <tr>
 <td class="tbClCp">{$l_userOcc}</td>
-<td class="caption5"><input type="text" name="occupation" maxlength="100" size="20" value="{$occupation}" class="textForm" style="width:200px;" /></td>
+<td class="caption5"><input type="text" name="occupation" maxlength="100"  value="{$occupation}" class="textForm"  /></td>
 </tr>
 <tr>
 <td class="tbClCp">{$l_userFrom}</td>
-<td class="caption5"><input type="text" name="from" maxlength="100" size="20" value="{$from}" class="textForm" style="width:200px;" />
-<select name="fromSelect" class="selectTxt" onchange="JavaScript:insertCountry();" style="width:200px;">
+<td class="caption5"><input type="text" name="from" maxlength="100"  value="{$from}" class="textForm"  />
+<select name="fromSelect" class="selectTxt" onchange="JavaScript:insertCountry();" >
 <option value="">&nbsp;</option>
 <option value="Afghanistan">Afghanistan</option>
 <option value="Albania">Albania</option>
@@ -69,7 +69,6 @@ document.regform.from.value = ind;
 <option value="Andorra">Andorra</option>
 <option value="Angola">Angola</option>
 <option value="Anguilla">Anguilla</option>
-<option value="Antigua &amp; Barbuda">Antigua &amp; Barbuda</option>
 <option value="Argentina">Argentina</option>
 <option value="Armenia">Armenia</option>
 <option value="Aruba">Aruba</option>
@@ -91,7 +90,6 @@ document.regform.from.value = ind;
 <option value="Botswana">Botswana</option>
 <option value="Bouvet Island">Bouvet Island</option>
 <option value="Brazil">Brazil</option>
-<option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
 <option value="British Virgin Islands">British Virgin Islands</option>
 <option value="Brunei Darussalam">Brunei Darussalam</option>
 <option value="Bulgaria">Bulgaria</option>
@@ -102,7 +100,7 @@ document.regform.from.value = ind;
 <option value="Canada">Canada</option>
 <option value="Cape Verde">Cape Verde</option>
 <option value="Cayman Islands">Cayman Islands</option>
-<option value="Central African Republic">Central African Republic</option>
+<option value="Central African Republic">Centrafrique</option>
 <option value="Chad">Chad</option>
 <option value="Chile">Chile</option>
 <option value="China">China</option>
@@ -113,7 +111,7 @@ document.regform.from.value = ind;
 <option value="Congo">Congo</option>
 <option value="Cook Islands">Cook Islands</option>
 <option value="Costa Rica">Costa Rica</option>
-<option value="Cote D'ivoire (Ivory Coast)">Cote D'ivoire (Ivory Coast)</option>
+<option value="Cote D'ivoire (Ivory Coast)">Cote D'ivoire</option>
 <option value="Croatia">Croatia</option>
 <option value="Cuba">Cuba</option>
 <option value="Cyprus">Cyprus</option>
@@ -130,14 +128,12 @@ document.regform.from.value = ind;
 <option value="Eritrea">Eritrea</option>
 <option value="Estonia">Estonia</option>
 <option value="Ethiopia">Ethiopia</option>
-<option value="Falkland Islands (Malvinas)">Falkland Islands (Malvinas)</option>
 <option value="Faroe Islands">Faroe Islands</option>
 <option value="Fiji">Fiji</option>
 <option value="Finland">Finland</option>
 <option value="France">France</option>
 <option value="French Guiana">French Guiana</option>
 <option value="French Polynesia">French Polynesia</option>
-<option value="French Southern Territories">French Southern Territories</option>
 <option value="Gabon">Gabon</option>
 <option value="Gambia">Gambia</option>
 <option value="Georgia">Georgia</option>
@@ -154,7 +150,6 @@ document.regform.from.value = ind;
 <option value="Guinea-Bissau">Guinea-Bissau</option>
 <option value="Guyana">Guyana</option>
 <option value="Haiti">Haiti</option>
-<option value="Heard &amp; McDonald Islands">Heard &amp; McDonald Islands</option>
 <option value="Honduras">Honduras</option>
 <option value="Hong Kong">Hong Kong</option>
 <option value="Hungary">Hungary</option>
@@ -163,7 +158,7 @@ document.regform.from.value = ind;
 <option value="Indonesia">Indonesia</option>
 <option value="Iraq">Iraq</option>
 <option value="Ireland">Ireland</option>
-<option value="Islamic Republic of Iran">Islamic Republic of Iran</option>
+<option value="Islamic Republic of Iran">Republic of Iran</option>
 <option value="Israel">Israel</option>
 <option value="Italy">Italy</option>
 <option value="Jamaica">Jamaica</option>
@@ -172,11 +167,9 @@ document.regform.from.value = ind;
 <option value="Kazakhstan">Kazakhstan</option>
 <option value="Kenya">Kenya</option>
 <option value="Kiribati">Kiribati</option>
-<option value="Korea, Democratic People's Republic of">Korea, Democratic People's Republic of</option>
 <option value="Korea, Republic of">Korea, Republic of</option>
 <option value="Kuwait">Kuwait</option>
 <option value="Kyrgyzstan">Kyrgyzstan</option>
-<option value="Lao People's Democratic Republic">Lao People's Democratic Republic</option>
 <option value="Latvia">Latvia</option>
 <option value="Lebanon">Lebanon</option>
 <option value="Lesotho">Lesotho</option>
@@ -219,7 +212,6 @@ document.regform.from.value = ind;
 <option value="Nigeria">Nigeria</option>
 <option value="Niue">Niue</option>
 <option value="Norfolk Island">Norfolk Island</option>
-<option value="Northern Mariana Islands">Northern Mariana Islands</option>
 <option value="Norway">Norway</option>
 <option value="Oman">Oman</option>
 <option value="Pakistan">Pakistan</option>
@@ -253,16 +245,11 @@ document.regform.from.value = ind;
 <option value="Solomon Islands">Solomon Islands</option>
 <option value="Somalia">Somalia</option>
 <option value="South Africa">South Africa</option>
-<option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
 <option value="Spain">Spain</option>
 <option value="Sri Lanka">Sri Lanka</option>
 <option value="St. Helena">St. Helena</option>
-<option value="St. Kitts and Nevis">St. Kitts and Nevis</option>
-<option value="St. Pierre &amp; Miquelon">St. Pierre &amp; Miquelon</option>
-<option value="St. Vincent &amp; the Grenadines">St. Vincent &amp; the Grenadines</option>
 <option value="Sudan">Sudan</option>
 <option value="Suriname">Suriname</option>
-<option value="Svalbard &amp; Jan Mayen Islands">Svalbard &amp; Jan Mayen Islands</option>
 <option value="Swaziland">Swaziland</option>
 <option value="Sweden">Sweden</option>
 <option value="Switzerland">Switzerland</option>
@@ -283,17 +270,13 @@ document.regform.from.value = ind;
 <option value="Uganda">Uganda</option>
 <option value="Ukraine">Ukraine</option>
 <option value="United Arab Emirates">United Arab Emirates</option>
-<option value="United Kingdom (Great Britain)">United Kingdom (Great Britain)</option>
-<option value="United States Minor Outlying Islands">United States Minor Outlying Islands</option>
-<option value="United States of America">United States of America</option>
-<option value="United States Virgin Islands">United States Virgin Islands</option>
+<option value="United Kingdom (Great Britain)">United Kingdom</option>
+<option value="United States of America">USA</option>
 <option value="Uruguay">Uruguay</option>
 <option value="Uzbekistan">Uzbekistan</option>
 <option value="Vanuatu">Vanuatu</option>
-<option value="Vatican City State (Holy See)">Vatican City State (Holy See)</option>
 <option value="Venezuela">Venezuela</option>
 <option value="Viet Nam">Viet Nam</option>
-<option value="Wallis &amp; Futuna Islands">Wallis &amp; Futuna Islands</option>
 <option value="Western Sahara">Western Sahara</option>
 <option value="Yemen">Yemen</option>
 <option value="Zaire">Zaire</option>
@@ -306,7 +289,7 @@ document.regform.from.value = ind;
 </tr>
 <tr>
 <td class="tbClCp">{$l_userInterest}</td>
-<td class="caption5"><input type="text" name="interest" maxlength="150" size="20" value="{$interest}" class="textForm" style="width:200px;" /></td>
+<td class="caption5"><input type="text" name="interest" maxlength="150"  value="{$interest}" class="textForm"  /></td>
 </tr>
 <tr>
 <td class="tbClCp">{$l_userViewEmail}</td>
@@ -321,12 +304,12 @@ document.regform.from.value = ind;
 <td class="caption5">{$languageDown}</td>
 </tr>
 <tr>
-<td><img src="{$main_url}/img/p.gif" style="width:200px;height:1px" alt="" /></td>
-<td class="caption5" style="width:100%"><input type="submit" value="{$userTitle}" class="inputButton" /></td>
+<td><img src="{$main_url}/img/p.gif" style="width:170px;height:1px" alt="" /></td>
+<td class="caption5" ><input type="submit" value="{$userTitle}" class="inputButton" /></td>
 </tr>
 </table>
 {$adminEditField}
-<table class="responsive">
+<table class="table-responsive">
 	{$avatarForm}
 </table>
 

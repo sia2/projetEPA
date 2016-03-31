@@ -24,7 +24,7 @@ if(isset($_POST['user_usr']) and isset($_POST['user_pwd']) and isset($displayFor
 $user_pwd='';
 
 $userDataFields=<<<out
-{$l_sub_name}: <input type="text" size="18" maxlength="40" name="user_usr" value="{$user_usr}" class="textForm" /> {$l_sub_pass}: <input type="password" size="18" maxlength="32" name="user_pwd" class="textForm" /><br /><br />
+{$l_sub_name}:</td> <td><input type="text" size="18" maxlength="40" name="user_usr" value="{$user_usr}" class="textForm" /></td></tr> <tr><td>{$l_sub_pass}:</td> <td><input type="password" size="18" maxlength="32" name="user_pwd" class="textForm" />
 out;
 unset($_POST['user_usr']); unset($_POST['user_pwd']);
 }
@@ -130,13 +130,15 @@ out;
 }
 else{
 $formDisplay=<<<out
-<br />
-<table class="tbTransparentmb">
+<table class="table table-hover">
 <tr><td>
-<span class="txtNr">{$antiWarn}</span><br /><br />
+<span class="txtNr">{$antiWarn}</span>
+</td></tr></table>
+<table class="table table-hover">
+<tr><td>
 <form action="{$indexphp}" method="post" class="formStyle" name="resubmit">
-{$userDataFields}{$topicTitleField}{$postTextField}
-{$textAntiSpam}<input type="submit" value="{$l_postholdRepeat}" class="inputButton" name="subbut" />
+{$userDataFields}</td></tr><tr><td>{$topicTitleField}</td><td>{$postTextField}</td></tr>
+<tr><td>{$textAntiSpam}</td><td><input type="submit" value="{$l_postholdRepeat}" class="inputButton" name="subbut" />
 {$hiddenFields}
 </form>
 </td></tr></table>
