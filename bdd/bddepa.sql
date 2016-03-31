@@ -1,7 +1,7 @@
 -- phpMyAdmin SQL Dump
 -- version 3.5.1
 -- http://www.phpmyadmin.net
---
+--test
 -- Client: localhost
 -- Généré le: Jeu 31 Mars 2016 à 13:32
 -- Version du serveur: 5.5.24-log
