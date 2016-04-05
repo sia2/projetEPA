@@ -1,0 +1,90 @@
+<!Doctype>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link href="style.css" rel="stylesheet" media="all" type="text/css">
+</head>
+
+<Body>
+<div name="formulaire_Demande">
+<form name="demande" method="post" action="form.php">
+<img src="logo.png" alt="logo" height="200" />
+</br>
+<p style="text-align: center;"> Complétez votre demande pour être pris en charge </p>
+<fieldset>
+<legend>Compréhension</legend>
+<div name="langue">
+<Label style="font-family: Comic Sans MS;"> Comprenez-vous la langue française :</br>
+  <input type="radio" name="langue" value="oui" checked> oui<br>
+  <input type="radio" name="langue" value="non">non<br><br><br>
+ </Label>
+</div>
+</fieldset>
+<fieldset>
+<legend>identité</legend>
+<Label style="font-family: Comic Sans MS;">  Votre nom : &nbsp;&nbsp; <input type="text" placeholder="Entrer votre nom" name="name"></label><br><br>
+<Label style="font-family: Comic Sans MS;">  Votre prenom :  &nbsp;&nbsp;<input type="text" placeholder="Entrer votre prenom" name="prenom"></label><br><br>
+<Label style="font-family: Comic Sans MS;"> Votre age : &nbsp;&nbsp; <input type="age" placeholder="Votre age" name="age"></label><br><br><br>
+<Label style="font-family: Comic Sans MS;">  Votre Email :  &nbsp;&nbsp;<input type="mail" placeholder="Entrer votre Email" name="mail"></label><br><br>
+</fieldset>
+<fieldset>
+<legend>Pour savoir d'ou vous venez</legend>
+<div name="adress_origine">
+	<Label style="font-family: Comic Sans MS;">  Votre adresse d'origine :&nbsp;&nbsp; <input type="text" placeholder="Votre adresse d'origine" name="adress_origine"><br><br>
+	<Label style="font-family: Comic Sans MS;">  Votre code Postale:&nbsp;&nbsp;  <input type="text" name="CodePostale" placeholder="code postale"  min="1" max="5"><br><br>
+	<Label style="font-family: Comic Sans MS;">  Votre Université: &nbsp;&nbsp; <input type="text" placeholder="Votre université" name="uni"><br><br>
+	<Label style="font-family: Comic Sans MS;">  Votre ville : &nbsp;&nbsp; <input type="text" placeholder="Votre addresse d'origine" name="ville"><br><br><br>
+</div>
+</fieldset>
+<fieldset>
+<legend>Pour venir vous récuperez</legend>
+<div name="adress_arrivee">
+	<Label style="font-family: Comic Sans MS;">  Votre adresse d'arrivée : &nbsp;&nbsp; <input type="text" placeholder="Votre adresse d'arrivee" name="adress_arrivee"><br><br>
+	<Label style="font-family: Comic Sans MS;"> Votre code Postale:  &nbsp;&nbsp;<input type="text" name="CodePostale_arrivee" placeholder="code postale" "min="1" max="5"><br><br>
+	<Label style="font-family: Comic Sans MS;">  Votre ville :  &nbsp;&nbsp;<input type="text" placeholder="Votre addresse d'origine" name="ville_arrivee"><br><br>
+	<Label style="font-family: Comic Sans MS;">  L'université Accueillante : &nbsp;&nbsp; <input type="text" placeholder="Votre Université d'arrivee" name="uni_arrivee"><br><br><br>
+</div>
+<div name="horaire">
+	<Label style="font-family: Comic Sans MS;">  Votre date d'arrivée  &nbsp;&nbsp;<input type="date" name="date" max="2020-12-31" placeholder="date"></label><br><br>
+	<Label style="font-family: Comic Sans MS;">  Votre heure d'arrivée &nbsp;&nbsp; <input type="time" name="heure" max="2020-12-31" placeholder="heure"></label><br><br><br>
+</div>
+<div name="lieu">
+<Label style="font-family: Comic Sans MS;"> Choissisez votre destination  :</br></br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<select name="lieux" size=3>
+ <optgroup label="Aéroport">
+  <option label="CDG"> CDG
+  <option label="Orly">Orly
+  <option label="Beauvais"> Beauvais
+ </optgroup>
+ <optgroup label="Port">
+  <option label="havre"> Le Havre
+  <option label="tréport"> Le tréport
+  <option label="marseille"> Marseille
+ </optgroup>
+ <optgroup label="trains">
+  <option label="gare_du_nord"> GDN
+  <option label="gare_de_lyon"> gare de lyon
+  <option label="gare_de_est"> gare de l'est
+ </optgroup>
+</select><br><br><br>
+</label>
+</div>
+</fieldset>
+<br/>
+<fieldset>
+<div>
+<Label style="font-family: Comic Sans MS;"> Vos motif en France :<br> <TEXTAREA name="motif" rows=4 cols=40>motif de votre venue</TEXTAREA></label><br><br>
+<INPUT TYPE="submit" name="nom" VALUE=" Envoyer ">
+<INPUT TYPE="reset" name="nom" VALUE=" Annuler ">
+</div>
+</fieldset>
+
+</form>
+
+
+</Body<
+
+
+
+
+</html>
