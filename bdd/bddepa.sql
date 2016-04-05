@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 31 Mars 2016 à 17:24
+-- Généré le: Mar 05 Avril 2016 à 07:47
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -168,20 +168,6 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
   `diplome` text COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_etudiant`),
   KEY `id_etudiant` (`id_etudiant`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `listevotant`
---
-
-CREATE TABLE IF NOT EXISTS `listevotant` (
-  `id_listev` int(11) NOT NULL,
-  `nombre` int(11) NOT NULL,
-  `libelle_listev` text COLLATE utf8_unicode_ci NOT NULL,
-  PRIMARY KEY (`id_listev`),
-  KEY `id_listev` (`id_listev`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -539,6 +525,7 @@ CREATE TABLE IF NOT EXISTS `relance` (
 
 CREATE TABLE IF NOT EXISTS `reunion_instance` (
   `id_reunion_instance` int(11) NOT NULL,
+  `liste_votant` text COLLATE utf8_unicode_ci NOT NULL,
   `date` date NOT NULL,
   `libelle` text COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
@@ -622,12 +609,6 @@ CREATE TABLE IF NOT EXISTS `type_reunion` (
 --
 -- Contraintes pour les tables exportées
 --
-
---
--- Contraintes pour la table `adherent`
---
-ALTER TABLE `adherent`
-  ADD CONSTRAINT `fk_id_listev` FOREIGN KEY (`id_listev`) REFERENCES `listevotant` (`id_listev`);
 
 --
 -- Contraintes pour la table `ca`
