@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 05 Avril 2016 à 07:47
+-- Généré le: Mar 05 Avril 2016 à 16:02
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -446,6 +446,7 @@ CREATE TABLE IF NOT EXISTS `personne_physique` (
   `nom_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `prenom_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `adresse_personne-ph` text COLLATE utf8_unicode_ci NOT NULL,
+  `email` text COLLATE utf8_unicode_ci NOT NULL,
   `cp_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `ville_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `origine` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
