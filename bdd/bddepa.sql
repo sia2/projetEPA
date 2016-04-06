@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 05 Avril 2016 à 16:02
+-- Généré le: Mer 06 Avril 2016 à 12:03
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -122,6 +122,26 @@ CREATE TABLE IF NOT EXISTS `demande_accueil` (
 INSERT INTO `demande_accueil` (`id_demande`, `name`, `prenom`, `age`, `langue`, `adress_origine`, `adress_arrivee`, `date`, `heure`, `dateDemande`, `motif`, `etat`, `uni`, `Alerte`, `uniarr`, `email`, `id_etudiant`) VALUES
 (18, 'loick', 'latifi', 25, 'oui', '16 rue dauphine', '23 rue magellan', '2016-03-29', 1253, '31.03.16', 'motif de votre venue', 'en_cour', 'uni daudau', 0, 'uni desdes', 'loick.2@hotmail.fr', NULL),
 (21, 'loick', 'latifi', 25, 'oui', '16 rue dauphine', '23 rue magellan', '2016-03-29', 1253, '31.03.16', 'motif de votre venue', 'en_cour', 'uni daudau', 0, 'uni desdes', 'loick.2@hotmail.fr', NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `demande_adhesion`
+--
+
+CREATE TABLE IF NOT EXISTS `demande_adhesion` (
+  `id_adehesion` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `nom_demandeur` text COLLATE utf8_unicode_ci NOT NULL,
+  `prenom_demandeur` text COLLATE utf8_unicode_ci NOT NULL,
+  `email` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `motif` text COLLATE utf8_unicode_ci NOT NULL,
+  `adresse_demandeur` text COLLATE utf8_unicode_ci NOT NULL,
+  `id_personne_ph` int(11) NOT NULL,
+  PRIMARY KEY (`id_adehesion`),
+  KEY `id_adehesion` (`id_adehesion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -447,12 +467,14 @@ CREATE TABLE IF NOT EXISTS `personne_physique` (
   `prenom_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `adresse_personne-ph` text COLLATE utf8_unicode_ci NOT NULL,
   `email` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `cp_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `ville_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `origine` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `sexe` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `profession` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `centreinterets` text COLLATE utf8_unicode_ci NOT NULL,
+  `id_adhesion` int(11) NOT NULL,
   PRIMARY KEY (`id_personne_ph`),
   KEY `id_personne_ph` (`id_personne_ph`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
