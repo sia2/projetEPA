@@ -1,0 +1,160 @@
+P, P.noInd{
+font-family:Arial,'lucida grande',tahoma,verdana,arial,sans-serif;
+text-decoration:none;
+font-size:9pt;
+line-height:14pt;
+padding-top:5pt;
+padding-bottom:5pt;
+text-indent: 0.5cm;
+}
+
+P.noInd {
+text-indent: 0;
+}
+
+SMALL{
+font-family: Arial,Verdana,Arial,Helvetica,sans-serif;
+color: #000000;
+text-decoration: none;
+font-size: 10px;
+}
+
+PRE{
+font-family: Arial,Verdana,Arial,Helvetica,sans-serif;
+color: #000000;
+text-decoration: none;
+font-size: 10px;
+}
+
+H1{
+font-family:sans-serif,tahoma,verdana,'lucida grande';
+font-size:11pt;
+color:#774242;
+margin-top:5pt;
+margin-bottom:5pt;
+text-shadow: #E4E79F 0px 1px 1px;
+
+}
+
+H2{
+font-family: Arial,Verdana,Arial,Helvetica,sans-serif;
+text-decoration: none;	
+font-size: 9pt;
+margin-top: 4pt;
+margin-bottom: 4pt;
+margin-right: 0pt;
+margin-left: 2pt;
+padding:3pt;
+background-color:#DFEEC1;
+}
+
+LI{
+list-style:circle;
+font-size:9pt;
+margin-left:10pt;
+padding-left:10pt;
+margin:1pt;
+line-height:15pt;
+}
+
+UL{
+margin-top: 2px;
+margin-bottom: 2px;
+margin-right: 15px;
+margin-left: 15px;
+}
+
+OL{
+margin-top: 2px;
+margin-bottom: 2px;
+margin-right: 15px;
+margin-left: 15px;
+}
+
+td.caps {
+background-color: #FFFFFF;
+border: 1px #CCCCCC dotted;
+width:20%;
+}
+
+td.caps2 {
+border: 1px #CCCCCC solid;
+width:20%;
+}
+
+.plink{
+font-size:10pt;
+font-weight:bold;
+background-color: #E8E58F;
+color: #E88F8F;
+}
+
+EM, I{
+font-family: Georgia,Arial,Helvetica,sans-serif;
+}
+
+.caps2{
+border:1px #dbdbdb solid;
+font-size:9pt;
+line-height:15pt;
+padding-bottom:1px;
+padding-left:5px;
+padding-right:5px;
+padding-top:2px;
+text-align:left;
+}
+
+.comSub{
+margin-left:25pt;
+}
+.comRad{
+margin-left:20pt;
+}
+.comPremium{
+background-color:#E7EACA;
+}
+
+td.padTb{
+padding:7pt;
+}
+
+/* Special hyperlinks */
+
+td.capMenu A.specialMenu:link {
+color:red;text-decoration:none;
+background-color:#E0EA44;
+}
+td.capMenu A.specialMenu:active {
+color:#002244; text-decoration:none;
+background-color:#E0EA44;
+}
+td.capMenu A.specialMenu:visited {
+color:#002244; text-decoration:none;
+background-color:#E0EA44;
+}
+td.capMenu A.specialMenu:hover {
+color:#002244; text-decoration:none;
+background-color:#E2F0B6;
+}
+
+hr.two1 {
+border: 0;
+height: 1px;
+background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0));
+width:170px;
+}
+
+div.adpad{
+padding-top:12px;
+padding-bottom:13px;
+}
+
+hr.two {
+border:0px; 
+height:1px;
+width:170px;
+background-image: -webkit-linear-gradient(left, #F9F9F9, #79980E, #F9F9F9);
+background-image: -moz-linear-gradient(left, #F9F9F9, #79980E, #F9F9F9);
+background-image: -ms-linear-gradient(left, #F9F9F9, #79980E, #F9F9F9);
+background-image: -o-linear-gradient(left, #F9F9F9, #79980E, #F9F9F9); 
+}
