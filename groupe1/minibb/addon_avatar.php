@@ -6,7 +6,7 @@ Check COPYING file for more details.
 Copyright (C) 2004-2014 Paul Puzyrev. www.minibb.com
 Latest File Update: 2014-Oct-01
 */
-$maxFileSize=0;
+//$maxFileSize=0;
 if (!defined('INCLUDED776')) die ('Fatal error.');
 
 include($pathToFiles.'addon_avatar_options.php');

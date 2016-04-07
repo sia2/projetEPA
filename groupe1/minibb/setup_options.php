@@ -85,7 +85,7 @@ $userUnlock=0;
 
 /* New options for miniBB 1.5 */
 $emailadmposts=0;
-$useredit=86400;
+$useredit=31536000;
 
 /* New options for miniBB 1.6 */
 //$metaLocation='go';
@@ -134,7 +134,7 @@ $allForumsReg=TRUE;
 //$mod_rewrite=TRUE;
 $enableViews=TRUE;
 $userInfoInPosts=array('user_custom1');
-//$userDeleteMsgs=1;
+$userDeleteMsgs=2;
 
 $description='miniBB is a free complete PHP forum software, bulletin board, having very strong bulletin board idea beside. Modern free forums script is mostly too large, too cool, sometimes funny and cumbersome, written by freelancers. mini bb is free from these lacks due its clear concepts of the whole search engine friendly forums solution, also freelance avalaible. mysql is the default database for minibb. Open source bulletin board mostly\'s oriented to users; having a website design concept behind, small bulletin board becomes further leader in building, integrating and embedding forums into website. miniBB supports multilingual content, language packs, rss, postgresql, mssql, bad words, smilies, instant online modules, mod rewrite, SEO. By bulletin bird, we mean the easiest forums solution for a website, speed, simplicity. Whatever your community, discussion is related to, you can download our bulletin forum software and use it on your site! www.miniBB.net has all useful software downloads for anyone using our bulletin board PHP solution.';
 

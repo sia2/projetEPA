@@ -6,10 +6,10 @@ $avatarDir=$pathToFiles.'shared_files/avatars'; //general path to your directory
 
 $avatarUrl="{$main_url}/shared_files/avatars"; //general WWW path to avatars images. No slash at the end.
 
-$avatarMaxFileSize=10240; //maximum avatar file size in Bytes (10240 = 10 Kbytes). If you want to DISABLE uploads, set this to 0.
+$avatarMaxFileSize=20240; //maximum avatar file size in Bytes (10240 = 10 Kbytes). If you want to DISABLE uploads, set this to 0.
 
-$maxAvatarWidth=50; //maximum picture width in pixels. Set amount of maximum width and height ONLY if you have GD library installed, ELSE set them to 0 (any pic width and height will be allowed, just because it is impossible to determine w/h then).
-$maxAvatarHeight=50; //maximum picture height in pixels. 
+$maxAvatarWidth=500; //maximum picture width in pixels. Set amount of maximum width and height ONLY if you have GD library installed, ELSE set them to 0 (any pic width and height will be allowed, just because it is impossible to determine w/h then).
+$maxAvatarHeight=500; //maximum picture height in pixels. 
 
 $staticAvatarSize=FALSE;// set to TRUE if you would like to allow to upload static size avatars ONLY (the size defined under $maxAvatarWidth and $maxAvatarHeight). This is the most suitable way if you're using threads layout model where username row is placed on top of a message text. Setting this to FALSE allows to upload various size avatars which fits under dimensions specified in $maxAvatarWidth and $maxAvatarHeight.
 
