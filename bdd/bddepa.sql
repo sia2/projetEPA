@@ -1,9 +1,15 @@
 -- phpMyAdmin SQL Dump
 -- version 3.5.1
 -- http://www.phpmyadmin.net
+<<<<<<< HEAD
 --
 -- Client: localhost
 -- Généré le: Mar 05 Avril 2016 à 07:47
+=======
+--test
+-- Client: localhost
+-- Généré le: Jeu 31 Mars 2016 à 13:32
+>>>>>>> bdd
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -95,7 +101,11 @@ CREATE TABLE IF NOT EXISTS `cotisation` (
 
 CREATE TABLE IF NOT EXISTS `demande_accueil` (
   `id_demande` int(16) NOT NULL AUTO_INCREMENT,
+<<<<<<< HEAD
   `name` varchar(255) NOT NULL,
+=======
+  `nom` varchar(255) NOT NULL,
+>>>>>>> bdd
   `prenom` varchar(255) NOT NULL,
   `age` int(255) NOT NULL,
   `langue` varchar(255) NOT NULL,
@@ -110,6 +120,7 @@ CREATE TABLE IF NOT EXISTS `demande_accueil` (
   `Alerte` int(12) DEFAULT '0',
   `uniarr` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
+<<<<<<< HEAD
   `id_etudiant` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_demande`),
   KEY `fk_id_etudiant` (`id_etudiant`)
@@ -122,6 +133,12 @@ CREATE TABLE IF NOT EXISTS `demande_accueil` (
 INSERT INTO `demande_accueil` (`id_demande`, `name`, `prenom`, `age`, `langue`, `adress_origine`, `adress_arrivee`, `date`, `heure`, `dateDemande`, `motif`, `etat`, `uni`, `Alerte`, `uniarr`, `email`, `id_etudiant`) VALUES
 (18, 'loick', 'latifi', 25, 'oui', '16 rue dauphine', '23 rue magellan', '2016-03-29', 1253, '31.03.16', 'motif de votre venue', 'en_cour', 'uni daudau', 0, 'uni desdes', 'loick.2@hotmail.fr', NULL),
 (21, 'loick', 'latifi', 25, 'oui', '16 rue dauphine', '23 rue magellan', '2016-03-29', 1253, '31.03.16', 'motif de votre venue', 'en_cour', 'uni daudau', 0, 'uni desdes', 'loick.2@hotmail.fr', NULL);
+=======
+  `id_etudiant` int(11) NOT NULL,
+  PRIMARY KEY (`id_demande`),
+  KEY `fk_id_etudiant` (`id_etudiant`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
+>>>>>>> bdd
 
 -- --------------------------------------------------------
 
@@ -166,13 +183,33 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
   `adresse` text COLLATE utf8_unicode_ci NOT NULL,
   `niveau_etude` text COLLATE utf8_unicode_ci NOT NULL,
   `diplome` text COLLATE utf8_unicode_ci NOT NULL,
+<<<<<<< HEAD
   PRIMARY KEY (`id_etudiant`),
+=======
+>>>>>>> bdd
   KEY `id_etudiant` (`id_etudiant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
 --
+<<<<<<< HEAD
+=======
+-- Structure de la table `listevotant`
+--
+
+CREATE TABLE IF NOT EXISTS `listevotant` (
+  `id_listev` int(11) NOT NULL,
+  `nombre` int(11) NOT NULL,
+  `libelle_listev` text COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id_listev`),
+  KEY `id_listev` (`id_listev`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+>>>>>>> bdd
 -- Structure de la table `membrebureau`
 --
 
@@ -525,7 +562,10 @@ CREATE TABLE IF NOT EXISTS `relance` (
 
 CREATE TABLE IF NOT EXISTS `reunion_instance` (
   `id_reunion_instance` int(11) NOT NULL,
+<<<<<<< HEAD
   `liste_votant` text COLLATE utf8_unicode_ci NOT NULL,
+=======
+>>>>>>> bdd
   `date` date NOT NULL,
   `libelle` text COLLATE utf8_unicode_ci NOT NULL,
   `description` text COLLATE utf8_unicode_ci NOT NULL,
@@ -611,6 +651,15 @@ CREATE TABLE IF NOT EXISTS `type_reunion` (
 --
 
 --
+<<<<<<< HEAD
+=======
+-- Contraintes pour la table `adherent`
+--
+ALTER TABLE `adherent`
+  ADD CONSTRAINT `fk_id_listev` FOREIGN KEY (`id_listev`) REFERENCES `listevotant` (`id_listev`);
+
+--
+>>>>>>> bdd
 -- Contraintes pour la table `ca`
 --
 ALTER TABLE `ca`
