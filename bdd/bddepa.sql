@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 07 Avril 2016 à 11:45
+-- Généré le: Jeu 07 Avril 2016 à 18:39
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -28,15 +28,27 @@ SET time_zone = "+00:00";
 
 CREATE TABLE IF NOT EXISTS `adherent` (
   `id_adherent` int(11) NOT NULL,
-  `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `duree_adherent` int(11) NOT NULL,
-  `date_premier_adhesion` date NOT NULL,
-  `date_dernier_adhesion` date NOT NULL,
-  `statut_adherent` text COLLATE utf8_unicode_ci NOT NULL,
-  `id_listev` int(11) NOT NULL,
+  `date` date NOT NULL,
   PRIMARY KEY (`id_adherent`),
-  KEY `id_adherent` (`id_adherent`),
-  KEY `fk_id_listev` (`id_listev`)
+  KEY `id_adherent` (`id_adherent`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `adresse`
+--
+
+CREATE TABLE IF NOT EXISTS `adresse` (
+  `id_adresse` int(11) NOT NULL,
+  `num_rue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nom_rue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `code_postale` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id_personne_ph` int(11) NOT NULL,
+  `id_personne_moral` int(11) NOT NULL,
+  PRIMARY KEY (`id_adresse`),
+  KEY `id_adresse` (`id_adresse`),
+  KEY `fk_id_personne_ph` (`id_personne_ph`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -64,8 +76,8 @@ CREATE TABLE IF NOT EXISTS `ca` (
 
 CREATE TABLE IF NOT EXISTS `connexion` (
   `id_connexion` int(11) NOT NULL,
-  `login` text COLLATE utf8_unicode_ci NOT NULL,
-  `password` text COLLATE utf8_unicode_ci NOT NULL,
+  `login` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `id_personne_moral` int(11) NOT NULL,
   `id_personne_ph` int(11) NOT NULL,
   PRIMARY KEY (`id_connexion`),
@@ -135,12 +147,6 @@ INSERT INTO `demande_accueil` (`id_demande`, `name`, `prenom`, `age`, `langue`, 
 CREATE TABLE IF NOT EXISTS `demande_adhesion` (
   `id_adehesion` int(11) NOT NULL,
   `date` date NOT NULL,
-  `nom_demandeur` text COLLATE utf8_unicode_ci NOT NULL,
-  `prenom_demandeur` text COLLATE utf8_unicode_ci NOT NULL,
-  `email` text COLLATE utf8_unicode_ci NOT NULL,
-  `tel` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
-  `motif` text COLLATE utf8_unicode_ci NOT NULL,
-  `adresse_demandeur` text COLLATE utf8_unicode_ci NOT NULL,
   `id_personne_ph` int(11) NOT NULL,
   PRIMARY KEY (`id_adehesion`),
   KEY `id_adehesion` (`id_adehesion`)
@@ -154,11 +160,16 @@ CREATE TABLE IF NOT EXISTS `demande_adhesion` (
 
 CREATE TABLE IF NOT EXISTS `document` (
   `id_document` int(11) NOT NULL,
-  `nom_document` text COLLATE utf8_unicode_ci NOT NULL,
-  `type_document` text COLLATE utf8_unicode_ci NOT NULL,
+  `nom_document` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `type_document` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `chemin_r_doc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `statut` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_projet` int(11) NOT NULL,
+  `chemin_a_doc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id_statut` int(11) NOT NULL,
   PRIMARY KEY (`id_document`),
-  KEY `id_document` (`id_document`)
+  KEY `id_document` (`id_document`),
+  KEY `fk_id_statut` (`id_statut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -169,13 +180,27 @@ CREATE TABLE IF NOT EXISTS `document` (
 
 CREATE TABLE IF NOT EXISTS `don` (
   `id_don` int(11) NOT NULL,
-  `num_don` int(11) NOT NULL,
-  `montant_don` text COLLATE utf8_unicode_ci NOT NULL,
-  `objet_don` text COLLATE utf8_unicode_ci NOT NULL,
-  `id_recu_fiscal` int(11) NOT NULL,
-  `id_personne_moral` int(11) NOT NULL,
+  `objet_don` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id_recu_fiscal` int(11) DEFAULT NULL,
+  `id_personne_moral` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_don`),
   KEY `id_don` (`id_don`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `dossier`
+--
+
+CREATE TABLE IF NOT EXISTS `dossier` (
+  `id_dossier` int(11) NOT NULL,
+  `id_sous_dossier` int(11) DEFAULT NULL,
+  `id_document` int(11) DEFAULT NULL,
+  `nom_dossier` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `chemin` int(255) DEFAULT NULL,
+  PRIMARY KEY (`id_dossier`),
+  KEY `id_dossier` (`id_dossier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -186,9 +211,8 @@ CREATE TABLE IF NOT EXISTS `don` (
 
 CREATE TABLE IF NOT EXISTS `etudiant` (
   `id_etudiant` int(11) NOT NULL,
-  `adresse` text COLLATE utf8_unicode_ci NOT NULL,
-  `niveau_etude` text COLLATE utf8_unicode_ci NOT NULL,
-  `diplome` text COLLATE utf8_unicode_ci NOT NULL,
+  `niveau_etude` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `diplome` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_etudiant`),
   KEY `id_etudiant` (`id_etudiant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -215,8 +239,8 @@ CREATE TABLE IF NOT EXISTS `membrebureau` (
 
 CREATE TABLE IF NOT EXISTS `message` (
   `id_message` int(11) NOT NULL,
-  `message` text COLLATE utf8_unicode_ci NOT NULL,
-  `validation_message` text COLLATE utf8_unicode_ci NOT NULL,
+  `message` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `validation_message` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_message`),
   KEY `id_message` (`id_message`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -393,8 +417,8 @@ INSERT INTO `minibbtable_users` (`user_id`, `username`, `user_regdate`, `user_pa
 
 CREATE TABLE IF NOT EXISTS `multimedia` (
   `id_multimedia` int(11) NOT NULL,
-  `libelle` text COLLATE utf8_unicode_ci NOT NULL,
-  `objet_multimedia` text COLLATE utf8_unicode_ci NOT NULL,
+  `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `objet_multimedia` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_multimedia`),
   KEY `id_multimedia` (`id_multimedia`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -429,15 +453,14 @@ INSERT INTO `my_users` (`ID`, `name`, `pass`, `email`) VALUES
 
 CREATE TABLE IF NOT EXISTS `paiement` (
   `id_paiement` int(11) NOT NULL,
-  `libelle_paiement` text COLLATE utf8_unicode_ci NOT NULL,
+  `etat_paiement` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date` date NOT NULL,
   `montant` double NOT NULL,
-  `idtypeP` int(11) NOT NULL,
+  `idtypeP` int(11) DEFAULT NULL,
   `id_don` int(11) NOT NULL,
   `id_personne_ph` int(11) NOT NULL,
-  `id_subvention` int(11) NOT NULL,
-  `id_personne` int(11) NOT NULL,
-  PRIMARY KEY (`id_personne_ph`),
+  `id_subvention` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_paiement`),
   KEY `id_paiement` (`id_paiement`),
   KEY `fk_idtypeP` (`idtypeP`),
   KEY `fk_id_don` (`id_don`),
@@ -452,8 +475,13 @@ CREATE TABLE IF NOT EXISTS `paiement` (
 
 CREATE TABLE IF NOT EXISTS `personne_morale` (
   `id_personne_moral` int(11) NOT NULL,
-  `raisonsociale` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `description` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `raisonsociale` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nom` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `statut` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `adresse_siege` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `num_siret` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nom_representant` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_personne_moral`),
   KEY `id_personne_moral` (`id_personne_moral`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -466,34 +494,17 @@ CREATE TABLE IF NOT EXISTS `personne_morale` (
 
 CREATE TABLE IF NOT EXISTS `personne_physique` (
   `id_personne_ph` int(11) NOT NULL,
-  `nom_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
-  `prenom_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
-  `adresse_personne-ph` text COLLATE utf8_unicode_ci NOT NULL,
-  `email` text COLLATE utf8_unicode_ci NOT NULL,
+  `nom_personne_ph` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `prenom_personne_ph` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `tel` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `cp_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
-  `ville_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `origine` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `sexe` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
-  `profession` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
-  `centreinterets` text COLLATE utf8_unicode_ci NOT NULL,
-  `id_adhesion` int(11) NOT NULL,
+  `sexe` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `profession` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `centre_interet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id_adhesion` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_personne_ph`),
   KEY `id_personne_ph` (`id_personne_ph`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `personne_ph_statut`
---
-
-CREATE TABLE IF NOT EXISTS `personne_ph_statut` (
-  `idpp_statut` int(11) NOT NULL,
-  `id_personne_ph` int(11) NOT NULL,
-  `id_statut` int(11) NOT NULL,
-  KEY `idpp_statut` (`idpp_statut`),
-  KEY `fk_id_statut` (`id_statut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -504,11 +515,11 @@ CREATE TABLE IF NOT EXISTS `personne_ph_statut` (
 
 CREATE TABLE IF NOT EXISTS `prelevement` (
   `id_prelevement` int(11) NOT NULL,
-  `libelle` text COLLATE utf8_unicode_ci NOT NULL,
+  `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date_prelevement` date NOT NULL,
   `montant_prelevement` double NOT NULL,
-  `id_cotisation` int(11) NOT NULL,
-  `id_don` int(11) NOT NULL,
+  `id_cotisation` int(11) DEFAULT NULL,
+  `id_don` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_prelevement`),
   KEY `idprelevement` (`id_prelevement`),
   KEY `fk_id_cotisation` (`id_cotisation`)
@@ -522,10 +533,10 @@ CREATE TABLE IF NOT EXISTS `prelevement` (
 
 CREATE TABLE IF NOT EXISTS `projet` (
   `id_projet` int(11) NOT NULL,
-  `nom_projet` text COLLATE utf8_unicode_ci NOT NULL,
+  `nom_projet` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `date_debut_projet` date NOT NULL,
-  `resume_projet` text COLLATE utf8_unicode_ci NOT NULL,
-  `description` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `resume_projet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_projet`),
   KEY `id_projet` (`id_projet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -538,7 +549,7 @@ CREATE TABLE IF NOT EXISTS `projet` (
 
 CREATE TABLE IF NOT EXISTS `relance` (
   `id_relance` int(11) NOT NULL,
-  `temps_relance` int(11) NOT NULL,
+  `temps_relance` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_relance`),
   KEY `id_relance` (`id_relance`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -551,10 +562,10 @@ CREATE TABLE IF NOT EXISTS `relance` (
 
 CREATE TABLE IF NOT EXISTS `reunion_instance` (
   `id_reunion_instance` int(11) NOT NULL,
-  `liste_votant` text COLLATE utf8_unicode_ci NOT NULL,
+  `liste_votant` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `date` date NOT NULL,
-  `libelle` text COLLATE utf8_unicode_ci NOT NULL,
-  `description` text COLLATE utf8_unicode_ci NOT NULL,
+  `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_type_reunion` int(11) NOT NULL,
   KEY `id_reunion_instance` (`id_reunion_instance`),
   KEY `fk_id_type_reunion` (`id_type_reunion`)
@@ -581,7 +592,7 @@ CREATE TABLE IF NOT EXISTS `reçu_fiscal` (
 
 CREATE TABLE IF NOT EXISTS `statut` (
   `id_statut` int(11) NOT NULL,
-  `libelle` text COLLATE utf8_unicode_ci NOT NULL,
+  `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_statut`),
   KEY `id_statut` (`id_statut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -596,9 +607,9 @@ CREATE TABLE IF NOT EXISTS `subvention` (
   `id_subvention` int(11) NOT NULL,
   `num_subvention` int(11) NOT NULL,
   `montant_subvention` double NOT NULL,
-  `beneficiaire` text COLLATE utf8_unicode_ci NOT NULL,
-  `lieu` text COLLATE utf8_unicode_ci NOT NULL,
-  `nom_titulaire` text COLLATE utf8_unicode_ci NOT NULL,
+  `beneficiaire` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lieu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nom_titulaire` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_projet` int(11) NOT NULL,
   `id_personne_moral` int(11) NOT NULL,
   PRIMARY KEY (`id_subvention`),
@@ -615,7 +626,7 @@ CREATE TABLE IF NOT EXISTS `subvention` (
 
 CREATE TABLE IF NOT EXISTS `typepaiement` (
   `idtypeP` int(11) NOT NULL,
-  `libelle` text COLLATE utf8_unicode_ci NOT NULL,
+  `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`idtypeP`),
   KEY `idtypeP` (`idtypeP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -628,13 +639,19 @@ CREATE TABLE IF NOT EXISTS `typepaiement` (
 
 CREATE TABLE IF NOT EXISTS `type_reunion` (
   `id_type_reunion` int(11) NOT NULL,
-  `libelle` text COLLATE utf8_unicode_ci NOT NULL,
+  `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   KEY `id_type_reunion` (`id_type_reunion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Contraintes pour les tables exportées
 --
+
+--
+-- Contraintes pour la table `adresse`
+--
+ALTER TABLE `adresse`
+  ADD CONSTRAINT `fk_id_personne_ph` FOREIGN KEY (`id_personne_ph`) REFERENCES `personne_physique` (`id_personne_ph`);
 
 --
 -- Contraintes pour la table `ca`
@@ -655,18 +672,9 @@ ALTER TABLE `cotisation`
   ADD CONSTRAINT `fk_id_recu_fiscal` FOREIGN KEY (`id_recu_fiscal`) REFERENCES `reçu_fiscal` (`id_recu_fiscal`);
 
 --
--- Contraintes pour la table `paiement`
+-- Contraintes pour la table `document`
 --
-ALTER TABLE `paiement`
-  ADD CONSTRAINT `fk_idtypeP` FOREIGN KEY (`idtypeP`) REFERENCES `typepaiement` (`idtypeP`),
-  ADD CONSTRAINT `fk_id_don` FOREIGN KEY (`id_don`) REFERENCES `don` (`id_don`),
-  ADD CONSTRAINT `fk_id_personne_ph` FOREIGN KEY (`id_personne_ph`) REFERENCES `personne_physique` (`id_personne_ph`),
-  ADD CONSTRAINT `fk_id_subvention` FOREIGN KEY (`id_subvention`) REFERENCES `subvention` (`id_subvention`);
-
---
--- Contraintes pour la table `personne_ph_statut`
---
-ALTER TABLE `personne_ph_statut`
+ALTER TABLE `document`
   ADD CONSTRAINT `fk_id_statut` FOREIGN KEY (`id_statut`) REFERENCES `statut` (`id_statut`);
 
 --
