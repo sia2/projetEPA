@@ -4,12 +4,16 @@
 <<<<<<< HEAD
 --
 -- Client: localhost
+<<<<<<< HEAD
 -- Généré le: Mar 05 Avril 2016 à 07:47
 =======
 --test
 -- Client: localhost
 -- Généré le: Jeu 31 Mars 2016 à 13:32
 >>>>>>> bdd
+=======
+-- Généré le: Jeu 07 Avril 2016 à 11:45
+>>>>>>> 82009cf372699e1863ecd346fd038117dcaa404f
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -72,8 +76,11 @@ CREATE TABLE IF NOT EXISTS `connexion` (
   `id_connexion` int(11) NOT NULL,
   `login` text COLLATE utf8_unicode_ci NOT NULL,
   `password` text COLLATE utf8_unicode_ci NOT NULL,
+  `id_personne_moral` int(11) NOT NULL,
+  `id_personne_ph` int(11) NOT NULL,
   PRIMARY KEY (`id_connexion`),
-  KEY `id_connexion` (`id_connexion`)
+  KEY `id_connexion` (`id_connexion`),
+  KEY `fk_id_personnal_moral` (`id_personne_moral`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -139,6 +146,26 @@ INSERT INTO `demande_accueil` (`id_demande`, `name`, `prenom`, `age`, `langue`, 
   KEY `fk_id_etudiant` (`id_etudiant`)
 ) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=18 ;
 >>>>>>> bdd
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `demande_adhesion`
+--
+
+CREATE TABLE IF NOT EXISTS `demande_adhesion` (
+  `id_adehesion` int(11) NOT NULL,
+  `date` date NOT NULL,
+  `nom_demandeur` text COLLATE utf8_unicode_ci NOT NULL,
+  `prenom_demandeur` text COLLATE utf8_unicode_ci NOT NULL,
+  `email` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(20) COLLATE utf8_unicode_ci NOT NULL,
+  `motif` text COLLATE utf8_unicode_ci NOT NULL,
+  `adresse_demandeur` text COLLATE utf8_unicode_ci NOT NULL,
+  `id_personne_ph` int(11) NOT NULL,
+  PRIMARY KEY (`id_adehesion`),
+  KEY `id_adehesion` (`id_adehesion`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -483,12 +510,15 @@ CREATE TABLE IF NOT EXISTS `personne_physique` (
   `nom_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `prenom_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `adresse_personne-ph` text COLLATE utf8_unicode_ci NOT NULL,
+  `email` text COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
   `cp_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `ville_personne_ph` text COLLATE utf8_unicode_ci NOT NULL,
   `origine` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `sexe` varchar(8) COLLATE utf8_unicode_ci NOT NULL,
   `profession` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   `centreinterets` text COLLATE utf8_unicode_ci NOT NULL,
+  `id_adhesion` int(11) NOT NULL,
   PRIMARY KEY (`id_personne_ph`),
   KEY `id_personne_ph` (`id_personne_ph`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -664,6 +694,12 @@ ALTER TABLE `adherent`
 --
 ALTER TABLE `ca`
   ADD CONSTRAINT `fk_id_membrebureau` FOREIGN KEY (`id_membrebureau`) REFERENCES `membrebureau` (`id_membrebureau`);
+
+--
+-- Contraintes pour la table `connexion`
+--
+ALTER TABLE `connexion`
+  ADD CONSTRAINT `fk_id_personnal_moral` FOREIGN KEY (`id_personne_moral`) REFERENCES `personne_morale` (`id_personne_moral`);
 
 --
 -- Contraintes pour la table `cotisation`
