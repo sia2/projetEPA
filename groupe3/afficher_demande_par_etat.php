@@ -25,6 +25,22 @@ while ($demande = mysql_fetch_array($requet)) {
 		<a style="color:red;">Date de la Demande :</a><?php echo "".$demande[dateDemande];?></br>
 		<a style="color:red;">Motif du voyage :</a><?php echo "".$demande[motif];?></br></br>
 		<?php
+		$tempslimite = 7;
+		$date = date("d.m.Y");
+		$timestamp = strtotime($demande[date]);
+		$timestamp1 = strtotime($date);
+		$calcul = $timestamp-$timestamp1;
+		if($calcul<604800 ){
+			//mail_dirgeant();
+			?>
+			<img src="Urgence.png" alt="Photo urgence" width="60" height="50"/>
+			<a style="text-align: center;" >Attention notre invité arrive bientôt</a></br>
+			<?php
+		}
+		
+		
+		?>
+		<?php
 			if($demande[etat]=='en_cour'){ ?>
 			</br><a> Demande à traiter avec votre compte ? </a><br/>
 		 <input type="hidden" name="demande" value="<?php echo "".$demande[id]."" ?>"></br>&nbsp;&nbsp; 
