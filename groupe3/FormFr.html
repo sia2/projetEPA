@@ -4,7 +4,18 @@
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <link href="style.css" rel="stylesheet" media="all" type="text/css">
 </head>
+<script>
+function maFonction() 
+{
+   self.location.href='FormEng.html'
+}
 
+function maFonction2() 
+{
+    self.location.href='FormFR.html'
+}
+
+</script>
 <Body>
 <div name="formulaire_Demande">
 <form name="demande" method="post" action="form.php">
@@ -14,9 +25,10 @@
 <fieldset>
 <legend>Compréhension</legend>
 <div name="langue">
-<Label style="font-family: Comic Sans MS;"> Comprenez-vous la langue française :</br>
-  <input type="radio" name="langue" value="oui" checked> oui<br>
-  <input type="radio" name="langue" value="non">non<br><br><br>
+
+<Label style="font-family: Comic Sans MS;"> Do you understand french :</br>
+  <input type="radio" name="langue" value="oui" onclick="javascript:maFonction();" checked>Yes<br>
+  <input type="radio" name="langue" value="non" onclick="javascript:maFonction();">no<br><br><br>
  </Label>
 </div>
 </fieldset>
@@ -62,7 +74,7 @@
   <option label="marseille"> Marseille
  </optgroup>
  <optgroup label="trains">
-  <option label="gare_du_nord"> GDN
+  <option label="gare_du_nord"> gare du nord
   <option label="gare_de_lyon"> gare de lyon
   <option label="gare_de_est"> gare de l'est
  </optgroup>
@@ -73,7 +85,7 @@
 <br/>
 <fieldset>
 <div>
-<Label style="font-family: Comic Sans MS;"> Vos motif en France :<br> <TEXTAREA name="motif" rows=4 cols=40>motif de votre venue</TEXTAREA></label><br><br>
+<Label style="font-family: Comic Sans MS;"> Pourquoi venez vous en France? :<br> <TEXTAREA name="motif" rows=4 cols=40>motif de votre venue</TEXTAREA></label><br><br>
 <INPUT TYPE="submit" name="nom" VALUE=" Envoyer ">
 <INPUT TYPE="reset" name="nom" VALUE=" Annuler ">
 </div>

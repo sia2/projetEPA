@@ -71,6 +71,7 @@ while ($demande = mysql_fetch_array($requet)) {
 		$timestamp1 = strtotime($date);
 		$calcul = $timestamp-$timestamp1;
 		if($calcul<604800 ){
+			//mail_dirgeant();
 			?>
 			<img src="Urgence.png" alt="Photo urgence" width="60" height="50"/>
 			<a style="text-align: center;" >Attention notre invité arrive bientôt</a></br>
@@ -92,6 +93,7 @@ while ($demande = mysql_fetch_array($requet)) {
 		<Label style="font-family: Comic Sans MS;">  Son email : &nbsp;&nbsp; <input type="text" placeholder="Entrer son email" name="mail1"></label><br><br>
 		<label><input type="submit" name="invite1" value="traitée"></label></td>
 		</span>
+		
 		<script type="text/javascript">
 		function toggle_text(id) {
 		var span = document.getElementById(id);

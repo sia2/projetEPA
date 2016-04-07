@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 06 Avril 2016 à 12:03
+-- Généré le: Jeu 07 Avril 2016 à 11:45
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -66,8 +66,11 @@ CREATE TABLE IF NOT EXISTS `connexion` (
   `id_connexion` int(11) NOT NULL,
   `login` text COLLATE utf8_unicode_ci NOT NULL,
   `password` text COLLATE utf8_unicode_ci NOT NULL,
+  `id_personne_moral` int(11) NOT NULL,
+  `id_personne_ph` int(11) NOT NULL,
   PRIMARY KEY (`id_connexion`),
-  KEY `id_connexion` (`id_connexion`)
+  KEY `id_connexion` (`id_connexion`),
+  KEY `fk_id_personnal_moral` (`id_personne_moral`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -638,6 +641,12 @@ CREATE TABLE IF NOT EXISTS `type_reunion` (
 --
 ALTER TABLE `ca`
   ADD CONSTRAINT `fk_id_membrebureau` FOREIGN KEY (`id_membrebureau`) REFERENCES `membrebureau` (`id_membrebureau`);
+
+--
+-- Contraintes pour la table `connexion`
+--
+ALTER TABLE `connexion`
+  ADD CONSTRAINT `fk_id_personnal_moral` FOREIGN KEY (`id_personne_moral`) REFERENCES `personne_morale` (`id_personne_moral`);
 
 --
 -- Contraintes pour la table `cotisation`
