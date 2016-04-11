@@ -1,0 +1,45 @@
+body {
+    text-align: center;
+}
+
+a {
+    cursor:pointer;
+    margin-top: 1em;
+}
+
+.registerForm {
+    width: 50%;
+    margin: 0 auto;
+}
+
+.registerButton {
+    margin-top: 1em;
+}
+
+.formInput {
+    margin-top: 0.5em;
+}
+
+.container {
+    display: inline;
+}
+
+.connectionForm {
+    float: left;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.connection {
+    width: 50%;
+    margin: 0 auto;
+    float: right;
+}
+
+.formPart1 {
+    float: left;
+}
+
+.formPart2 {
+    float: right;
+}
