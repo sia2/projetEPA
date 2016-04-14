@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 07 Avril 2016 à 18:39
+-- Généré le: Jeu 14 Avril 2016 à 16:53
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -166,6 +166,8 @@ CREATE TABLE IF NOT EXISTS `document` (
   `statut` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_projet` int(11) NOT NULL,
   `chemin_a_doc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `taille` double DEFAULT NULL,
   `id_statut` int(11) NOT NULL,
   PRIMARY KEY (`id_document`),
   KEY `id_document` (`id_document`),
@@ -198,7 +200,7 @@ CREATE TABLE IF NOT EXISTS `dossier` (
   `id_sous_dossier` int(11) DEFAULT NULL,
   `id_document` int(11) DEFAULT NULL,
   `nom_dossier` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `chemin` int(255) DEFAULT NULL,
+  `chemin` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_dossier`),
   KEY `id_dossier` (`id_dossier`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -215,6 +217,24 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
   `diplome` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_etudiant`),
   KEY `id_etudiant` (`id_etudiant`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `jalon`
+--
+
+CREATE TABLE IF NOT EXISTS `jalon` (
+  `id_jalon` int(11) NOT NULL,
+  `niveau` int(11) DEFAULT NULL,
+  `date` date NOT NULL,
+  `montant` double NOT NULL,
+  `realiseroupas` double NOT NULL,
+  `adefinir` int(11) DEFAULT NULL,
+  `id_projet` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_jalon`),
+  KEY `id_jalon` (`id_jalon`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
