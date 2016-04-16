@@ -60,8 +60,14 @@ if($GLOBALS['action']=='vthread' and $im!='') $im='<br />'.$im;
 return $im;
 }
 
-/*--Avatars addon */
 
+/* Hiding logging form from anonymous users */
+if($forum!=0 and $user_id==0 and ($action=='vtopic' OR $action=='vthread')) $roForums[]=$forum;
+/* --Hiding logging form from anonymous users */
+
+
+
+/*--Avatars addon */
 /* Registration Disclaimer */
 if(($action=='registernew' or $action=='register') and !isset($_COOKIE[$cookiename.'_disclaimer']) and !isset($_POST['disclaimer'])){
 $title.='Disclaimer';

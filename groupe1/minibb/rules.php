@@ -20,7 +20,10 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="index.php">Ensemble pour l'Afrique</a>
+				<a class="navbar-brand" href="index.php">
+    				<img style=" **margin-top: -55px;**" alt="Logo" src="img/logo.png" class="pull-left">
+    				<span class="stylelogo">&nbsp Ensemble pour l'Afrique</span>
+				</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav navbar-right">
