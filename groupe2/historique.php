@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php include_once('function.php');?>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -21,15 +20,6 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="../assets/js/hover.zoom.js"></script>
     <script src="../assets/js/hover.zoom.conf.js"></script>
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
-    <![endif]-->
-    <STYLE>
-#classement { FONT:bold 12 Arial; CURSOR:pointer }
-</STYLE>
     <SCRIPT>
 var index
 function  sort_int(p1,p2) { return p1[index]-p2[index]; }			//fonction pour trier les nombres
@@ -51,7 +41,7 @@ function TableOrder(e,Dec)  //Dec= 0:Croissant, 1:Décroissant
 	{	var Type;
 		objet=oTable.rows[1].cells[c].innerHTML.replace(/<\/?[^>]+>/gi,"")
 		if(objet.match(/^\d\d[\/-]\d\d[\/-]\d\d\d\d$/)) { FntSort[c]=sort_char; Type=0; } //date jj/mm/aaaa
-		else if(objet.match(/^[0-9£€?$\.\s-]+$€/))		{ FntSort[c]=sort_int;  Type=1; } //nombre, numéraire
+		else if(objet.match(/^[0-9£?$\.\s-]+$/))		{ FntSort[c]=sort_int;  Type=1; } //nombre, numéraire
 		else											{ FntSort[c]=sort_char; Type=2; } //Chaine de caractère
 
 		for(r=1;r<oTable.rows.length;r++)		//De toutes les rangées
@@ -76,6 +66,11 @@ function TableOrder(e,Dec)  //Dec= 0:Croissant, 1:Décroissant
 }
 </SCRIPT>
 
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
   </head>
 
   <body>
@@ -107,7 +102,7 @@ function TableOrder(e,Dec)  //Dec= 0:Croissant, 1:Décroissant
 	<div class="container pt">
 		<div class="row mt">
 			<div class="col-lg-6 col-lg-offset-3 centered">
-				<h3>HISTORIQUE DES PAIEMENTS</h3>
+				<h3>ME RENDRE RICHE</h3>
 				<hr>
 				<p>Historique des paiements percu par EPA</p>
                                 <a class="btn btn-default" href="indon.php"> <span class="glyphicon glyphicon-plus" aria-hidden="true" style="font-size: 1.5em;"></span> Ajouter un don </a>
@@ -116,20 +111,105 @@ function TableOrder(e,Dec)  //Dec= 0:Croissant, 1:Décroissant
             <table class="table table-striped">
               <thead>
                 <tr>
-                  <td>ID paiment <span id="classement" onclick=TableOrder(event,1)>&#9660;</span><span id="classement" onclick=TableOrder(event,0)>&#9650;</span></td>
-                   <td>NOM et Prénom<span id="classement" onclick=TableOrder(event,1)>&#9660;</span><span id="classement" onclick=TableOrder(event,0)>&#9650;</span></td>
-                   <td>Date<span id="classement" onclick=TableOrder(event,1)>&#9660;</span><span id="classement" onclick=TableOrder(event,0)>&#9650;</span></td>
-                   <td>Montant<span id="classement" onclick=TableOrder(event,1)>&#9660;</span><span id="classement" onclick=TableOrder(event,0)>&#9650;</span></td>
-                   <td>Type<span id="classement" onclick=TableOrder(event,1)>&#9660;</span><span id="classement" onclick=TableOrder(event,0)>&#9650;</span></td>
-                   <td>Etat<span id="classement" onclick=TableOrder(event,1)>&#9660;</span><span id="classement" onclick=TableOrder(event,0)>&#9650;</span></td>
-                   <td>Plus d'info</td>
-                  <td> Modifier </td>
+                  <th>ID paiment <span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span> </th>
+                  <th>Nom et Prénom</th>
+                  <th>Date</th>
+                  <th>Type</th>
+                  <th>Montant</th>
+                  <th>Etat<span onclick=TableOrder(event,1)>&#9660;</span><span onclick=TableOrder(event,0)>&#9650;</span></th>
+                  <th>Plus d'info</th>
+                  <th> Modifier </th>
                   
                 </tr>
               </thead>
               <tbody>
-            <?php afficherhistorique()?>
-
+                <tr>
+                  <td>01234</td>
+                  <td>Salim Derghoum</td>
+                  <td>11-11-2014</td>
+                  <td>Don</td>
+                  <td>100</td>
+                  <td>En attente chèque</td>
+                  <td><button type="button" class="btn btn-default btn-xs " data-toggle="modal" data-target="#myModal">
+                  <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
+                  </td>
+                  <td><a href="modifiercollection2.html" name="submit" class="btn btn-info">Valider</a>  <a href="supprimer.html" class="btn btn-danger">Supprimer</a></td>
+                </tr>
+                 <tr>
+                  <td>01234</td>
+                  <td>Mamod Dhergoum</td>
+                  <td>11-11-2014</td>
+                  <td>Adhérent</td>
+                  <td>50</td>
+                  <td>En attente RIB</td>
+                  <td><button type="button" class="btn btn-default btn-xs " data-toggle="modal" data-target="#myModal">
+                  <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
+                  </td>
+                  <td><a href="modifiercollection2.html" name="submit" class="btn btn-info">Valider</a>  <a href="supprimer.html" class="btn btn-danger">Supprimer</a></td>
+                </tr>
+                <tr>
+                  <td>01234</td>
+                  <td>Soraya Dhergoum</td>
+                  <td>11-11-2014</td>
+                  <td>Don</td>
+                  <td>50000</td>
+                  <td>En attente RIB</td>
+                  <td><button type="button" class="btn btn-default btn-xs " data-toggle="modal" data-target="#myModal">
+                  <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
+                  </td>
+                  <td><a href="supprimer.html" class="btn btn-danger">Recu Fiscal</a></td>
+                </tr>
+                        <td>01234</td>
+                  <td>Soraya Dhergoum</td>
+                  <td>11-11-2014</td>
+                  <td>Don</td>
+                  <td>50000</td>
+                  <td>En attente RIB</td>
+                  <td><button type="button" class="btn btn-default btn-xs " data-toggle="modal" data-target="#myModal">
+                  <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
+                  </td>
+                  <td><a href="supprimer.html" class="btn btn-danger">Recu Fiscal</a></td>
+                </tr>
+                        <td>01234</td>
+                  <td>Soraya Dhergoum</td>
+                  <td>11-11-2014</td>
+                  <td>Don</td>
+                  <td>50000</td>
+                  <td>En attente RIB</td>
+                  <td><button type="button" class="btn btn-default btn-xs " data-toggle="modal" data-target="#myModal">
+                  <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
+                  </td>
+                  <td><a href="supprimer.html" class="btn btn-danger">Recu Fiscal</a></td>
+                </tr>
+                        <td>01234</td>
+                  <td>Soraya Dhergoum</td>
+                  <td>11-11-2014</td>
+                  <td>Don</td>
+                  <td>50000</td>
+                  <td>En attente RIB</td>
+                  <td><button type="button" class="btn btn-default btn-xs " data-toggle="modal" data-target="#myModal">
+                  <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
+                  </td>
+                  <td><a href="supprimer.html" class="btn btn-danger">Recu Fiscal</a></td>
+                </tr>
+                        <td>01234</td>
+                  <td>Soraya Dhergoum</td>
+                  <td>11-11-2014</td>
+                  <td>Don</td>
+                  <td>50000</td>
+                  <td>En attente RIB</td>
+                  <td><button type="button" class="btn btn-default btn-xs " data-toggle="modal" data-target="#myModal">
+                  <span class="glyphicon glyphicon glyphicon-search" aria-hidden="true"></span>
+                  </button>
+                  </td>
+                  <td><a href="supprimer.html" class="btn btn-danger">Recu Fiscal</a></td>
+                </tr>
                 
                
               </tbody>
@@ -140,28 +220,23 @@ function TableOrder(e,Dec)  //Dec= 0:Croissant, 1:Décroissant
             </div>
 			</div>
 		</div><!-- /row -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                          <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Informations complémentaires</h4>
+        <h4 class="modal-title" id="myModalLabel">Selection de Boutiques</h4>
       </div>
       <div class="modal-body">
     <h2 class="sub-header">Information de la personne</h2>
           <div class="table-responsive">
-                                <?php 
-if(isset($_POST['submit_button']))
-{?>
-              <span><b>NOM : </b><?php echo strtoupper($_POST['nom_personne_ph'])?></span> <br/>
-              <span><b>Prénom : </b><?php echo$_POST['prenom_personne_ph']?></span> <br/>
-              <span><b>Téléphoone : </b><?php echo$_POST['tel']?></span> <br/>
-              <span><b>Mail : </b><?php echo$_POST['email']?></span><br/>
-<span><b>Adresse : </b><?php echo$_POST['rue0'].' '.$_POST['rue1'].' '.$_POST['rue2'].' '.$_POST['rue3'];?></span><br/>
-              <span><b>Ville : </b><?php echo$_POST['ville']?></span><br/>
-              <span><b>Code Postale : </b><?php echo$_POST['cp']?></span><br/>
+              <span><b>Nom : </b><input type="text" value="MIZOURI"></span> <br/>
+              <span><b>Prénom : </b><input type="text" value="Mohamed-Hedi"></span> <br/>
+              <span><b>Téléphoone : </b><input type="text" value="064251513"></span> <br/>
+              <span><b>Mail : </b><input type="text" value="Mohamed-Hedi@mail.fr"></span><br/>
           </div>
-<?php }?>
  <h2 class="sub-header">Historique des paiments</h2>
           <div class="table-responsive">
             <table class="table table-striped">
@@ -173,16 +248,36 @@ if(isset($_POST['submit_button']))
                 </tr>
               </thead>
               <tbody>
-                  <?php 
-if(isset($_POST['submit_button']))
-{
-    $id_personne = $_POST['id_don'];
-    afficherinfoscomp($id_personne);
-    echo' <script type="text/javascript"> jQuery(document).ready(function()
-  {jQuery("#myModal").modal("show");});</script>';
-}
-?>
-
+                <tr>
+                  <td>01-04-2015</td>
+                  <td>100€</td>
+                  <td>Adhérent</td>
+                </tr>
+                <tr>
+                  <td>01-04-2015</td>
+                  <td>100€</td>
+                  <td>Adhérent</td>
+                </tr>
+                <tr>
+                  <td>01-04-2015</td>
+                  <td>100€</td>
+                  <td>Adhérent</td>
+                </tr>
+                <tr>
+                  <td>01-04-2015</td>
+                  <td>100€</td>
+                  <td>Adhérent</td>
+                </tr>
+                <tr>
+                  <td>01-04-2015</td>
+                  <td>100€</td>
+                  <td>Adhérent</td>
+                </tr>
+                <tr>
+                  <td>01-04-2015</td>
+                  <td>100€</td>
+                  <td>Adhérent</td>
+                </tr>
               </tbody>
             </table>
           </div>
@@ -194,11 +289,28 @@ if(isset($_POST['submit_button']))
 </div>
 </div>
 <nav>
-
+<div class="text-center">
+  <ul class="pagination text-center">
+    <li>
+      <a href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li>
+      <a href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
   <div class="text-center"> 
 <button id="singlebutton" name="singlebutton" class="btn btn-primary">Retour</button>  </br></br>
 </div>
- 
+  </div>
 </nav>
 
 
@@ -207,7 +319,7 @@ if(isset($_POST['submit_button']))
 	
 	
 	<!-- +++++ Footer Section +++++ -->
-       
+	
 	<div id="footer">
 		<div class="container">
 			<div class="row">
@@ -251,11 +363,3 @@ if(isset($_POST['submit_button']))
     <script src="../assets/js/bootstrap.min.js"></script>
   </body>
 </html>
-<?php
-if(isset($_GET[nom]) and isset($_GET[prenom]) and isset($_GET[adresse]) and isset($_GET[cp]) and isset($_GET[ville]) and isset($_GET[montant]) and isset($_GET[date]) and isset($_GET[id]) and $_GET[mail] )
-{
-    pdf($_GET[nom], $_GET[prenom], $_GET[date], $_GET[adresse], $_GET[cp], $_GET[ville], $_GET[montant], $_GET[id]);
-    mailrecufiscal($_GET[mail]);
-}
-
-?>

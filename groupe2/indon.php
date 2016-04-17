@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<?php include_once('function.php');?>
 <html lang="fr">
   <head>
     <meta charset="utf-8">
@@ -58,146 +57,40 @@
 				<h3>Ajouter un don</h3>
 				<hr>
 				<p>Don recu par courrier (chèque ou espèce)</p>
-                                <?php 
-if(isset($_POST['valider']))
-{
-    if(isset($_POST['type']) and isset($_POST['typep']) and  isset($_POST['montant']))
-    {
-        if($_POST['montant']<20)
-        {
-            echo'<div class="alert alert-danger" role="alert">Don minimum de 20 € !</div>';
-        }
-        else
-        {
-            if(isset($_POST['email']) and strlen($_POST['email'])>1)
-            {
-                if($_POST['type'] == "don")
-                {
-                    if(enregistrerDon2($_POST['email'],"a","Validé", $_POST['montant'],$_POST['typep']) == -1)
-                    {
-                        echo'<div class="alert alert-danger" role="alert">Ce mail n\'identifie personne. Remplissez le formulaire ou vérifier le mail !</div>';
-                    }
-                    else
-                    {
-                     echo '<div class="alert alert-success" role="alert">Transaction enregistré 1 !</div>';
-                    }
-                }
-                else
-                {
-                    //ICI AJOUTER LA FONCTION POUR ADHERENT
-                }
-            }
-            else if ( isset($_POST['nom']) and isset($_POST['prenom']) and isset($_POST['adresse']) and isset($_POST['cp']) and isset($_POST['city']) and isset($_POST['phone']) and isset($_POST['eemail'])) 
-            {
-                 if($_POST['type'] == "don")
-                {
-                    if(enregistrerDon($_POST['nom'], $_POST['prenom'], $_POST['eemail'], $_POST['phone'], $_POST['adresse'], $_POST['city'], $_POST['cp'], "a", "Validé", $_POST['montant'],$_POST['typep']) ==1)
-                    {
-                        echo '<div class="alert alert-success" role="alert">Transaction enregistré !</div>';
-                    }
-                    else
-                    {
-                         echo'<div class="alert alert-danger" role="alert">Quelque chose ne va pas !</div>';
-                    }
-                }
-                else
-                {
-                                        //ICI AJOUTER LA FONCTION POUR ADHERENT
-
-                }
-            }
-            else
-            {
-                echo '<div class="alert alert-success" role="alert">Veuillez à renseigner tout les champs ! </div>';
-            }
-        }
-        
-    }
-    else
-{
-    echo'<div class="alert alert-danger" role="alert">Attention danger !</div>';
-}
-}
-
-?>
 			</div>
-                    
 		</div>
             				<div class="col-lg-8 col-lg-offset-2 centered">
 
   <form role="form-vertical" method="post">
             <div class="input-group">
-                Selectionner le type <select  name="type"  class="btn btn-default-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-  <option>cotisation</option>
-  <option>don</option>
-</select>
-<!-- /btn-group -->
-      <div class="input-group-addon">$</div>
-      <input type="text" name="montant" class="form-control"  placeholder="Montant">
-      <div class="input-group-addon">.00</div>         
-            </div><!-- /input-group -->   
-<label class="radio-inline">
-  <input type="radio" name="typep" id="inlineRadio1" value="1"> Espèces
-</label>
-<label class="radio-inline">
-  <input type="radio" name="typep" id="inlineRadio2" value="2"> RIB
-</label>
-<label class="radio-inline">
-  <input type="radio" name="typep" id="inlineRadio3" value="3"> Autres
-</label>
-        <hr/>
+              <div class="input-group-btn">
+                <button type="button" class="btn btn-default-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">Type <span class="caret"></span></button>
+                <ul class="dropdown-menu" role="menu">
+                  <li><a href="#">Don</a></li>
+                  <li><a href="#">Adhérent</a></li>
+                </ul>
+              </div><!-- /btn-group -->
+              <input type="text" class="form-control" placeholder="Montant en Euro" aria-label="...">
+            </div><!-- /input-group -->
+        <br/>
+    
+<input type='text' class="form-control" placeholder="Nom"/>
+</br>
+<input type='text' class="form-control" placeholder="Prénom" />
+</br>
 <p>Seulement si déjà enregistré dans le système </p>
-<div class="input-group">
-    <span class="input-group-addon">@</span>
-    <input type="text" name="email" class="form-control"  placeholder="email">
-  </div>
-<br/>
+<input type='text' class="form-control" placeholder="Mail"/>
+</br>
 <p>Sinon</p>
-<hr>
-<br/>
-    <div class="input-group">
-    <span class="input-group-addon">Nom</span>
-    <input type="text" name="nom" class="form-control" >
-  </div>
-<br/>
-
-    <div class="input-group">
-    <span class="input-group-addon">Prénom</span>
-    <input type="text" name="prenom" class="form-control" >
-  </div>
-<br/>
-
-    <div class="input-group">
-    <span class="input-group-addon">Adresse</span>
-    <input type="text" name="adresse" class="form-control" >
-  </div>
-<br/>
-    <div class="input-group">
-    <span class="input-group-addon">Code Postal</span>
-    <input type="text" name="cp" class="form-control" >
-  </div>
-<br/>
-    <div class="input-group">
-    <span class="input-group-addon">Ville</span>
-    <input type="text" name="city" class="form-control" >
-  </div>
-<br/>
-    <div class="input-group">
-    <span class="input-group-addon">Téléphone</span>
-    <input type="text" name="phone" class="form-control" >
-  </div>
-<br/>
-    <div class="input-group">
-    <span class="input-group-addon">Mail</span>
-    <input type="text" name="eemail" class="form-control" >
-  </div>
-<br/>
-
-
- <button type="submit" name="valider" class="btn btn-info">Valider </button>
+<input type='text' class="form-control" placeholder="Adresse"/>
+</br>
+<input type='text' class="form-control" placeholder="Téléphone"/>
+</br>
+<input type='text' class="form-control" placeholder="Mail"/>
+</br>
+ <button type="button" class="btn btn-info">Valider </button>
 <br/>
   </form>
-
                                         </div>
         </div>
 	<div id="footer">

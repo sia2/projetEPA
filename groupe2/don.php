@@ -8,7 +8,7 @@
     <meta name="author" content="">
    <link rel="shortcut icon" href="../assets/img/user.png">
 
-    <title>Don EPA</title>
+    <title>Paiment EPA</title>
 
     <!-- Bootstrap core CSS -->
     <link href="../assets/css/bootstrap.css" rel="stylesheet">
@@ -62,34 +62,29 @@
 				<p>N'hésitez pas à faire un don pour EPA, qu'il soit ponctuel ou régulier!</p>
 			</div>
 		</div>
-    <div class="row mt">	
+            <div class="row mt">	
 			<div class="col-lg-8 col-lg-offset-2">
-          <div class="form-group centered">
-            <form role = "form" action="https://www.sandbox.paypal.com/cgi-bin/webscr" method="post">
-            <input type='text' value="" name="amount" list="montant" autocomplete="off" placeholder="Autre Montant"  onChange="checkAmount(this.value, 'single')" onkeyUp="checkAmount(this.value, 'single')"></input>
-              <datalist name="amount" id="montant" >
-              <option value='10'>10 €</option>
-              <option value='25'>25 €</option>
-              <option value='50'>50 €</option>
-              <option value='100'>100 €</option>
-              </datalist>
-            <input name="currency_code" type="hidden" value="EUR" />
-            <input name="return" type="hidden" value="http://www.marmoh.com/SIA/IPN.php" />
-            <input name="cancel_return" type="hidden" value="http://www.marmoh.com/SIA/don.php" />
-            <input name="notify_url" type="hidden" value="http://marmoh.com/SIA/IPN.php" />
-            <input name="cmd" type="hidden" value="_xclick" />
-            <input name="business" type="hidden" value="mohamedhedidu78-facilitator@hotmail.fr" />
-            <input name="item_name" type="hidden" value="Don EPA" />
-            <input name="no_note" type="hidden" value="1" />
-            <input name="lc" type="hidden" value="FR" />
-             <input type="hidden" value="MARMOHZER" name="don-amount" id="don-amount" />
-              <input type="hidden" value="" name="don-type" id="don-type" />
-            <input name="bn" type="hidden" value="PP-BuyNowBF" />
-           <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
-           <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
-        </form>
-				
-                                </div>
+				<form role="form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                    <input type="hidden" name="cmd" value="_s-xclick"/>
+                                   <input type="hidden" name="hosted_button_id" value="MEYWTY5XQSEDJ">
+                                   <input type="hidden" value="MARMOHZER" name="don-amount" id="don-amount" />
+                                    <input type="hidden" value="" name="don-type" id="don-type" />
+                                    <input name="currency_code" type="hidden" value="EUR" />
+                                    <input name="shipping" type="hidden" value="10.00" />
+                                    <input name="tax" type="hidden" value="10.00" />
+                                
+				  <div class="form-group">
+                                   <label class="radio-inline"><input id="amount-single-1" type="radio" onclick="unsetFree();setDon(this.value,'single');" name="amount" value="50">50</label>
+                                   <label class="radio-inline"><input id="amount-single-3" type="radio" onclick="unsetFree();setDon(this.value,'single');" name="amount" value="500">500€</label> 
+                                   <label class="radio-inline"><input id="amount-single-4" type="radio" onclick="unsetFree();setDon(this.value,'single');"  name="amount" value="5000">5000€</label>
+                                   <label class="radio-inline"><input id="amount-single-5" type="radio" onclick="unsetFree();setDon(this.value,'single');"  name="amount" value="50000">50000€</label>
+                                   <input type="text" name="amount"  placeholder="Autre Montant"  onclick="unsetRadio();" onkeyUp="checkAmount(this.value, 'single')"></input>
+                                   <input type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal, le réflexe sécurité pour payer en ligne">
+                                    <img alt="" border="0" src="https://www.paypalobjects.com/fr_FR/i/scr/pixel.gif" width="1" height="1">
+                                  </div>
+                                    
+                                    
+                                </form>  
 			</div>
                 </div>
               <div class="alert alert-success notice centered" id="notice" >
