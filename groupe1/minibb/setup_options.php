@@ -24,7 +24,7 @@ $admin_usr='admin';
 $admin_pwd='dauphine';
 $admin_email='admin@epa-forum.shost.ca';
 
-$bb_admin='dauphine_admin.php?';
+$bb_admin='epa_admin.php?';
 
 $indexphp='index.php?';
 

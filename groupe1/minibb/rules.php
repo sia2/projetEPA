@@ -1,7 +1,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<head><title>Règlement du forum</title>
-	
+<head><title>RÃ¨glement du forum</title>
+	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="icon" type="image/png" href="favicon.png" />
@@ -40,15 +40,15 @@
 			<table class="table table-hover">
 				<tr>
 					<td>
-						<h1>Règlement du forum</h1>
+						<h1>RÃ¨glement du forum</h1>
 
-						<h2>Article 0. Préface</h2>
+						<h2>Article 0. PrÃ©face</h2>
 
-						La règlementation ci-dessous a été établie dans le but principal de réunir l’ensemble de la communauté d'Ensemble Pour l'Afrique au sein d’un forum placé sous le signe du respect d’autrui et de la convivialité, afin de favoriser l’échange et le partage de connaissances. En s’inscrivant sur cette plateforme, l’utilisateur déclare avoir pris connaissance des règles qui le régissent ainsi que de les avoir comprises et assimilées de manière à pouvoir les appliquer à tout temps et à tout moment.
+						La rÃ¨glementation ci-dessous a Ã©tÃ© Ã©tablie dans le but principal de rÃ©unir lâ€™ensemble de la communautÃ© d'Ensemble Pour l'Afrique au sein dâ€™un forum placÃ© sous le signe du respect dâ€™autrui et de la convivialitÃ©, afin de favoriser lâ€™Ã©change et le partage de connaissances. En sâ€™inscrivant sur cette plateforme, lâ€™utilisateur dÃ©clare avoir pris connaissance des rÃ¨gles qui le rÃ©gissent ainsi que de les avoir comprises et assimilÃ©es de maniÃ¨re Ã  pouvoir les appliquer Ã  tout temps et Ã  tout moment.
 
 						<br /><br />
 
-						Tout utilisateur allant à l’encontre des règles générales, permettant le bon maintien du forum, encoure des sanctions pouvant aller du simple avertissement au bannissement permanent du compte forum. Ceci s’applique également aux règles spécifiques de chaque section. L’équipe de modération se réserve le droit de modifier et déplacer tout message en infraction aux règles, ainsi que de bloquer l’accès de comptes forums dans les cas les plus graves.
+						Tout utilisateur allant Ã  lâ€™encontre des rÃ¨gles gÃ©nÃ©rales, permettant le bon maintien du forum, encoure des sanctions pouvant aller du simple avertissement au bannissement permanent du compte forum. Ceci sâ€™applique Ã©galement aux rÃ¨gles spÃ©cifiques de chaque section. Lâ€™Ã©quipe de modÃ©ration se rÃ©serve le droit de modifier et dÃ©placer tout message en infraction aux rÃ¨gles, ainsi que de bloquer lâ€™accÃ¨s de comptes forums dans les cas les plus graves.
 
 
 						<br /><br />
@@ -60,11 +60,11 @@
 
 						<h2>Article 1. Comptes</h2>
 
-						1.1 De par le système actuellement en place, chaque utilisateur a le droit d’enregistrer et utiliser un seul et unique compte par l’intermédiaire de son compte jeu. Générer des comptes multiples sera punissable et reviendra à du multi-compte sur le plan jeu. Si le joueur possède plusieurs comptes jeu inscrits sur des mondes différents, il ne pourra en enregistrer et n'en utiliser qu'un seul sur le forum.
+						1.1 De par le systÃ¨me actuellement en place, chaque utilisateur a le droit dâ€™enregistrer et utiliser un seul et unique compte par lâ€™intermÃ©diaire de son compte jeu. GÃ©nÃ©rer des comptes multiples sera punissable et reviendra Ã  du multi-compte sur le plan jeu. Si le joueur possÃ¨de plusieurs comptes jeu inscrits sur des mondes diffÃ©rents, il ne pourra en enregistrer et n'en utiliser qu'un seul sur le forum.
 
 						<br /><br />
 
-						1.2 Chaque utilisateur a des données personnelles associées à son compte (identifiants, e-mail, etc.). Ce dernier n’est pas autorisé à divulguer ces informations le concernant ni même celles concernant un autre utilisateur.
+						1.2 Chaque utilisateur a des donnÃ©es personnelles associÃ©es Ã  son compte (identifiants, e-mail, etc.). Ce dernier nâ€™est pas autorisÃ© Ã  divulguer ces informations le concernant ni mÃªme celles concernant un autre utilisateur.
 
 
 						<br /><br />
@@ -74,15 +74,15 @@
 					<td>
 
 						<h2>Article 2. Attitude</h2>
-						2.1 La langue officielle de la communauté est le français, seule cette langue peut être utilisée pour la communication au sein du forum. Une citation dans une langue étrangère peut être acceptée si sa traduction en français est affichée au même endroit (à côté, en-dessous ...). Ceci est également valable pour les signatures et autres éléments personnalisables du profil.
+						2.1 La langue officielle de la communautÃ© est le franÃ§ais, seule cette langue peut Ãªtre utilisÃ©e pour la communication au sein du forum. Une citation dans une langue Ã©trangÃ¨re peut Ãªtre acceptÃ©e si sa traduction en franÃ§ais est affichÃ©e au mÃªme endroit (Ã  cÃ´tÃ©, en-dessous ...). Ceci est Ã©galement valable pour les signatures et autres Ã©lÃ©ments personnalisables du profil.
 						<br /><br />
-						2.2 Le langage dit « sms » ou « msn » est à proscrire. Pour certains c’est une manière plus rapide de communiquer mais pour d’autres c’est très difficile à déchiffrer. Ne saccageons pas notre bel héritage qu’est la langue de Molière.
+						2.2 Le langage dit Â« sms Â» ou Â« msn Â» est Ã  proscrire. Pour certains câ€™est une maniÃ¨re plus rapide de communiquer mais pour dâ€™autres câ€™est trÃ¨s difficile Ã  dÃ©chiffrer. Ne saccageons pas notre bel hÃ©ritage quâ€™est la langue de MoliÃ¨re.
 						<br /><br />
-						2.3 L’utilisateur du forum se doit de respecter autrui et de rester poli en toute circonstance. Les insultes personnelles (même partiellement masquées mais parfaitement compréhensibles), l’agressivité et la provocation envers un utilisateur quelconque du forum ou un membre de l’équipe de modération seront sanctionnées.
+						2.3 Lâ€™utilisateur du forum se doit de respecter autrui et de rester poli en toute circonstance. Les insultes personnelles (mÃªme partiellement masquÃ©es mais parfaitement comprÃ©hensibles), lâ€™agressivitÃ© et la provocation envers un utilisateur quelconque du forum ou un membre de lâ€™Ã©quipe de modÃ©ration seront sanctionnÃ©es.
 						<br /><br />
-						2.4 Se faire passer pour un modérateur ou tout autre membre de l’équipe est interdit. L’usurpation d’identité que ce soit par pseudonyme, avatar, signature ou comportement n’est pas tolérée et sera sanctionnée.
+						2.4 Se faire passer pour un modÃ©rateur ou tout autre membre de lâ€™Ã©quipe est interdit. Lâ€™usurpation dâ€™identitÃ© que ce soit par pseudonyme, avatar, signature ou comportement nâ€™est pas tolÃ©rÃ©e et sera sanctionnÃ©e.
 						<br /><br />
-						2.5 En plus des présentes règles, chaque section du forum dispose de ses propres règles spécifiques. L'utilisateur est prié de les lire et se doit de les respecter au même titre que les règles générales du forum.
+						2.5 En plus des prÃ©sentes rÃ¨gles, chaque section du forum dispose de ses propres rÃ¨gles spÃ©cifiques. L'utilisateur est priÃ© de les lire et se doit de les respecter au mÃªme titre que les rÃ¨gles gÃ©nÃ©rales du forum.
 						<br /><br />
 					</td>
 				</tr>
@@ -92,53 +92,53 @@
 
 						<h2>Article 3. Messages</h2>
 
-						3.0 Le hors-sujet, le flood et le spam sont ainsi définis :
-						- le hors-sujet est un message ou un ensemble de messages qui s'écartent de la ligne directrice définie par le titre et le premier message de la discussion ; bien qu'il soit constructif ou apporte des éléments intéressants, mais qui ne sont pas en rapport avec la discussion en cours ;
-						- le flood est un message ou un ensemble de messages n'apportant rien de constructif ou d'intéressant à la discussion en cours et généralement hors-sujet, sans pour autant être malveillant ;
-						- le spam est l'envoi répété de messages dans le but de nuire ou de perturber la bonne lisibilité du forum d'une manière générale ou de la messagerie privée d'un utilisateur.
+						3.0 Le hors-sujet, le flood et le spam sont ainsi dÃ©finis :
+						- le hors-sujet est un message ou un ensemble de messages qui s'Ã©cartent de la ligne directrice dÃ©finie par le titre et le premier message de la discussion ; bien qu'il soit constructif ou apporte des Ã©lÃ©ments intÃ©ressants, mais qui ne sont pas en rapport avec la discussion en cours ;
+						- le flood est un message ou un ensemble de messages n'apportant rien de constructif ou d'intÃ©ressant Ã  la discussion en cours et gÃ©nÃ©ralement hors-sujet, sans pour autant Ãªtre malveillant ;
+						- le spam est l'envoi rÃ©pÃ©tÃ© de messages dans le but de nuire ou de perturber la bonne lisibilitÃ© du forum d'une maniÃ¨re gÃ©nÃ©rale ou de la messagerie privÃ©e d'un utilisateur.
 
 						<br /><br />
 
-						3.1 Tout message (et plus généralement tout contenu publié sur le forum par utilisateur) se verra modifié, censuré, déplacé, supprimé dans le cas où :
-						- Le message est contraire à l’ordre public et aux bonnes mœurs ;
-						- Le message est à caractères pornographique, xénophobe, extrémiste politique ou religieux, révisionniste, immoral, injurieux, offensant, diffamatoire, raciste ou portant atteinte à l’honneur d’autrui ;
-						- Le message incite à la discrimination d’une personne ou d’un groupe de personne pour des raisons d’origine, de race, de religion, de mode de vie ou d’appartenance ou non à une ethnie ;
-						- Le message contient des informations au sujet de clefs, hacks, cracks ou toute autre chose de nature illégale ;
-						- Le message rentre dans le cadre d’un règlement de compte ou un conflit entre utilisateurs.
+						3.1 Tout message (et plus gÃ©nÃ©ralement tout contenu publiÃ© sur le forum par utilisateur) se verra modifiÃ©, censurÃ©, dÃ©placÃ©, supprimÃ© dans le cas oÃ¹ :
+						- Le message est contraire Ã  lâ€™ordre public et aux bonnes mÅ“urs ;
+						- Le message est Ã  caractÃ¨res pornographique, xÃ©nophobe, extrÃ©miste politique ou religieux, rÃ©visionniste, immoral, injurieux, offensant, diffamatoire, raciste ou portant atteinte Ã  lâ€™honneur dâ€™autrui ;
+						- Le message incite Ã  la discrimination dâ€™une personne ou dâ€™un groupe de personne pour des raisons dâ€™origine, de race, de religion, de mode de vie ou dâ€™appartenance ou non Ã  une ethnie ;
+						- Le message contient des informations au sujet de clefs, hacks, cracks ou toute autre chose de nature illÃ©gale ;
+						- Le message rentre dans le cadre dâ€™un rÃ¨glement de compte ou un conflit entre utilisateurs.
 
 
 
 						<br /><br />
 
-						3.2 Publier des contenus n’appartenant pas au sujet ou à la section concernée (flood, hors-sujet, etc.) est à éviter. N’est pas concerné par cette règle la section Détente.
+						3.2 Publier des contenus nâ€™appartenant pas au sujet ou Ã  la section concernÃ©e (flood, hors-sujet, etc.) est Ã  Ã©viter. Nâ€™est pas concernÃ© par cette rÃ¨gle la section DÃ©tente.
 
 						<br /><br />
 
-						3.3 Spammer le forum de messages sans intérêt dans le simple but de mettre du désordre est strictement interdit sur l'ensemble du forum.
+						3.3 Spammer le forum de messages sans intÃ©rÃªt dans le simple but de mettre du dÃ©sordre est strictement interdit sur l'ensemble du forum.
 
 						<br /><br />
 
-						3.4 L’utilisateur doit faire attention à ne pas publier d’image dépassant le cadre normal (nécessitant de naviguer dans la fenêtre par l’intermédiaire des barres de défilement horizontales et verticales). S'il ne lui est pas possible de redimensionner l'image, ou bien si le redimensionnement altérait la lisibilité de l'image, il lui est demandé de poster à la place un lien externe vers cette image.
+						3.4 Lâ€™utilisateur doit faire attention Ã  ne pas publier dâ€™image dÃ©passant le cadre normal (nÃ©cessitant de naviguer dans la fenÃªtre par lâ€™intermÃ©diaire des barres de dÃ©filement horizontales et verticales). S'il ne lui est pas possible de redimensionner l'image, ou bien si le redimensionnement altÃ©rait la lisibilitÃ© de l'image, il lui est demandÃ© de poster Ã  la place un lien externe vers cette image.
 
 						<br /><br />
 
-						3.5 Il est interdit aux utilisateurs de créer un nouveau sujet pour une discussion déjà fermée. Si vous souhaitez apporter un complément à la discussion qui nécessite la réouverture de cette dernière, faites en part au modérateur ayant décidé la fermeture de la discussion, qui prendra la décision appropriée.
+						3.5 Il est interdit aux utilisateurs de crÃ©er un nouveau sujet pour une discussion dÃ©jÃ  fermÃ©e. Si vous souhaitez apporter un complÃ©ment Ã  la discussion qui nÃ©cessite la rÃ©ouverture de cette derniÃ¨re, faites en part au modÃ©rateur ayant dÃ©cidÃ© la fermeture de la discussion, qui prendra la dÃ©cision appropriÃ©e.
 
 						<br /><br />
 
-						3.6 La publicité et les liens pour d'autres sites est interdite. Les liens de parrainage et liens à "clics", qu'ils soient explicites ou non, sont également interdits.
+						3.6 La publicitÃ© et les liens pour d'autres sites est interdite. Les liens de parrainage et liens Ã  "clics", qu'ils soient explicites ou non, sont Ã©galement interdits.
 
 						<br /><br />
 
-						3.7 La publicité pour des blogs, forums communautaires et autres est permise, mais uniquement dans la section Détente, et à condition qu'il ne s'agisse pas d'un contenu lié à un quelconque jeu (Exemple de site permis : forum de jeu de rôle). Les vidéos Youtube (et, par extension, tout autre type de lien vidéo) sont autorisées dans la signature des utilisateurs ainsi que dans un sujet d'échange de liens en section Détente si ces vidéos respectent l'ensemble des présentes règles.
+						3.7 La publicitÃ© pour des blogs, forums communautaires et autres est permise, mais uniquement dans la section DÃ©tente, et Ã  condition qu'il ne s'agisse pas d'un contenu liÃ© Ã  un quelconque jeu (Exemple de site permis : forum de jeu de rÃ´le). Les vidÃ©os Youtube (et, par extension, tout autre type de lien vidÃ©o) sont autorisÃ©es dans la signature des utilisateurs ainsi que dans un sujet d'Ã©change de liens en section DÃ©tente si ces vidÃ©os respectent l'ensemble des prÃ©sentes rÃ¨gles.
 
 						<br /><br />
 
-						3.8 En cas de soucis de manipulation sur le forum (double postage, discussions doublons, etc.), contactez un modérateur de la section. Si un utilisateur poste deux messages à la suite dans un délai réduit, ceux-ci seront automatiquement fusionnés. Cela ne doit pas inciter l'utilisateur à ne pas faire attention à ce qu'il fait. Un excès de double-posts ou de discussions doublons malgré un rappel à l'ordre sera sanctionné.
+						3.8 En cas de soucis de manipulation sur le forum (double postage, discussions doublons, etc.), contactez un modÃ©rateur de la section. Si un utilisateur poste deux messages Ã  la suite dans un dÃ©lai rÃ©duit, ceux-ci seront automatiquement fusionnÃ©s. Cela ne doit pas inciter l'utilisateur Ã  ne pas faire attention Ã  ce qu'il fait. Un excÃ¨s de double-posts ou de discussions doublons malgrÃ© un rappel Ã  l'ordre sera sanctionnÃ©.
 
 						<br /><br />
 
-						3.9 Poster un message au nom d’un utilisateur banni n’est pas autorisé.
+						3.9 Poster un message au nom dâ€™un utilisateur banni nâ€™est pas autorisÃ©.
 
 						<br /><br />
 
@@ -148,13 +148,13 @@
 				<tr>
 					<td>
 
-						<h2>Article 4. Messagerie privée </h2>
+						<h2>Article 4. Messagerie privÃ©e </h2>
 
-						4.1 La publicité et le harcèlement par l’intermédiaire de la messagerie privée pourront être sanctionnés.
+						4.1 La publicitÃ© et le harcÃ¨lement par lâ€™intermÃ©diaire de la messagerie privÃ©e pourront Ãªtre sanctionnÃ©s.
 
 						<br /><br />
 
-						4.2 La copie partielle ou totale d’un message privé ne peut être rendue publique sans l’accord des deux partis.
+						4.2 La copie partielle ou totale dâ€™un message privÃ© ne peut Ãªtre rendue publique sans lâ€™accord des deux partis.
 
 
 						<br /><br />
@@ -166,23 +166,23 @@
 
 						<h2>Article 5. Avatars et signatures</h2>
 
-						5.1 Les images utilisées en guise d’avatar et de signature sont soumises aux mêmes règles que les messages. Dans le cas où un avatar et/ou une signature seraient contraire aux règles, il(elle) devra être changée sur demande de l’équipe de modération.
+						5.1 Les images utilisÃ©es en guise dâ€™avatar et de signature sont soumises aux mÃªmes rÃ¨gles que les messages. Dans le cas oÃ¹ un avatar et/ou une signature seraient contraire aux rÃ¨gles, il(elle) devra Ãªtre changÃ©e sur demande de lâ€™Ã©quipe de modÃ©ration.
 						<br /><br />
-						5.2 Une seule image est autorisée pour la signature.
+						5.2 Une seule image est autorisÃ©e pour la signature.
 						<br /><br />
-						5.3 Les images utilisées devront être fixes (non-animées).
+						5.3 Les images utilisÃ©es devront Ãªtre fixes (non-animÃ©es).
 						<br /><br />
-						5.4 L’image employée pour l’avatar ne peut excéder les limites suivantes :
+						5.4 Lâ€™image employÃ©e pour lâ€™avatar ne peut excÃ©der les limites suivantes :
 						- Hauteur : 100 pixels ;
 						- Largeur : 100 pixels ;
 						- Poids : 64 kilo octets.
 						<br /><br />
-						5.5 L’image employée pour la signature ne peut excéder les limites suivantes :
+						5.5 Lâ€™image employÃ©e pour la signature ne peut excÃ©der les limites suivantes :
 						- Hauteur : 120 pixels ;
 						- Largeur : 700 pixels ;
 						- Poids : 150 kilo octets.
 						<br /><br />
-						5.6 En plus d'une image, la signature peut contenir du texte ou des sauts de ligne dans une proportion raisonnable (quatre lignes maximum). L'utilisation de la balise [SIZE] n'est pas autorisée dans la signature, sauf si la police d'écriture utilisée réduit naturellement la taille et la rend illisible (exemple : Garamond) : dans ce cas uniquement, la balise [SIZE] peut être utilisée pour rétablir une taille lisible, mais pas davantage.
+						5.6 En plus d'une image, la signature peut contenir du texte ou des sauts de ligne dans une proportion raisonnable (quatre lignes maximum). L'utilisation de la balise [SIZE] n'est pas autorisÃ©e dans la signature, sauf si la police d'Ã©criture utilisÃ©e rÃ©duit naturellement la taille et la rend illisible (exemple : Garamond) : dans ce cas uniquement, la balise [SIZE] peut Ãªtre utilisÃ©e pour rÃ©tablir une taille lisible, mais pas davantage.
 						<br /><br />
 					</td>
 				</tr>
@@ -190,24 +190,24 @@
 				<tr>
 					<td>
 
-						<h2>Article 6. Modération du forum</h2>
-						6.1.1 Les membres de l’équipe de modération sont des bénévoles recrutés sur candidature par le responsable de la communauté.
+						<h2>Article 6. ModÃ©ration du forum</h2>
+						6.1.1 Les membres de lâ€™Ã©quipe de modÃ©ration sont des bÃ©nÃ©voles recrutÃ©s sur candidature par le responsable de la communautÃ©.
 						<br /><br />
 
 						<br /><br />
-						6.1.2 L’équipe de modération est à traiter avec égalité, les membres qui la composent sont aussi des joueurs comme les autres.
+						6.1.2 Lâ€™Ã©quipe de modÃ©ration est Ã  traiter avec Ã©galitÃ©, les membres qui la composent sont aussi des joueurs comme les autres.
 						<br /><br />
-						6.3 Pour tout problème rencontré sur le forum, l’équipe de modérateurs se tient à disposition de l’utilisateur. Ce dernier ne peut cependant pas les contacter pour des problèmes concernant le jeu, il en retourne de l’équipe des opérateurs dans ces cas-là. De même, l’équipe des opérateurs ne pourra pas aider pour des problèmes relatifs au forum.
+						6.3 Pour tout problÃ¨me rencontrÃ© sur le forum, lâ€™Ã©quipe de modÃ©rateurs se tient Ã  disposition de lâ€™utilisateur. Ce dernier ne peut cependant pas les contacter pour des problÃ¨mes concernant le jeu, il en retourne de lâ€™Ã©quipe des opÃ©rateurs dans ces cas-lÃ . De mÃªme, lâ€™Ã©quipe des opÃ©rateurs ne pourra pas aider pour des problÃ¨mes relatifs au forum.
 						<br /><br />
-						6.4 En cas de conflit avec l’équipe de modération, l’utilisateur est en mesure de contacter le responsable de la communauté. La création d’une discussion publique à ce sujet n’est pas autorisée.
+						6.4 En cas de conflit avec lâ€™Ã©quipe de modÃ©ration, lâ€™utilisateur est en mesure de contacter le responsable de la communautÃ©. La crÃ©ation dâ€™une discussion publique Ã  ce sujet nâ€™est pas autorisÃ©e.
 						<br /><br />
-						6.5 Lors de l’infraction d’une ou plusieurs règles, l’équipe de modération est en mesure de vous sanctionner en vous attribuant un avertissement.
+						6.5 Lors de lâ€™infraction dâ€™une ou plusieurs rÃ¨gles, lâ€™Ã©quipe de modÃ©ration est en mesure de vous sanctionner en vous attribuant un avertissement.
 						<br /><br />
-						6.6 À l’issue de plusieurs avertissements reçus, un bannissement du compte sera effectué. Le bannissement pourra être prolongé ou devenir permanent dans le cas où l’utilisateur aggraverait son cas.
+						6.6 Ã€ lâ€™issue de plusieurs avertissements reÃ§us, un bannissement du compte sera effectuÃ©. Le bannissement pourra Ãªtre prolongÃ© ou devenir permanent dans le cas oÃ¹ lâ€™utilisateur aggraverait son cas.
 						<br /><br />
-						6.7 Si vous pensez avoir reçu un avertissement injustement, prenez contact avec le modérateur qui a donné l'avertissement. Dans le cas où vous n’obtiendriez pas satisfaction auprès du modérateur en question, vous pouvez contacter le responsable de la communauté. Sa décision sera ferme et définitive.
+						6.7 Si vous pensez avoir reÃ§u un avertissement injustement, prenez contact avec le modÃ©rateur qui a donnÃ© l'avertissement. Dans le cas oÃ¹ vous nâ€™obtiendriez pas satisfaction auprÃ¨s du modÃ©rateur en question, vous pouvez contacter le responsable de la communautÃ©. Sa dÃ©cision sera ferme et dÃ©finitive.
 						<br /><br />
-						6.8 Les bannissements/blocages jeu ou forum n'ont pas à être discutés sur le forum. Prenez contact avec l'opérateur ou la personne qui vous a bloqué via message privé/Ticket de Support/e-mail seulement.
+						6.8 Les bannissements/blocages jeu ou forum n'ont pas Ã  Ãªtre discutÃ©s sur le forum. Prenez contact avec l'opÃ©rateur ou la personne qui vous a bloquÃ© via message privÃ©/Ticket de Support/e-mail seulement.
 
 						<br /><br />
 					</td>
@@ -216,9 +216,9 @@
 				<tr>
 					<td>
 						<h2>Article 7. Divers</h2>
-						7.1 L’équipe de modération et l’ensemble des membres de la communauté ne sont pas des spécialistes dans tous les domaines. N’est fourni sur ce forum qu’un support général.
+						7.1 Lâ€™Ã©quipe de modÃ©ration et lâ€™ensemble des membres de la communautÃ© ne sont pas des spÃ©cialistes dans tous les domaines. Nâ€™est fourni sur ce forum quâ€™un support gÃ©nÃ©ral.
 						<br /><br />
-						7.2 Les candidatures pour un poste de modérateur forum ou d’opérateur jeu devront se faire via l'outil spécifique lors des périodes de recrutement, qui sont annoncées dans le sujet approprié.
+						7.2 Les candidatures pour un poste de modÃ©rateur forum ou dâ€™opÃ©rateur jeu devront se faire via l'outil spÃ©cifique lors des pÃ©riodes de recrutement, qui sont annoncÃ©es dans le sujet appropriÃ©.
 						<br /><br />
 					</td>
 				</tr>
