@@ -5,10 +5,10 @@
         * to connect the database
         */
         /* ************************************ */
-        public $db_address = 'localhost:3306';
-        public $db_name    = "EPA";
+        public $db_address = 'localhost';
+        public $db_name    = "bddepa";
         public $user       = "root";
-        public $password   = "password";
+        public $password   = "";
         /* ************************************ */
         public $connection;
 
@@ -118,7 +118,7 @@
                               '".$physicalPerson->get_firstname()."', '".$physicalPerson->get_postalCode()."',
                               '".$physicalPerson->get_city()."', '".$physicalPerson->get_origine()."', '".$physicalPerson->get_gender()."', '".$physicalPerson->get_profession()."', '".$physicalPerson->get_interests()."', '".$physicalPerson->get_email()."', '".$physicalPerson->get_tel()."', '".$physicalPerson->get_address()."')";
 
-                      if (($this->connection)->query($sql) === TRUE) {
+                      if (($this->connection).query($sql) === TRUE) {
                         $sql = "SELECT email FROM personne_physique WHERE email='".$physicalPerson->get_email()."'";
                         if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                             return 0;
@@ -178,7 +178,7 @@
                     } else {
                       $sql = "INSERT INTO connexion (id_connexion, login, password)
                               VALUES ('".$connec->get_id()."', '".$connec->get_pseudo()."', '".$connec->get_password()."')";
-                      if (($this->connection)->query($sql) === TRUE) {
+                      if (($this->connection).query($sql) === TRUE) {
                         $sql = "SELECT login FROM connexion WHERE login='".$connec->get_pseudo()."'";
                         if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                             return 0;
@@ -208,7 +208,7 @@
                     ////////////////////////////////////////
                     $sql = "INSERT INTO demande_adhesion (id, date)
                             VALUES ('".$membershipDemand->get_id()."', '".$membershipDemand->get_date()."')";
-                    if (($this->connection)->query($sql) === TRUE) {
+                    if (($this->connection).query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 1;
@@ -232,7 +232,7 @@
                     ////////////////////////////////////////
                     $sql = "INSERT INTO statut (id_statut, libelle)
                             VALUES ('".$status->get_id()."', '".$status->get_status()."')";
-                    if (($this->connection)->query($sql) === TRUE) {
+                    if (($this->connection).query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 1;
@@ -523,10 +523,10 @@
         function accept_membershipDemand($id) {
             $sql = "INSERT INTO adherent (id, date)
                   VALUES ('".$id."', '".date("Y/m/d")."')";
-            if (($this->connection)->query($sql) === TRUE) {
+            if (($this->connection).query($sql) === TRUE) {
                 // delete from membershipDemand table
                 $sql = "DELETE FROM demande_adhesion WHERE id='$id'";
-                if (($this->connection)->query($sql) === TRUE) {
+                if (($this->connection).query($sql) === TRUE) {
                     return 0;
                 } else {
                     return 1;
@@ -541,7 +541,7 @@
         */
         function refuse_membershipDemand($id) {
             $sql = "DELETE FROM demande_adhesion WHERE id='$id'";
-            if (($this->connection)->query($sql) === TRUE) {
+            if (($this->connection).query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
@@ -553,7 +553,7 @@
         */
         function remove_membership($id) {
             $sql = "DELETE FROM adherent WHERE id='$id'";
-            if (($this->connection)->query($sql) === TRUE) {
+            if (($this->connection).query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
@@ -566,7 +566,7 @@
         function update_status_from_id($id, $newStatus) {
           if($newStatus != '') {
             $sql = "UPDATE statut SET libelle='$newStatus' WHERE id_statut='$id'";
-            if (($this->connection)->query($sql) === TRUE) {
+            if (($this->connection).query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
@@ -601,7 +601,7 @@
                             , ville_personne_ph='$city', cp_personne_ph='$postalCode', email='$email', profession='$profession'
                             , centreinterets='$interests' WHERE id_personne_ph='$id'";
 
-                    if (($this->connection)->query($sql) === TRUE) {
+                    if (($this->connection).query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 1;

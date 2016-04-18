@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<buildpath>
+	<buildpathentry kind="src" path="groupe1/epa"/>
+	<buildpathentry kind="src" path="groupe1/minibb"/>
+	<buildpathentry kind="src" path="groupe2"/>
+	<buildpathentry kind="src" path="groupe3"/>
+	<buildpathentry kind="src" path="groupe4"/>
+	<buildpathentry kind="con" path="org.eclipse.php.core.LANGUAGE"/>
+</buildpath>
