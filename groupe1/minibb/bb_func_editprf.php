@@ -74,10 +74,10 @@ $upda=array($dbUserSheme['user_email'][1], $dbUserSheme['user_viewemail'][1], $d
 foreach($addFieldsGen as $k) if(isset($dbUserSheme[$k])) $upda[]=$dbUserSheme[$k][1];
 foreach($dbUserSheme as $k=>$v) if(strstr($k,'user_custom') and isset($_POST[$v[2]]) and ($_POST[$v[2]]!='' OR (isset($prevVals[$k]) and $prevVals[$k]!='' and $_POST[$v[2]]=='' ) ) ) $upda[]=$v[1];
 
-if($passwd!=''){
+/*if($passwd!=''){
 ${$dbUserSheme['user_password'][1]}=writeUserPwd(${$dbUserSheme['user_password'][1]});
 $upda[]=$dbUserSheme['user_password'][1];
-}
+}*/
 
 /* sending confirm link on user's email if it's changed */
 if(!defined('ADMIN_USER_TMP') and $user_id!=1 and $genEmailDisable!=1 and isset($closeRegister) and $closeRegister==1 and strtolower($userData[$dbUserSheme['user_email'][0]])!=strtolower(${$dbUserSheme['user_email'][2]})){

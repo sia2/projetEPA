@@ -85,4 +85,23 @@ header("{$rheader}{$main_url}/{$indexphp}action={$action}"); exit;
 if($action=='vthread' or $action=='merge') include($pathToFiles.'addon_mergetopics.php');
 /* --Merge topics */
 
+/* Custom user profile functions */
+if($action=='userinfo'){
+
+function parseUserInfo_user_regdate($val){
+return '';
+}
+
+function parseUserInfo_email($val){
+if ($GLOBALS['row'][3]!=1) return $GLOBALS['usEmail']; elseif($GLOBALS['user_id']>0) return '<a href="mailto:'.$val.'">'.$val.'</a>'; else return '';
+}
+
+}
+/* --Custom user profile functions */
+
+/* Restricting from editing a profile on forums */
+if(($action=='prefs' or $action=='editprefs') and (isset($_GET['adminUser']) or isset($_POST['adminUser']))){
+die('This operation is not available in your synchronized forums version. Please use default tools for modifying users profile from the main website.');
+}
+/* --Restricting from editing a profile on forums */
 ?>

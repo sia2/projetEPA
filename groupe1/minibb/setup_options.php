@@ -16,7 +16,7 @@ $DBpwd='';
 $Tf='minibbtable_forums';
 $Tp='minibbtable_posts';
 $Tt='minibbtable_topics';
-$Tu='minibbtable_users';
+$Tu='connexion';
 $Ts='minibbtable_send_mails';
 $Tb='minibbtable_banned';
 
@@ -98,30 +98,19 @@ $stats_barWidthLim='31';
 /* New options for miniBB 2.0 */
 
 $dbUserSheme=array(
-'username'=>array(1,'username','login'),
-'user_password'=>array(3,'user_password','passwd'),
-'user_email'=>array(4,'user_email','email'),
-'user_icq'=>array(5,'user_icq','icq'),
-'user_website'=>array(6,'user_website','website'),
-'user_occ'=>array(7,'user_occ','occupation'),
-'user_from'=>array(8,'user_from','from'),
-'user_interest'=>array(9,'user_interest','interest'),
-'user_viewemail'=>array(10,'user_viewemail','user_viewemail'),
-'user_sorttopics'=>array(11,'user_sorttopics','user_sorttopics'),
-'language'=>array(14,'language','language'),
-'num_topics'=>array(16,'num_topics',''),
-'num_posts'=>array(17,'num_posts',''),
-'user_custom1'=>array(18,'user_custom1','user_custom1'),
-'user_custom2'=>array(19,'user_custom2','user_custom2'),
-'user_custom3'=>array(20,'user_custom3','user_custom3')
+'username'=>array(1,'login','login'),
+'user_password'=>array(2,'password',''),
+'user_email'=>array(3,'email','email'),
+'user_viewemail'=>array(6,'user_viewemail','user_viewemail'),
+'user_sorttopics'=>array(7,'user_sorttopics','user_sorttopics'),
+'language'=>array(8,'language','language'),
+'num_topics'=>array(9,'num_topics',''),
+'num_posts'=>array(10,'num_posts','')
 );
-$dbUserId='user_id';
-$dbUserDate='user_regdate'; $dbUserDateKey=2;
+$dbUserId='id_connexion';
+$dbUserDate='user_regdate'; $dbUserDateKey=4;
 $dbUserAct='activity';
-$dbUserNp='user_newpasswd';
-$dbUserNk='user_newpwdkey';
-
-$enableNewRegistrations=TRUE;
+$enableNewRegistrations=FALSE;
 $enableProfileUpdate=TRUE;
 
 $usersEditTopicTitle=FALSE;
