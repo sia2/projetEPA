@@ -6,7 +6,7 @@
 
     require_once('class/class_db.php');
 
-    if(isset($_SESSION) && !empty($_SESSION['pseudo']) && !empty($_SESSION['password'])) {
+    if(isset($_SESSION) && !empty($_SESSION['user']) && !empty($_SESSION['password'])) {
         header("Location: connected.php");
         exit();
     }

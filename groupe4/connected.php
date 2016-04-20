@@ -10,7 +10,7 @@
     <body>
         <h1><u>Ensemble pour l'Afrique</u></h1>
         <?php
-            if(isset($_SESSION) && isset($_SESSION['pseudo']) && isset($_SESSION['password'])) {
+            if(isset($_SESSION) && isset($_SESSION['user']) && isset($_SESSION['password'])) {
               if(isset($_SESSION['membershipDemand']) && $_SESSION['membershipDemand'] != 'exist' && $_SESSION['membership'] != 'exist' && ($_SESSION['status'] != 'President' || $_SESSION['status'] != 'Tresorier' || $_SESSION['status'] != 'Secretaire' ||
               $_SESSION['status'] != 'Membre CA')) {
         ?>

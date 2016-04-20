@@ -5,10 +5,11 @@
         * to connect the database
         */
         /* ************************************ */
-        public $db_address = 'localhost';
-        public $db_name    = "bddepa";
+        /* ************************************ */
+        public $db_address = 'localhost:3306';
+        public $db_name    = "EPA";
         public $user       = "root";
-        public $password   = "";
+        public $password   = "Bonnie.94700";
         /* ************************************ */
         public $connection;
 

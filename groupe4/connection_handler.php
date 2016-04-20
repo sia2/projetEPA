@@ -19,10 +19,11 @@
     $database = new Database();
     $database->open_db();
     if($database->check_account($pseudo, $password) == 0) {
-        $_SESSION['pseudo']           = $pseudo;
+        $_SESSION['user']             = $pseudo;
         $_SESSION['password']         = $password;
+        $_SESSION['ID']               = $database->get_id_from_account($pseudo, $password);
         $_SESSION['status']           = $database->get_status($pseudo, $password);
-        $_SESSION['membership'] = $database->get_membership($pseudo, $password);
+        $_SESSION['membership']       = $database->get_membership($pseudo, $password);
         $_SESSION['membershipDemand'] = $database->get_membershipDemand($pseudo, $password);
         $database->close_db();
         header("Location: connected.php");
