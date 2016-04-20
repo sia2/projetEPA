@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 20 Avril 2016 à 16:17
+-- Généré le: Mer 20 Avril 2016 à 19:29
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -32,6 +32,22 @@ CREATE TABLE IF NOT EXISTS `adherent` (
   PRIMARY KEY (`id_adherent`),
   KEY `id_adherent` (`id_adherent`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `adresse`
+--
+
+CREATE TABLE IF NOT EXISTS `adresse` (
+  `id_adresse` int(11) NOT NULL,
+  `num_rue` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nom_rue` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `code_postale` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id_personne_ph` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id_adresse`),
+  KEY `id_adresse` (`id_adresse`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -501,9 +517,6 @@ CREATE TABLE IF NOT EXISTS `personne_physique` (
   `sexe` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `profession` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `centre_interet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `num_rue` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `nom_rue` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `code_postal` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_personne_ph`),
   KEY `id_personne_ph` (`id_personne_ph`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
