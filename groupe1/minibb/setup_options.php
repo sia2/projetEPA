@@ -9,7 +9,7 @@ Latest File Update: 2014-Sep-28
 $DB='mysqli';
 
 $DBhost='localhost';
-$DBname='minibb';
+$DBname='bddepa';
 $DBusr='root';
 $DBpwd='';
 
