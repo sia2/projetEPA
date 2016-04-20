@@ -12,4 +12,5 @@ Vous pourrez désormais vous connecter via la page développée par le groupe 4 
 
 Bon courage.
 
+Testé avec la base de données du : Mer 20 Avril 2016 à 19:29
 --------------------------------------------------------------------------
