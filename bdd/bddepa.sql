@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Jeu 14 Avril 2016 à 16:59
+-- Généré le: Mer 20 Avril 2016 à 15:33
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -522,7 +522,6 @@ CREATE TABLE IF NOT EXISTS `personne_physique` (
   `sexe` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `profession` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `centre_interet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `id_adhesion` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_personne_ph`),
   KEY `id_personne_ph` (`id_personne_ph`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
