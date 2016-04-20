@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 20 Avril 2016 à 15:33
+-- Généré le: Mer 20 Avril 2016 à 16:17
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -36,24 +36,6 @@ CREATE TABLE IF NOT EXISTS `adherent` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `adresse`
---
-
-CREATE TABLE IF NOT EXISTS `adresse` (
-  `id_adresse` int(11) NOT NULL,
-  `num_rue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `nom_rue` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `code_postale` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `id_personne_ph` int(11) NOT NULL,
-  `id_personne_moral` int(11) NOT NULL,
-  PRIMARY KEY (`id_adresse`),
-  KEY `id_adresse` (`id_adresse`),
-  KEY `fk_id_personne_ph` (`id_personne_ph`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `ca`
 --
 
@@ -76,14 +58,11 @@ CREATE TABLE IF NOT EXISTS `ca` (
 
 CREATE TABLE IF NOT EXISTS `connexion` (
   `id_connexion` int(11) NOT NULL,
-  `login` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `password` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `id_personne_moral` int(11) NOT NULL,
-  `id_personne_ph` int(11) NOT NULL,
+  `login` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_connexion`),
-  KEY `id_connexion` (`id_connexion`),
-  KEY `fk_id_personnal_moral` (`id_personne_moral`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  KEY `id_connexion` (`id_connexion`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -522,6 +501,9 @@ CREATE TABLE IF NOT EXISTS `personne_physique` (
   `sexe` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `profession` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `centre_interet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `num_rue` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nom_rue` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `code_postal` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_personne_ph`),
   KEY `id_personne_ph` (`id_personne_ph`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -667,22 +649,10 @@ CREATE TABLE IF NOT EXISTS `type_reunion` (
 --
 
 --
--- Contraintes pour la table `adresse`
---
-ALTER TABLE `adresse`
-  ADD CONSTRAINT `fk_id_personne_ph` FOREIGN KEY (`id_personne_ph`) REFERENCES `personne_physique` (`id_personne_ph`);
-
---
 -- Contraintes pour la table `ca`
 --
 ALTER TABLE `ca`
   ADD CONSTRAINT `fk_id_membrebureau` FOREIGN KEY (`id_membrebureau`) REFERENCES `membrebureau` (`id_membrebureau`);
-
---
--- Contraintes pour la table `connexion`
---
-ALTER TABLE `connexion`
-  ADD CONSTRAINT `fk_id_personnal_moral` FOREIGN KEY (`id_personne_moral`) REFERENCES `personne_morale` (`id_personne_moral`);
 
 --
 -- Contraintes pour la table `cotisation`
