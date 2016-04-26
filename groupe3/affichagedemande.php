@@ -134,7 +134,7 @@ while ($demande = mysql_fetch_array($requet)) {
 mysql_close();
   exit();
 }else{ 
- header("Location: http://localhost/my-site/projetEPA-master/groupe4/index.php"); 
+ header("Location: http://localhost/projetEPA/groupe4/index.php"); 
       exit();}
 
 ?>
