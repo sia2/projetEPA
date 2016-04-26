@@ -1,7 +1,10 @@
 
 <?php
 
-include("fonction.php");
+
+session_start();
+if(isset($_SESSION['pseudo'])) {
+ include("fonction.php");
 connectMaBase();
 //on choisi toutes les infos de la demande en cour
 $requet= mysql_query("SELECT * FROM demande_accueil");
@@ -15,9 +18,9 @@ $j=1;
 <body>
 <form action="afficher_demande_par_etat.php" method="get">
 <fieldset>
-<legend>La liste des demandes</legend>
+<legend style="background-color:rgb(0,51,0);">La liste des demandes</legend>
 		<p style="text-align: center;"> Vous pouvez sélectionner l'état des demandes qui vous interèsse :</p><br></br>
-			<input type="radio" name="etat" value="en_cour" checked /><label>En Attente de traitement</label></br>
+			<input type="radio" name="etat" value="en_cour" checked /><label>En Attente de traitement</label><br/>
 			  <input type="radio" name="etat" value="traitee" /> <label>Traitée</label><br />
 			  <input type="radio" name="etat" value="arrivee" /> <label>Arrivée</label><br /><td></br></br>	
 	
@@ -57,36 +60,39 @@ while ($demande = mysql_fetch_array($requet)) {
 <body>
 <form action="traiter_demande.php" method="get">
 <fieldset>
-<legend>Demande n°<?php echo $j ;$j=$j+1?></legend>
-	
-		<a style="color:red;">nom : </a> <?php echo "".$demande[name];?></br>
-		<a style="color:red;">Prenom :</a><?php echo "".$demande[prenom];?></br>
-		<a style="color:red;">Email :</a><?php echo "".$demande[email];?></br>
-		<a style="color:red;">Date de la Demande :</a><?php echo "".$demande[dateDemande];?></br>
-		<a style="color:red;">Motif du voyage :</a><?php echo "".$demande[motif];?></br></br>
+<legend style="background-color:rgb(0,51,0);">Demande n°<?php echo $j ;$j=$j+1?></legend>
 		<?php
 		$tempslimite = 7;
 		$date = date("d.m.Y");
-		$timestamp = strtotime($demande[date]);
+		$timestamp = strtotime($demande['date']);
 		$timestamp1 = strtotime($date);
 		$calcul = $timestamp-$timestamp1;
 		if($calcul<604800 ){
 			//mail_dirgeant();
 			?>
-			<img src="Urgence.png" alt="Photo urgence" width="60" height="50"/>
-			<a style="text-align: center;" >Attention notre invité arrive bientôt</a></br>
+			<img src="Urgence.png" alt="Photo urgence" width="40" height="40"/></br>
+			<a style="text-align: center;" >Attention notre invité arrive dans moin d'une semaine</a></br>
 			<?php
 		}
 		
 		
 		?>
+		</br>
+		<a style="color:red;">nom : </a> <?php echo "".$demande['name'];?></br>
+		<a style="color:red;">Prenom :</a><?php echo "".$demande['prenom'];?></br>
+		<a style="color:red;">Email :</a><?php echo "".$demande['email'];?></br>
+		<a style="color:red;">Date de la Demande :</a><?php echo "".$demande['dateDemande'];?></br>
+		<a style="color:red;">Motif du voyage :</a><?php echo "".$demande['motif'];?></br></br>
+		<input type="hidden" name="etat2" value="<?php echo "".$demande['etat']."" ?>">
+		<input type="hidden" name="name" value="<?php echo "".$demande['name']."" ?>">
+	
 		
 		<?php
 			//affichage des demande qui ont l'etat en cour 
-			if($demande[etat]=='en_cour'){ ?>
+			if($demande['etat']=='en_cour'){ ?>
 			</br><a> Demande à traiter avec votre compte ? </a><br/>
-		 <input type="hidden" name="demande" value="<?php echo "".$demande[id]."" ?>"></br>&nbsp;&nbsp; 
-		<label><input type="submit" name="invite" value="oui"> </label></td>
+		 <input type="hidden" name="demande" value="<?php echo "".$demande['id_demande']."" ?>"></br>&nbsp;&nbsp; 
+		<label><input type="submit" name="invite" value="oui"> </label></td><br/>
 		<button type="button" onclick="toggle_text('span_txt2<?php echo $i?>');">non c'est un invité</button><br/>
 		<span id="span_txt2<?php echo $i?>"style="display:none;"><br/>
 		<Label style="font-family: Comic Sans MS;">  Son nom : &nbsp;&nbsp; <input type="text" placeholder="Entrer Son nom" name="name"></label><br><br>
@@ -111,9 +117,8 @@ while ($demande = mysql_fetch_array($requet)) {
 			$i=$i+1;
 			}
 			//affichage des demandes qui ont l'etat en cour	
-			if($demande[etat]=='traitee'){ ?>
-			<a> Demande à cloturer</a>
-			<input type="hidden" name="demande" value="<?php echo "".$demande[id]."" ?>">
+			if($demande['etat']=='traitee'){ ?>
+			<input type="hidden" name="demande" value="<?php echo "".$demande['id_demande']."" ?>">
 			<label><input type="submit" name="etat" value="cloturer la demande">  </label></td><br/>
 		<?php	
 		}	
@@ -127,4 +132,9 @@ while ($demande = mysql_fetch_array($requet)) {
 }
 
 mysql_close();
+  exit();
+}else{ 
+ header("Location: http://localhost/my-site/projetEPA-master/groupe4/index.php"); 
+      exit();}
+
 ?>

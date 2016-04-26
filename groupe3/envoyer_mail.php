@@ -4,17 +4,16 @@ include("fonction.php");
 connectMaBase();
 
 //On récupère les valeurs entrées par l'utilisateur (le reste sera recuperer apres test:
-$name=$_POST['name'];
-$requet= mysql_query("SELECT email FROM adherent");
-$mail=$_POST['mail'];
+$name=$_GET['name'];
+$mail=$_GET['mail'];
 $contenu=$_GET['contenu'];
-$demande2=$_GET['demande_id']
-//mail_etudiant($demande2[email]);
+$demande$_GET['demande_id'];
+$requet= mysql_query("SELECT email FROM `demande_accueil` WHERE id_demande =$demande");
 
-while ($adherent = mysql_fetch_array($requet)) {
+while ($res = mysql_fetch_array($requet)) {
 //on envoi au mails de chaques adherents
-$destinataire = $adherent[0];
-$expediteur   = 'Ensemble pour l afrique';
+$destinataire = $res;
+$expediteur   = $mail;
 $reponse      = $expediteur;
 
 echo "Ce script envoie un mail au format HTML à $destinataire $contenu";
@@ -23,4 +22,7 @@ mail($destinataire,'Email au format HTML',$contenu);
 
  
 }
+
+  header('Location: http://page_profil_utilisateur.php');
+  exit();
 ?> 

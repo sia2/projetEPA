@@ -3,9 +3,9 @@
 include("fonction.php");
 
 connectMaBase();
-$etat=$_GET[etat];
+$etat=$_GET['etat'];
 $requet= mysql_query("SELECT * FROM demande_accueil WHERE etat = '$etat' ");
-echo "Ce sont les demande qui ont l etat ".$etat;
+echo "Voici les demandes avec l'état ".$etat;
 $j=1;
 while ($demande = mysql_fetch_array($requet)) {
 ?>
@@ -19,15 +19,15 @@ while ($demande = mysql_fetch_array($requet)) {
 	<fieldset>
 		<legend>Demande n°<?php echo $j ;$j=$j+1?></legend>
 	
-		<a style="color:red;">nom : </a> <?php echo "".$demande[name];?></br>
-		<a style="color:red;">Prenom :</a><?php echo "".$demande[prenom];?></br>
-		<a style="color:red;">Email :</a><?php echo "".$demande[email];?></br>
-		<a style="color:red;">Date de la Demande :</a><?php echo "".$demande[dateDemande];?></br>
-		<a style="color:red;">Motif du voyage :</a><?php echo "".$demande[motif];?></br></br>
+		<a style="color:red;">nom : </a> <?php echo "".$demande['name'];?></br>
+		<a style="color:red;">Prenom :</a><?php echo "".$demande['prenom'];?></br>
+		<a style="color:red;">Email :</a><?php echo "".$demande['email'];?></br>
+		<a style="color:red;">Date de la Demande :</a><?php echo "".$demande['dateDemande'];?></br>
+		<a style="color:red;">Motif du voyage :</a><?php echo "".$demande['motif'];?></br></br>
 		<?php
 		$tempslimite = 7;
 		$date = date("d.m.Y");
-		$timestamp = strtotime($demande[date]);
+		$timestamp = strtotime($demande['date']);
 		$timestamp1 = strtotime($date);
 		$calcul = $timestamp-$timestamp1;
 		if($calcul<604800 ){
@@ -41,9 +41,9 @@ while ($demande = mysql_fetch_array($requet)) {
 		
 		?>
 		<?php
-			if($demande[etat]=='en_cour'){ ?>
+			if($demande['etat']=='en_cour'){ ?>
 			</br><a> Demande à traiter avec votre compte ? </a><br/>
-		 <input type="hidden" name="demande" value="<?php echo "".$demande[id]."" ?>"></br>&nbsp;&nbsp; 
+		 <input type="hidden" name="demande" value="<?php echo "".$demande['id']."" ?>"></br>&nbsp;&nbsp; 
 		<label><input type="submit" name="invite" value="oui"> </label></td>
 		<button type="button" onclick="toggle_text('span_txt2<?php echo $i?>');">non c'est un invité</button><br/>
 		<span id="span_txt2<?php echo $i?>"style="display:none;"><br/>
@@ -67,9 +67,9 @@ while ($demande = mysql_fetch_array($requet)) {
 		<?php
 			$i=$i+1;
 			}
-			if($demande[etat]=='traitee'){ ?>
+			if($demande['etat']=='traitee'){ ?>
 			<p> Demande à cloturer</p>
-			<input type="hidden" name="demande" value="<?php echo "".$resultat[id]."" ?>">
+			<input type="hidden" name="demande" value="<?php echo "".$resultat['id']."" ?>">
 			<label><input type="submit" name="etat" value="cloturer la demande">  </label><br/>
 			
 		<?php	

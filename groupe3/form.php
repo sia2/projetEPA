@@ -56,4 +56,8 @@ mail($destinataire,
  
 // on ferme la connexion
 mysql_close();
+
+  header("Location: http://localhost/my-site/projetEPA-master/groupe4/connected.php");
+  exit();
+
 ?>
