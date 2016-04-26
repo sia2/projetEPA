@@ -5,6 +5,7 @@ require_once './const.php';
 error_reporting(0);
 
 $path = $_GET['dir'];
+
 $uploaddir = $path.'/';
 $newname=str_replace(" ",'_',$_FILES['fic']['name']);
 $uploadfile = $uploaddir.basename($newname);
@@ -26,22 +27,23 @@ $rep = dirname($uploadfile);
 $occ = substr(strrchr($rep, '/'), 1);
 
 /* On récupère l'id du dossier ou est stocké le fichier pour pouvoir le stocker dans la base de données lors de l'insertion d'un document */
-$resultat = $co->execQuery("SELECT id_dossier FROM `epa`.`dossier` WHERE nom_dossier ='".$occ."'");
+$resultat = $co->execQuery("SELECT id_dossier FROM `bddepa`.`dossier` WHERE nom_dossier ='".$occ."'");
 $idd = $co->recup1Res();
 
-/*echo ("Le répertoire parent est : ".$rep.'..') ; */
-/*echo 'Derniere occurence : '.$occ.'';*/
-/*echo 'iDENTIFIANT DOSSIER : '.$idd['id_dossier'].';;';*/
+/*echo ("Le répertoire parent est : ".$rep.'<br/>') ; 
+echo 'Derniere occurence : '.$occ.'<br/>';
+echo 'IDENTIFIANT DOSSIER : '.$idd['id_dossier'].';';*/
 
 /* Si le fichier est inexistant dans le répertoire d'upload */
 if(!file_exists($uploadfile))
 {
     
-    $req = "INSERT INTO epa.`document`(`nom_document`,`type_document`,`chemin_r_doc`, `id_projet`,`chemin_a_doc`, `id_statut`, `date_document`,`taille_document`,`id_dossier`) 
-            VALUES ('".$newname."', '".$typeF."' ,'".$uploadfile."', 1, '".$uploadfileBDD."', '".$statut."', CURRENT_DATE(), '".$tailleF."', '".$idd['id_dossier']."')";
+    $req = "INSERT INTO `bddepa`.`document`(`nom_document`,`type_document`,`chemin_r_doc`, `id_projet`,`chemin_a_doc`, `date`,`taille`,`id_statut`,`id_dossier`) 
+            VALUES ('".$newname."', '".$typeF."' ,'".$uploadfile."', 1, '".$uploadfileBDD."', CURRENT_DATE(), '".$tailleF."','".$statut."' ,'".$idd['id_dossier']."')";
    
+   // echo 'La requete : '.$req.'';
     $resultat = $co->execQuery($req);  
-    
+    //echo 'La requete vbhvbjhe: '.$resultat.'';
     if($resultat)
     {
         
@@ -51,7 +53,14 @@ if(!file_exists($uploadfile))
         {
             chmod($uploadfile, 0777);
             header('Location:index.php?dir='.$path.'&in=0');
-        }
+        }else{
+			echo "Dans else de move_uploaded_file";
+		}
+    }
+    else
+    {
+        echo 'dans else de if($resultat)';
+		//header('Location:index.php?dir='.$path.'&in=0');
     }
 }
 else

@@ -17,7 +17,7 @@
     if(!empty($newse))
     {
         /*echo 'Recherche voulu : '.$se.'<br>';*/
-        $e = "SELECT * FROM `epa`.`document` WHERE nom_document 
+        $e = "SELECT * FROM `bddepa`.`document` WHERE nom_document 
                           LIKE '%".$newse."%'";
                           /*echo $e;*/
         $co->execQuery($e);

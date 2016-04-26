@@ -10,7 +10,7 @@ $identifiant = $_GET["iden"];
 if(isset($identifiant))
 {
 
-  $res = $sqli->execQuery("SELECT chemin_r_doc FROM `epa`.`document` WHERE id_document ='".$identifiant."'");
+  $res = $sqli->execQuery("SELECT chemin_r_doc FROM `bddepa`.`document` WHERE id_document ='".$identifiant."'");
   $chemin = $sqli->recup1Res();
 
   /*echo 'Chemin document a supprimer : '.$chemin['chemin_r_doc'].'';*/
@@ -18,12 +18,12 @@ if(isset($identifiant))
   $nb = $co->execQuery("SELECT COUNT(*) FROM `document`");
   $lg = $co->recup1Res();
   
-  $resultat = $co->execQuery("DELETE FROM `document` WHERE id_document = '".$identifiant."'"); 
+  $resultat = $co->execQuery("DELETE FROM `bddepa`.`document` WHERE id_document = '".$identifiant."'"); 
   
   if($resultat)
   {
       /* On récupère le nombre de lignes dans la table après suppression */
-     $nb = $co->execQuery("SELECT COUNT(*) FROM `document`");
+     $nb = $co->execQuery("SELECT COUNT(*) FROM `bddepa`.`document`");
      $lgbis = $co->recup1Res();
       
 

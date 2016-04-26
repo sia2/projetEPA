@@ -6,14 +6,14 @@
     error_reporting(0);
 
     //$DEFAULT=$_SERVER['DOCUMENT_ROOT']; /*Default redirection quand le script commence*/
-    $path = "C:/wamp64/www/SIA/Documents";
+    $path = "C:/wamp/www/SIA/Documents";
+    /*echo 'Lechemin : '.$path.'<br/>';*/
 
     /* si aucun dossier n'a encore été créer on affiche la path courante */
     if(!isset($_POST['mkdir'])&&!isset($_POST['pathmkdir'])&&!isset($_GET['dir']))
     {
         header('location:?dir='.$path);
     }
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -31,18 +31,22 @@
     </head>
     <body>
         <div class="container">
-            <div class="row">
+           <!-- <a href="javascript:;" onClick="window.open('Documents/Divers/crozier_Acteurs_et_systemes.pdf');"> Documents </a>-->
             <div class="col-lg-offset-10 col-lg-4 col-md-4 col-sm-4 ">
                 <br><br><br>
-                <button class="btn btn-primary" type="button" style="margin-bottom: 30px;" data-toggle="modal" data-target="#myRep"><i class="glyphicon glyphicon-plus"></i> Ajouter un répertoire </button>
+                <button class="btn btn-primary" type="button" style="margin-bottom: 30px;" data-toggle="modal" data-target="#myRep">
+                <i class="glyphicon glyphicon-plus"></i> Ajouter un répertoire </button></div>
+                
                 <?php
                 
+                    /*echo 'Chemin de la page courante  : '.$_GET['dir'].'<br>';*/
+
                 if($_GET['dir'] != "C:/wamp64/www/SIA/Documents")
                 {
-                    echo '<br><button class="btn btn-primary" type="button" style="margin-bottom: 30px;" data-toggle="modal" data-target="#myModal"><i      class="glyphicon glyphicon-plus"></i> Ajouter un document </button></div>'; 
+                    echo '<br><div class="col-lg-offset-10 col-lg-4 col-md-4 col-sm-4" ><button class="btn btn-primary" type="button" style="margin-bottom: 30px;" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> Ajouter un document </button></div>'; 
                 }
                     echo'<br><br>
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <form method="POST" action="recherche.php?dir='.$_GET['dir'].'">                   
                         <div class="input-group">
                             <input type="text" class="form-control" name="search">
@@ -66,10 +70,16 @@
                         if(!$handle){ echo('Erreur l\'ors de l\'ouverture de '.$rep.' !'); exit; }
                         $replien=str_replace(" ",'%20',$rep);/*idem pour les dossier*/
 
-                        $a->ajout_Rep();
+                        $a->ajout_Rep($replien);
                     }
                         
+                        $resultat = $co->execQuery("SELECT * FROM `bddepa`.`dossier`");
+                        $co->recupLRes();
+                        
+                        $tab = $co->getListeRes();
+
                         echo '<section>
+                                <br><br>
                                 <table class="table table-striped text-center">
                                     <thead style="font-size : 15px; cursor: pointer;">
                                         <tr>
@@ -79,24 +89,18 @@
                                     </thead>   
                                     <tbody> ';
 
-                        $resultat = $co->execQuery("SELECT * FROM `epa`.`dossier`");
-                        $co->recupLRes();
-                        
-                        $tab = $co->getListeRes();
-
                         for($i=0; $i < sizeof($tab); $i++)
                         {
                             /* affichage du tableau des répertoires : lorsuque l'on clique sur le nom d'un répertoire, on accède à son contenu */
                             if($_GET['dir'] == $tab[$i]["chemin"])
                             {
-                            
                                 echo '<tr>';
                                 echo '<td>';
                                 echo '<a href=?dir='.$tab[$i]["chemin"].'/'.$tab[$i]["nom_dossier"].'><i class="glyphicon glyphicon-folder-open"></i> &nbsp ' .$tab[$i]  ["nom_dossier"].'</a>';
                                 echo '</td>';
                                 echo '</tr>';  
                             }   
-                    }
+                        }
                 
                         echo '  </tbody>
                                 </table>
@@ -104,9 +108,9 @@
                         echo '<br><br><br>';
 
                        /* On récupère les identifiants des dossiers qui possèdent des fichiers */
-                        $sql = "SELECT DISTINCT `epa`.`document`.id_dossier 
-                                FROM `epa`.`document`, `epa`.`dossier` 
-                                WHERE `epa`.`dossier`.id_dossier = `epa`.`document`.id_dossier";
+                        $sql = "SELECT DISTINCT `bddepa`.`document`.id_dossier 
+                                FROM `bddepa`.`document`, `bddepa`.`dossier` 
+                                WHERE `bddepa`.`dossier`.id_dossier = `bddepa`.`document`.id_dossier";
                         $exec = $ms->execQuery($sql);
 
                         $ms->recupLRes();
@@ -120,7 +124,7 @@
 
                             /* On récupère les chemins des dossiers qui ont des fichiers */
                             $requete =  $sqli->execQuery("  SELECT chemin, id_dossier, nom_dossier
-                                                            FROM `epa`.`dossier`
+                                                            FROM `bddepa`.`dossier`
                                                             WHERE id_dossier = '".$recup[$k]['id_dossier']."'");
                             $cpath[$k] = $sqli->recup1Res();
                             $cpath[$k]['chemin'] = $cpath[$k]['chemin'].'/'.$cpath[$k]['nom_dossier'];
@@ -132,7 +136,7 @@
                         {
                             if($_GET['dir'] == $cpath[$cpt]["chemin"])
                             {
-                                $resultat = $ms->execQuery("SELECT * FROM `epa`.`document` WHERE id_dossier = '".$cpath[$cpt]["id_dossier"]."'");
+                                $resultat = $ms->execQuery("SELECT * FROM `bddepa`.`document` WHERE id_dossier = '".$cpath[$cpt]["id_dossier"]."'");
                                 $ms->recupLRes();
                                 $tab_Res = $ms->getListeRes();
 

@@ -5,9 +5,8 @@ require_once './MysqlManager.php';
 
 $HOST_NAME = "localhost";
 $USER_NAME = "root";
-/*$PASSWORD_NAME = "caramelle";*/
 $PASSWORD_NAME = "";
-$DB_NAME = "epa";
+$DB_NAME = "bddepa";
         
 $co = new MysqlManager($HOST_NAME, $DB_NAME, $USER_NAME, $PASSWORD_NAME);   
 $ms = new MysqlManager($HOST_NAME, $DB_NAME, $USER_NAME, $PASSWORD_NAME); 

@@ -6,7 +6,8 @@ require_once './const.php';
 $mkdir = $_POST['mkdir'];
 $pmkdir = $_POST['pathmkdir'];
 
-
+/*echo 'Nom du dossier :'.$mkdir.'';
+echo 'Chemin du dossier : '.$pmkdir.'';*/
 
 /* permet de créer un répertoire */
 if(isset($mkdir) && !empty($mkdir) && isset($pmkdir) && !empty($pmkdir))
@@ -19,7 +20,7 @@ if(isset($mkdir) && !empty($mkdir) && isset($pmkdir) && !empty($pmkdir))
     $occ = substr(strrchr($pmkdir, '/'), 1);
 
     /* On récupère l'id du dossier ou est stocké le fichier pour pouvoir le stocker dans la base de données lors de l'insertion d'un document */
-    $resultat = $co->execQuery("SELECT id_dossier FROM `epa`.`dossier` WHERE nom_dossier ='".$occ."'");
+    $resultat = $co->execQuery("SELECT id_dossier FROM `bddepa`.`dossier` WHERE nom_dossier ='".$occ."'");
     $idd = $co->recup1Res();
 
     /*echo 'Id du sous dossier: '.$idd['id_dossier'].'';*/
@@ -27,10 +28,11 @@ if(isset($mkdir) && !empty($mkdir) && isset($pmkdir) && !empty($pmkdir))
     $ddl_dir = $pmkdir.'/'.$mkdir;
 
     /* On récupère les noms des dossiers et leur chemin dans la base de données */
-    $req1 = $manager->execQuery("SELECT nom_dossier, chemin FROM `epa`.`dossier`");
+    $req1 = $manager->execQuery("SELECT nom_dossier, chemin FROM `bddepa`.`dossier`");
     $manager->recupLRes();
     $dossier = $manager->getListeRes();
 
+    /*echo 'Chemin : '.$ddl_dir.'';*/
 
 
     $i = 0;
@@ -45,7 +47,7 @@ if(isset($mkdir) && !empty($mkdir) && isset($pmkdir) && !empty($pmkdir))
         $i++;
     }
 
-    $resultat = $ms->execQuery("INSERT INTO `epa`.`dossier`(`nom_dossier`,`chemin`) 
+    $resultat = $ms->execQuery("INSERT INTO `bddepa`.`dossier`(`nom_dossier`,`chemin`) 
     								VALUES ('".$mkdir."', '".$pmkdir."')"); 
 
     if(!mkdir($ddl_dir,0777) && !$resultat)
@@ -55,7 +57,7 @@ if(isset($mkdir) && !empty($mkdir) && isset($pmkdir) && !empty($pmkdir))
     else
     {
         header('location:index.php?dir='.$pmkdir.'&mkd=0');
-    }*/
+    }
     
        
 }

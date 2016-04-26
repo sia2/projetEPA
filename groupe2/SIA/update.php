@@ -20,15 +20,15 @@ $tailleF = $_FILES['newfic']['size'];
 $cheminF = $_FILES['newfic']['tmp_name'];
 
 
-$resultat = $co->execQuery("SELECT * FROM `epa`.`document` WHERE id_document = '".$iddoc."'");
+$resultat = $co->execQuery("SELECT * FROM `bddepa`.`document` WHERE id_document = '".$iddoc."'");
 $t_Res = $co->recup1Res();
 
 
-$req = "UPDATE `epa`.`document` SET nom_document = '".$n_titre."',`id_statut`= '".$newdroit."', `date_document`= CURRENT_DATE(), `chemin_r_doc` = '".$uploadfile."', `chemin_a_doc` = '".$uploadfileBDD."'  
+$req = "UPDATE `bddepa`.`document` SET nom_document = '".$n_titre."',`id_statut`= '".$newdroit."', `date`= CURRENT_DATE(), `chemin_r_doc` = '".$uploadfile."', `chemin_a_doc` = '".$uploadfileBDD."'  
         WHERE id_document = '".$iddoc."'"; 
 $res = $co->execQuery($req);  
 
-$resbis = $co->execQuery("SELECT * FROM `epa`.`document` WHERE id_document = '".$iddoc."'");
+$resbis = $co->execQuery("SELECT * FROM `bddepa`.`document` WHERE id_document = '".$iddoc."'");
 $tabF = $co->recup1Res();
 
 

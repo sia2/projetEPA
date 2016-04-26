@@ -52,7 +52,7 @@ class Affichage
             </div>';
    }
 
-   function ajout_Rep()
+   function ajout_Rep($chemin)
    {
       echo '<div class="modal fade" id="myRep" role="dialog">
                 <div class="modal-dialog">
@@ -67,7 +67,7 @@ class Affichage
                         <div class="form-group">
                             <label for="choix"> Nom dossier </label>
                             <input type="text"  id="name" name ="mkdir" class="form-control"/>
-                            <input type="hidden" name="pathmkdir" value="'.$replien.'" />
+                            <input type="hidden" name="pathmkdir" value="'.$chemin.'" />
                         </div>
                         <button type="submit" class="btn btn-primary">Ajouter</button>
                     </form> 
@@ -150,9 +150,9 @@ class Affichage
       for($i=0; $i < sizeof($tab); $i++)
       {
           echo '<tr>';
-          echo '<td><a href="'.$tab[$i]["chemin_r_doc"].'"><i class="glyphicon glyphicon-open"></i> &nbsp ' .$tab[$i]["nom_document"].'</a></td>';
-          echo '<td>'.$tab[$i]["date_document"].'</td>';
-          echo '<td>'.$tab[$i]["taille_document"].' MO </td>';
+          echo '<td><a href="file:///'.$tab[$i]["chemin_r_doc"].'"><i class="glyphicon glyphicon-open"></i> &nbsp ' .$tab[$i]["nom_document"].'</a></td>';
+          echo '<td>'.$tab[$i]["date"].'</td>';
+          echo '<td>'.$tab[$i]["taille"].' MO </td>';
           echo'<td> 
               <div class="col-lg-3 col-lg-offset-1">
                   <a href="info_upd.php?idupd='.$tab[$i]["id_document"].'&dir='.$_GET['dir'].'" ><button class="btn btn-primary" type="button" value="Modifier" ><i class="glyphicon glyphicon-refresh"></i> &nbsp Modifier </button></a>

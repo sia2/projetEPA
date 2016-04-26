@@ -60,7 +60,7 @@
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a class="menu-top-active" href="index.php">Accueil</a></li>
                             <li><a href="epa.php">A propos de nous</a></li>
-                            <li><a href="SIA/index.php">Documents</a></li>
+                            <li><a href="/projetEPA/groupe2/SIA/index.php">Documents</a></li>
                             <li><a href="/projetEPA/groupe1/minibb/index.php">Forum</a></li>
                             <li><a href="/projetEPA/groupe2/Paiement/don.php">Don</a></li>
                              <li><a href="contact.php">Contact</a></li>
