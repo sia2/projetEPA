@@ -17,6 +17,7 @@
     <!-- Custom styles for this template -->
     <link href="../assets/css/main.css" rel="stylesheet">
 
+
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src="../assets/js/hover.zoom.js"></script>
     <script src="../assets/js/hover.zoom.conf.js"></script>
@@ -26,11 +27,26 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+	
+	
+	 <link href="assets/css/bootstrap.css" rel="stylesheet" />
+   
+    <link href="assets/css/font-awesome.css" rel="stylesheet" />
+    
+    <link href="assets/css/style.css" rel="stylesheet" />
+	
+	
   </head>
 
   <body>
 
-    <!-- Static navbar -->
+  <!--change-->
+  <?php include("entete.php"); ?>
+  
+  <!--fin change -->
+  
+  
+    <!-- Static navbar 
     <div class="navbar navbar-default navbar-default-top">
       <div class="container">
         <div class="navbar-header">
@@ -47,10 +63,10 @@
             <li><a href="blog.html">Forum2</a></li>
             <li><a href="contact.html">Forum 3</a></li>
           </ul>
-        </div><!--/.nav-collapse -->
+        </div><!--/.nav-collapse 
       </div>
     </div>
-
+-->
 	
 	<!-- +++++ Contact Section +++++ -->
 	

@@ -93,7 +93,7 @@ header {
 }
 #bouton-droite{
 	padding-right : 95px;
-	margin-top: 0px;
+	margin-top: 40px;
 }
 
 #client{
@@ -110,8 +110,8 @@ p {
 	padding: 10px 0 0 15px;
 }
 
-#mode-con{
-	padding-left: 400px;
+.ds-paiement{
+	padding : 0 0 0 500px;
 }
 
 /* USER SETTINGS DIV */
