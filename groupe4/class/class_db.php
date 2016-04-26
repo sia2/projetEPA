@@ -60,21 +60,6 @@
             return 1;
           }
 
-          if($physicalPerson->get_address() == '') {
-            echo 'Address field empty';
-            return 1;
-          }
-
-          if($physicalPerson->get_postalCode() == '') {
-            echo 'Postal Code field empty';
-            return 1;
-          }
-
-          if($physicalPerson->get_city() == '') {
-            echo 'City field empty';
-            return 1;
-          }
-
           if($physicalPerson->get_gender() == '') {
             echo 'Gender field empty';
             return 1;
@@ -114,12 +99,12 @@
                     if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                         echo 'Email already exist in our database <br>';
                     } else {
-                      $sql = "INSERT INTO personne_physique (id_personne_ph, nom_personne_ph, prenom_personne_ph, cp_personne_ph, ville_personne_ph, origine, sexe, profession, centreinterets, email, tel, adresse_personne_ph)
-                              VALUES ('".$physicalPerson->get_id()."', '".$physicalPerson->get_name()."',
-                              '".$physicalPerson->get_firstname()."', '".$physicalPerson->get_postalCode()."',
-                              '".$physicalPerson->get_city()."', '".$physicalPerson->get_origine()."', '".$physicalPerson->get_gender()."', '".$physicalPerson->get_profession()."', '".$physicalPerson->get_interests()."', '".$physicalPerson->get_email()."', '".$physicalPerson->get_tel()."', '".$physicalPerson->get_address()."')";
 
-                      if (($this->connection).query($sql) === TRUE) {
+                      $sql = "INSERT INTO personne_physique (id_personne_ph, nom_personne_ph, prenom_personne_ph, email, tel, origine, sexe, profession, centre_interet)
+                              VALUES ('".$physicalPerson->get_id()."', '".$physicalPerson->get_name()."',
+                              '".$physicalPerson->get_firstname()."', '".$physicalPerson->get_email()."', '".$physicalPerson->get_tel()."', '".$physicalPerson->get_origine()."', '".$physicalPerson->get_gender()."', '".$physicalPerson->get_profession()."','".$physicalPerson->get_interests()."')";
+
+                      if (($this->connection)->query($sql) === TRUE) {
                         $sql = "SELECT email FROM personne_physique WHERE email='".$physicalPerson->get_email()."'";
                         if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                             return 0;
@@ -139,29 +124,29 @@
             }
         }
 
-        // /*
-        // * Insert address
-        // */
-        // function insert_address($address) {
-        //     if(get_class($address) == 'Address') {
-        //         if($this->connection) {
-        //             //////////////////////////////////
-        //             // Insertion Address attributes
-        //             //////////////////////////////////
-        //             $sql = "INSERT INTO Adresse (id, numero_rue, rue, departement, codePostal)
-        //                     VALUES ('".$address->get_id()."', '".$address->get_streetNumber()."', '".$address->get_streetName()."', '".$address->get_department()."', '".$address->get_postalCode()."')";
-        //             if (($this->connection)->query($sql) === TRUE) {
-        //                 return 0;
-        //             } else {
-        //                 return 1;
-        //             }
-        //         } else {
-        //             return 1;
-        //         }
-        //     } else {
-        //         return 1;
-        //     }
-        // }
+        /*
+        * Insert address
+        */
+        function insert_address($address) {
+            if(get_class($address) == 'Address') {
+                if($this->connection) {
+                    //////////////////////////////////
+                    // Insertion Address attributes
+                    //////////////////////////////////
+                    $sql = "INSERT INTO adresse (id_adresse, num_rue, nom_rue, code_postale)
+                            VALUES ('".$address->get_id()."', '".$address->get_streetNumber()."', '".$address->get_streetName()."', '".$address->get_postalCode()."');";
+                    if (($this->connection)->query($sql) === TRUE) {
+                        return 0;
+                    } else {
+                        return 11;
+                    }
+                } else {
+                    return 12;
+                }
+            } else {
+                return 13;
+            }
+        }
 
         /*
         * Insert connection
@@ -179,7 +164,7 @@
                     } else {
                       $sql = "INSERT INTO connexion (id_connexion, login, password)
                               VALUES ('".$connec->get_id()."', '".$connec->get_pseudo()."', '".$connec->get_password()."')";
-                      if (($this->connection).query($sql) === TRUE) {
+                      if (($this->connection)->query($sql) === TRUE) {
                         $sql = "SELECT login FROM connexion WHERE login='".$connec->get_pseudo()."'";
                         if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                             return 0;
@@ -207,9 +192,9 @@
                     ////////////////////////////////////////
                     // Insertion MembershipDemand attributes
                     ////////////////////////////////////////
-                    $sql = "INSERT INTO demande_adhesion (id, date)
+                    $sql = "INSERT INTO demande_adhesion (id_adhesion, date)
                             VALUES ('".$membershipDemand->get_id()."', '".$membershipDemand->get_date()."')";
-                    if (($this->connection).query($sql) === TRUE) {
+                    if (($this->connection)->query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 1;
@@ -233,7 +218,7 @@
                     ////////////////////////////////////////
                     $sql = "INSERT INTO statut (id_statut, libelle)
                             VALUES ('".$status->get_id()."', '".$status->get_status()."')";
-                    if (($this->connection).query($sql) === TRUE) {
+                    if (($this->connection)->query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 1;
@@ -395,9 +380,8 @@
         function get_membershipDemand($pseudo, $password) {
 
             $id = $this->get_id_from_account($pseudo, $password);
-
             if($id != '') {
-                $sql = "SELECT * FROM demande_adhesion WHERE id='$id'";
+                $sql = "SELECT * FROM demande_adhesion WHERE id_adhesion='$id'";
 
                 if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                     return 'exist';
@@ -417,7 +401,7 @@
             $id = $this->get_id_from_account($pseudo, $password);
 
             if($id != '') {
-                $sql = "SELECT * FROM adherent WHERE id='$id'";
+                $sql = "SELECT * FROM adherent WHERE id_adherent='$id'";
 
                 if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                     return 'exist';
@@ -454,7 +438,7 @@
                 if(is_array($val)) {
 
                 } else {
-                    if($key == 'id') {
+                    if($key == 'id_adhesion') {
                         $id = $val;
                         array_push($array, $this->get_physicalPerson_from_id($id));
                     }
@@ -489,7 +473,7 @@
                 if(is_array($val)) {
 
                 } else {
-                    if($key == 'id') {
+                    if($key == 'id_adherent') {
                         $id = $val;
                         $pp = $this->get_physicalPerson_from_id($id);
                         $pp = json_decode($pp, true);
@@ -507,7 +491,7 @@
         * get physicialPerson if account exist
         */
         function get_physicalPerson_from_id($id) {
-            $sql = "SELECT * FROM EPA.personne_physique WHERE id_personne_ph='$id'";
+            $sql = "SELECT * FROM personne_physique WHERE id_personne_ph='$id'";
             $result = mysqli_query($this->connection, $sql);
             $json = array();
             $emparray = array();
@@ -522,12 +506,12 @@
         * accept membershipDemand
         */
         function accept_membershipDemand($id) {
-            $sql = "INSERT INTO adherent (id, date)
+            $sql = "INSERT INTO adherent (id_adherent, date)
                   VALUES ('".$id."', '".date("Y/m/d")."')";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 // delete from membershipDemand table
-                $sql = "DELETE FROM demande_adhesion WHERE id='$id'";
-                if (($this->connection).query($sql) === TRUE) {
+                $sql = "DELETE FROM demande_adhesion WHERE id_adhesion='$id'";
+                if (($this->connection)->query($sql) === TRUE) {
                     return 0;
                 } else {
                     return 1;
@@ -541,8 +525,8 @@
         * accept membershipDemand
         */
         function refuse_membershipDemand($id) {
-            $sql = "DELETE FROM demande_adhesion WHERE id='$id'";
-            if (($this->connection).query($sql) === TRUE) {
+            $sql = "DELETE FROM demande_adhesion WHERE id_adhesion='$id'";
+            if (($this->connection)->query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
@@ -553,8 +537,8 @@
         * accept membershipDemand
         */
         function remove_membership($id) {
-            $sql = "DELETE FROM adherent WHERE id='$id'";
-            if (($this->connection).query($sql) === TRUE) {
+            $sql = "DELETE FROM adherent WHERE id_adherent='$id'";
+            if (($this->connection)->query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
@@ -567,7 +551,7 @@
         function update_status_from_id($id, $newStatus) {
           if($newStatus != '') {
             $sql = "UPDATE statut SET libelle='$newStatus' WHERE id_statut='$id'";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
@@ -602,7 +586,7 @@
                             , ville_personne_ph='$city', cp_personne_ph='$postalCode', email='$email', profession='$profession'
                             , centreinterets='$interests' WHERE id_personne_ph='$id'";
 
-                    if (($this->connection).query($sql) === TRUE) {
+                    if (($this->connection)->query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 1;

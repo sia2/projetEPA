@@ -6,18 +6,16 @@
         protected $id;
         protected $streetNumber;
         protected $streetName;
-        protected $department;
         protected $postalCode;
 
         /*
         * Constructor
         */
-        function __construct($id, $streetNumber, $streetName, $department, $postalCode) {
+        function __construct($id, $streetNumber, $streetName, $postalCode) {
             // uniqid gives a string which ensures a unique id
             $this->id   = $id;
             $this->streetNumber = $streetNumber;
             $this->streetName = $streetName;
-            $this->department = $department;
             $this->postalCode = $postalCode;
         }
 
@@ -44,10 +42,6 @@
 
         function get_streetName() {
             return $this->streetName;
-        }
-
-        function get_department() {
-            return $this->department;
         }
 
         function get_postalCode() {

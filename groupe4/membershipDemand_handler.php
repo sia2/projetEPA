@@ -11,7 +11,7 @@
 
     $database = new Database();
     $database->open_db();
-    $id = $database->get_id_from_account($pseudo, $password);
+    $id = $database->get_id_from_account($user, $password);
     $result = $database->insert_membershipDemand(new membershipDemand($id));
     if(isset($_SESSION) && $result == 0) {
       $_SESSION['membershipDemand'] = 'exist';

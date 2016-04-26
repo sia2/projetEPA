@@ -72,19 +72,13 @@
                               $status = $val;
                           } else if($key == 'tel') {
                               $tel = $val;
-                          } else if($key == 'adresse_personne_ph') {
-                              $address = $val;
-                          } else if($key == 'cp_personne_ph') {
-                              $postalCode = $val;
-                          } else if($key == 'ville_personne_ph') {
-                                $city = $val;
                           } else if($key == 'email') {
                               $email = $val;
                           } else if($key == 'sexe') {
                               $gender = $val;
                           } else if($key == 'profession') {
                               $profession = $val;
-                          } else if($key == 'centreinterets') {
+                          } else if($key == 'centre_interet') {
                               $interests = $val;
                           }
                       }

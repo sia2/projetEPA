@@ -84,7 +84,7 @@
                               $gender = $val;
                           } else if($key == 'profession') {
                               $profession = $val;
-                          } else if($key == 'centreinterets') {
+                          } else if($key == 'centre_interet') {
                               $interests = $val;
                           }
                       }

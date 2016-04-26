@@ -12,16 +12,13 @@
         protected $gender     = '';
         protected $tel        = '';
         protected $email      = '';
-        protected $address    = '';
-        protected $cp         = '';
-        protected $city       = '';
         protected $profession = '';
         protected $interests  = '';
 
         /*
         * Constructor
         */
-        function __construct($id, $name, $firstname, $origine, $gender, $tel, $email, $address, $cp, $city, $profession, $interests) {
+        function __construct($id, $name, $firstname, $origine, $gender, $tel, $email, $profession, $interests) {
             if($id == '') {
                 $this->id   = hexdec(uniqid());
                 $this->date = date("Y/m/d");
@@ -35,9 +32,6 @@
             $this->gender     = $gender;
             $this->tel        = $tel;
             $this->email      = $email;
-            $this->address    = $address;
-            $this->cp         = $cp;
-            $this->city       = $city;
             $this->profession = $profession;
             $this->interests  = $interests;
         }
@@ -72,18 +66,6 @@
 
         function get_origine() {
             return $this->origine;
-        }
-
-        function get_address() {
-            return $this->address;
-        }
-
-        function get_city() {
-            return $this->city;
-        }
-
-        function get_postalCode() {
-            return $this->cp;
         }
 
         function get_gender() {

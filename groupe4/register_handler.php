@@ -1,4 +1,7 @@
 <?php
+    error_reporting(E_ALL);
+    ini_set('display_errors', 1);
+
     require_once('class/class_db.php');
     require_once('class/class_physicalPerson.php');
     require_once('class/class_address.php');
@@ -17,7 +20,6 @@
     $tel          = check_input($_POST['tel']);
     $streetNumber = check_input($_POST['streetNumber']);
     $streetName   = check_input($_POST['streetName']);
-    $address      = $streetNumber." ".$streetName;
     $city         = check_input($_POST['city']);
     $postalCode   = check_input($_POST['postalCode']);
     $email        = check_input($_POST['email']);
@@ -27,12 +29,12 @@
     /*
     * Creating Physical Person
     */
-    $physicalPerson = new PhysicalPerson('', $name, $firstname, $origine, $gender, $tel, $email, $address, $postalCode, $city, $profession, $interests);
+    $physicalPerson = new PhysicalPerson('', $name, $firstname, $origine, $gender, $tel, $email, $profession, $interests);
 
-    // /*
-    // * Creating Address
-    // */
-    // $address = new Address($physicalPerson->get_id(), $streetNumber, $streetName, $department, $postalCode);
+    /*
+    * Creating Address
+    */
+    $address = new Address($physicalPerson->get_id(), $streetNumber, $streetName, $postalCode);
 
     /*
     * Creating Connection
@@ -51,12 +53,23 @@
     $database->open_db();
 
     if($database->check_availability_account($physicalPerson, $connection) == 0) {
-      $database->insert_physicalPerson($physicalPerson);
-      $database->insert_connection($connection);
-      $database->insert_status($status);
-
-      header("Location: index.php");
-      exit();
+      if($database->insert_address($address) == 0) {
+        if($database->insert_connection($connection) == 0) {
+          if($database->insert_status($status) == 0) {
+            if($database->insert_physicalPerson($physicalPerson) == 0) {
+              header("Location: index.php");
+              exit();
+            } else {
+            }
+          } else {
+            echo "13";
+          }
+        } else {
+          echo "12";
+        }
+      } else {
+        echo $database->insert_address($address);
+      }
     }
 
     $database->close_db();
