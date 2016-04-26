@@ -27,13 +27,32 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.tablesorter.min.js"></script>
         <script src="js/jquery.tablesorter.widgets.min.js"></script>
+		
+		<!--stype added-->
+		
+		
+   
+    
+    
+    <link href="assets/css/style.css" rel="stylesheet" />
+		<!--stype added end-->
         
     </head>
     <body>
+	<!--change-->
+  
+  <?php include("entete.php"); ?>
+	<!--fin change -->
         <div class="container">
            <!-- <a href="javascript:;" onClick="window.open('Documents/Divers/crozier_Acteurs_et_systemes.pdf');"> Documents </a>-->
+		 
+		   
+				
             <div class="col-lg-offset-10 col-lg-4 col-md-4 col-sm-4 ">
                 <br><br><br>
+				
+				
+	
                 <button class="btn btn-primary" type="button" style="margin-bottom: 30px;" data-toggle="modal" data-target="#myRep">
                 <i class="glyphicon glyphicon-plus"></i> Ajouter un répertoire </button></div>
                 
