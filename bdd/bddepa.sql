@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 26 Avril 2016 à 21:53
+-- Généré le: Mar 26 Avril 2016 à 22:03
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -152,7 +152,7 @@ CREATE TABLE IF NOT EXISTS `demande_adhesion` (
 --
 
 CREATE TABLE IF NOT EXISTS `document` (
-  `id_document` int(11) NOT NULL,
+  `id_document` int(11) NOT NULL AUTO_INCREMENT,
   `nom_document` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `type_document` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `chemin_r_doc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -162,10 +162,12 @@ CREATE TABLE IF NOT EXISTS `document` (
   `date` date DEFAULT NULL,
   `taille` double DEFAULT NULL,
   `id_statut` int(11) NOT NULL,
+  `id_dossier` int(11) NOT NULL,
   PRIMARY KEY (`id_document`),
   KEY `id_document` (`id_document`),
-  KEY `fk_id_statut` (`id_statut`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  KEY `fk_id_statut` (`id_statut`),
+  KEY `fk_id_dossier` (`id_dossier`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -694,6 +696,7 @@ ALTER TABLE `cotisation`
 -- Contraintes pour la table `document`
 --
 ALTER TABLE `document`
+  ADD CONSTRAINT `fk_id_dossier` FOREIGN KEY (`id_dossier`) REFERENCES `dossier` (`id_dossier`),
   ADD CONSTRAINT `fk_id_statut` FOREIGN KEY (`id_statut`) REFERENCES `statut` (`id_statut`);
 
 --
