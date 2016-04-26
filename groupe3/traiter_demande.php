@@ -1,7 +1,7 @@
 <?php
 
 include("fonction.php");
-
+session_start();
 connectMaBase();
 $etat='val_default';
 $valeur=$_GET['etat2'] ;
@@ -57,9 +57,9 @@ if (!$requet) {
 <input type=hidden name=subject value=formmail>
 <table>
 <tr><td>Votre Nom:</td>
-<td><input type=text name=name size=30 value="<?php echo $_SESSION['name'] ?>" /></td></tr>
+<td><input type=text name=name size=30 value="<?php echo $_SESSION['user'] ?>" /></td></tr>
 <tr><td>Votre Email:</td>
-<td><input type=text name=mail size=30 value="<?php echo $_SESSION['email'] ?>"></td></tr>
+<td><input type=text name=mail size=30 value="<?php echo $_SESSION['mail'] ?>"></td></tr>
 <tr><td colspan=2>Votre message:<br>
 <textarea COLS=50 ROWS=6 name=contenu></textarea>
 <input type="hidden" name="demande_id" value="<?php echo "".$demande1."" ?>">

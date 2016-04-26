@@ -3,7 +3,7 @@
 
 
 session_start();
-if(isset($_SESSION['pseudo'])) {
+if(isset($_SESSION['user'])) {
  include("fonction.php");
 connectMaBase();
 //on choisi toutes les infos de la demande en cour

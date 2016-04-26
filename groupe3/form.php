@@ -56,8 +56,8 @@ mail($destinataire,
  
 // on ferme la connexion
 mysql_close();
-
-  header("Location: http://localhost/my-site/projetEPA-master/groupe4/connected.php");
+//echo "<script type="text/javascript">alert("votre demande a été enregistrée");</script>";
+  header("Location: http://localhost/projetEPA/groupe4/connected.php");
   exit();
 
 ?>

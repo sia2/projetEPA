@@ -7,7 +7,7 @@ connectMaBase();
 $name=$_GET['name'];
 $mail=$_GET['mail'];
 $contenu=$_GET['contenu'];
-$demande$_GET['demande_id'];
+$demande=$_GET['demande_id'];
 $requet= mysql_query("SELECT email FROM `demande_accueil` WHERE id_demande =$demande");
 
 while ($res = mysql_fetch_array($requet)) {
@@ -23,6 +23,6 @@ mail($destinataire,'Email au format HTML',$contenu);
  
 }
 
-  header('Location: http://page_profil_utilisateur.php');
+  header("Location: http://localhost/projetEPA/groupe4/index.php"); 
   exit();
 ?> 
