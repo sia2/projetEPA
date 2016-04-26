@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mer 20 Avril 2016 à 19:29
+-- Généré le: Mar 26 Avril 2016 à 09:38
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `adherent` (
-  `id_adherent` int(11) NOT NULL,
+  `id_adherent` bigint(50) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id_adherent`),
   KEY `id_adherent` (`id_adherent`)
@@ -40,11 +40,10 @@ CREATE TABLE IF NOT EXISTS `adherent` (
 --
 
 CREATE TABLE IF NOT EXISTS `adresse` (
-  `id_adresse` int(11) NOT NULL,
+  `id_adresse` bigint(50) NOT NULL,
   `num_rue` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `nom_rue` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `code_postale` varchar(15) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `id_personne_ph` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_adresse`),
   KEY `id_adresse` (`id_adresse`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -73,7 +72,7 @@ CREATE TABLE IF NOT EXISTS `ca` (
 --
 
 CREATE TABLE IF NOT EXISTS `connexion` (
-  `id_connexion` int(11) NOT NULL,
+  `id_connexion` bigint(50) NOT NULL,
   `login` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id_connexion`),
@@ -140,11 +139,10 @@ INSERT INTO `demande_accueil` (`id_demande`, `name`, `prenom`, `age`, `langue`, 
 --
 
 CREATE TABLE IF NOT EXISTS `demande_adhesion` (
-  `id_adehesion` int(11) NOT NULL,
+  `id_adhesion` bigint(50) NOT NULL,
   `date` date NOT NULL,
-  `id_personne_ph` int(11) NOT NULL,
-  PRIMARY KEY (`id_adehesion`),
-  KEY `id_adehesion` (`id_adehesion`)
+  PRIMARY KEY (`id_adhesion`),
+  KEY `id_adehesion` (`id_adhesion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -179,7 +177,7 @@ CREATE TABLE IF NOT EXISTS `don` (
   `id_don` int(11) NOT NULL,
   `objet_don` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_recu_fiscal` int(11) DEFAULT NULL,
-  `id_personne_moral` int(11) DEFAULT NULL,
+  `id_personne_moral` bigint(50) DEFAULT NULL,
   PRIMARY KEY (`id_don`),
   KEY `id_don` (`id_don`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
@@ -489,7 +487,7 @@ CREATE TABLE IF NOT EXISTS `paiement` (
 --
 
 CREATE TABLE IF NOT EXISTS `personne_morale` (
-  `id_personne_moral` int(11) NOT NULL,
+  `id_personne_moral` bigint(50) NOT NULL,
   `raisonsociale` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `nom` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -508,7 +506,7 @@ CREATE TABLE IF NOT EXISTS `personne_morale` (
 --
 
 CREATE TABLE IF NOT EXISTS `personne_physique` (
-  `id_personne_ph` int(11) NOT NULL,
+  `id_personne_ph` bigint(50) NOT NULL,
   `nom_personne_ph` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `prenom_personne_ph` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -621,16 +619,16 @@ CREATE TABLE IF NOT EXISTS `subvention` (
   `id_subvention` int(11) NOT NULL,
   `num_subvention` int(11) NOT NULL,
   `montant_subvention` double NOT NULL,
-  `beneficiaire` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `lieu` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `nom_titulaire` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `beneficiaire` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `lieu` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nom_titulaire` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_projet` int(11) NOT NULL,
-  `id_personne_moral` int(11) NOT NULL,
+  `id_personne_moral` bigint(55) NOT NULL,
   PRIMARY KEY (`id_subvention`),
   KEY `id_subvention` (`id_subvention`),
   KEY `fk_id_projet` (`id_projet`),
   KEY `fk_id_personne_moral` (`id_personne_moral`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
