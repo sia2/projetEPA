@@ -39,10 +39,10 @@
         
     </head>
     <body>
-	<!--change-->
-  
-  <?php include("entete.php"); ?>
+	<!--change-->  
+		<?php include("entete.php"); ?>
 	<!--fin change -->
+	
         <div class="container">
            <!-- <a href="javascript:;" onClick="window.open('Documents/Divers/crozier_Acteurs_et_systemes.pdf');"> Documents </a>-->
 		 
@@ -256,5 +256,9 @@
                 if (confirm("Etes-vous sur de vouloir supprimer ce document?")) { document.location = delUrl;}
             }
         </script>
+		
+		<!--change-->  
+		<?php include("footer.php"); ?>
+	<!--fin change -->
     </body>
 </html>
