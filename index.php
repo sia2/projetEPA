@@ -51,14 +51,14 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<img src="assets/img/004.JPG" alt="...">
+					<img src="assets/img/13.JPG" alt="...">
 					<div class="carousel-caption">
 						FIRST
 					</div>
 				</div>
 				
 				<div class="item">
-					<img src="assets/img/01.JPG" alt="...">
+					<img src="assets/img/15.JPG" alt="...">
 					<div class="carousel-caption">
 					SECOND
 					</div>
