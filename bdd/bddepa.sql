@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 26 Avril 2016 à 12:14
+-- Généré le: Mar 26 Avril 2016 à 13:13
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -219,22 +219,20 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
 --
 
 CREATE TABLE IF NOT EXISTS `jalon` (
-  `id_jalon` int(11) NOT NULL,
+  `id_jalon` int(11) NOT NULL AUTO_INCREMENT,
   `niveau` int(11) DEFAULT NULL,
   `archivage` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `commentaire` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `titre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `termine` int(11) DEFAULT NULL,
-  `paye` int(11) DEFAULT NULL,
+  `termine` int(11) DEFAULT '0',
+  `paye` int(11) DEFAULT '0',
   `date_fin` date DEFAULT NULL,
-  `date` date NOT NULL,
+  `date_debut` date NOT NULL,
   `montant` double NOT NULL,
-  `realiseroupas` double NOT NULL,
-  `adefinir` int(11) DEFAULT NULL,
   `id_projet` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_jalon`),
   KEY `id_jalon` (`id_jalon`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -626,7 +624,7 @@ CREATE TABLE IF NOT EXISTS `statut` (
 CREATE TABLE IF NOT EXISTS `subvention` (
   `id_subvention` int(11) NOT NULL AUTO_INCREMENT,
   `num_subvention` int(11) NOT NULL,
-  `montant` double NOT NULL,
+  `montant` double NOT NULL DEFAULT '0',
   `beneficiaire` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `lieu` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `archivage` varchar(255) NOT NULL,
