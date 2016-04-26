@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 26 Avril 2016 à 09:57
+-- Généré le: Mar 26 Avril 2016 à 12:14
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -221,6 +221,12 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
 CREATE TABLE IF NOT EXISTS `jalon` (
   `id_jalon` int(11) NOT NULL,
   `niveau` int(11) DEFAULT NULL,
+  `archivage` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `commentaire` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `titre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `termine` int(11) DEFAULT NULL,
+  `paye` int(11) DEFAULT NULL,
+  `date_fin` date DEFAULT NULL,
   `date` date NOT NULL,
   `montant` double NOT NULL,
   `realiseroupas` double NOT NULL,
@@ -510,8 +516,8 @@ CREATE TABLE IF NOT EXISTS `personne_physique` (
   `nom_personne_ph` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `prenom_personne_ph` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `tel` varchar(15) COLLATE utf8_unicode_ci NOT NULL,
-  `origine` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
+  `tel` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `origine` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `sexe` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
   `profession` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `centre_interet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -544,14 +550,16 @@ CREATE TABLE IF NOT EXISTS `prelevement` (
 --
 
 CREATE TABLE IF NOT EXISTS `projet` (
-  `id_projet` int(11) NOT NULL,
+  `id_projet` int(11) NOT NULL AUTO_INCREMENT,
   `nom_projet` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `date_debut_projet` date NOT NULL,
+  `date_debut_projet` date DEFAULT NULL,
+  `date_fin_projet` date DEFAULT NULL,
   `resume_projet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `archivage` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_projet`),
   KEY `id_projet` (`id_projet`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -616,11 +624,13 @@ CREATE TABLE IF NOT EXISTS `statut` (
 --
 
 CREATE TABLE IF NOT EXISTS `subvention` (
-  `id_subvention` int(11) NOT NULL,
+  `id_subvention` int(11) NOT NULL AUTO_INCREMENT,
   `num_subvention` int(11) NOT NULL,
-  `montant_subvention` double NOT NULL,
+  `montant` double NOT NULL,
   `beneficiaire` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `lieu` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `archivage` varchar(255) NOT NULL,
+  `commentaire` varchar(255) NOT NULL,
   `nom_titulaire` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_projet` int(11) NOT NULL,
   `id_personne_moral` bigint(55) NOT NULL,
@@ -628,7 +638,7 @@ CREATE TABLE IF NOT EXISTS `subvention` (
   KEY `id_subvention` (`id_subvention`),
   KEY `fk_id_projet` (`id_projet`),
   KEY `fk_id_personne_moral` (`id_personne_moral`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -642,6 +652,16 @@ CREATE TABLE IF NOT EXISTS `typepaiement` (
   PRIMARY KEY (`idtypeP`),
   KEY `idtypeP` (`idtypeP`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `typepaiement`
+--
+
+INSERT INTO `typepaiement` (`idtypeP`, `libelle`) VALUES
+(0, 'Carte_Bancaire'),
+(1, 'Espèces'),
+(2, 'RIB'),
+(3, 'Autres');
 
 -- --------------------------------------------------------
 
