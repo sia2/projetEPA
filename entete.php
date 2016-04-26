@@ -61,7 +61,7 @@
                             <li><a class="menu-top-active" href="index.php">Accueil</a></li>
                             <li><a href="epa.php">A propos de nous</a></li>
                             <li><a href="SIA/index.php">Documents</a></li>
-                            <li><a href="groupe1/minibb/index.php">Forum</a></li>
+                            <li><a href="minibb/index.php">Forum</a></li>
                             <li><a href="Paiement/don.php">Don</a></li>
                              <li><a href="contact.php">Contact</a></li>
                        
