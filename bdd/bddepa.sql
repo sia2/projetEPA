@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 26 Avril 2016 à 13:13
+-- Généré le: Mar 26 Avril 2016 à 21:53
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -231,7 +231,8 @@ CREATE TABLE IF NOT EXISTS `jalon` (
   `montant` double NOT NULL,
   `id_projet` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_jalon`),
-  KEY `id_jalon` (`id_jalon`)
+  KEY `id_jalon` (`id_jalon`),
+  KEY `id_projet` (`id_projet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -554,7 +555,7 @@ CREATE TABLE IF NOT EXISTS `projet` (
   `date_fin_projet` date DEFAULT NULL,
   `resume_projet` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `archivage` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `archivage` varchar(255) COLLATE utf8_unicode_ci DEFAULT 'non',
   PRIMARY KEY (`id_projet`),
   KEY `id_projet` (`id_projet`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
@@ -624,7 +625,7 @@ CREATE TABLE IF NOT EXISTS `statut` (
 CREATE TABLE IF NOT EXISTS `subvention` (
   `id_subvention` int(11) NOT NULL AUTO_INCREMENT,
   `num_subvention` int(11) NOT NULL,
-  `montant` double NOT NULL DEFAULT '0',
+  `montant_subvention` double NOT NULL DEFAULT '0',
   `beneficiaire` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `lieu` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `archivage` varchar(255) NOT NULL,
@@ -696,6 +697,12 @@ ALTER TABLE `document`
   ADD CONSTRAINT `fk_id_statut` FOREIGN KEY (`id_statut`) REFERENCES `statut` (`id_statut`);
 
 --
+-- Contraintes pour la table `jalon`
+--
+ALTER TABLE `jalon`
+  ADD CONSTRAINT `jalon_ibfk_1` FOREIGN KEY (`id_projet`) REFERENCES `projet` (`id_projet`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
 -- Contraintes pour la table `prelevement`
 --
 ALTER TABLE `prelevement`
@@ -711,8 +718,8 @@ ALTER TABLE `reunion_instance`
 -- Contraintes pour la table `subvention`
 --
 ALTER TABLE `subvention`
-  ADD CONSTRAINT `fk_id_personne_moral` FOREIGN KEY (`id_personne_moral`) REFERENCES `personne_morale` (`id_personne_moral`),
-  ADD CONSTRAINT `fk_id_projet` FOREIGN KEY (`id_projet`) REFERENCES `projet` (`id_projet`);
+  ADD CONSTRAINT `subvention_ibfk_1` FOREIGN KEY (`id_projet`) REFERENCES `projet` (`id_projet`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_id_personne_moral` FOREIGN KEY (`id_personne_moral`) REFERENCES `personne_morale` (`id_personne_moral`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
