@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 26 Avril 2016 à 09:38
+-- Généré le: Mar 26 Avril 2016 à 09:57
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -142,8 +142,8 @@ CREATE TABLE IF NOT EXISTS `demande_adhesion` (
   `id_adhesion` bigint(50) NOT NULL,
   `date` date NOT NULL,
   PRIMARY KEY (`id_adhesion`),
-  KEY `id_adehesion` (`id_adhesion`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  KEY `id_adhesion` (`id_adhesion`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
