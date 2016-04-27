@@ -34,7 +34,7 @@
 
 <body>
 
-	<?php include("entete_con.php"); ?>
+	<?php include("entete.php"); ?>
 	
     <div class="content-wrapper">	
 		
@@ -43,11 +43,16 @@
 			<p>
 				(0033) 01 00 00 00 00 
 			</p>
-			<legend class="titres">En transport en commun:</legend>
 			<p>
-				Téléphone :
+				<br> 
+				
+				</br>
 			</p>
 			<legend class="titres">En transport en commun:</legend>
+			<p>
+				Métro 4 : station Porte d'Orléans
+			</p>
+			
 			
 		</div>
 		

@@ -1,5 +1,7 @@
 <?php
     class Database {
+        
+
         /*
         * Please fill the following variables
         * to connect the database
@@ -135,7 +137,7 @@
                     //////////////////////////////////
                     $sql = "INSERT INTO adresse (id_adresse, num_rue, nom_rue, code_postale)
                             VALUES ('".$address->get_id()."', '".$address->get_streetNumber()."', '".$address->get_streetName()."', '".$address->get_postalCode()."');";
-                    if (($this->connection).query($sql) === TRUE) {
+                    if (($this->connection)->query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 11;
@@ -164,7 +166,7 @@
                     } else {
                       $sql = "INSERT INTO connexion (id_connexion, login, password)
                               VALUES ('".$connec->get_id()."', '".$connec->get_pseudo()."', '".$connec->get_password()."')";
-                      if (($this->connection).query($sql) === TRUE) {
+                      if (($this->connection)->query($sql) === TRUE) {
                         $sql = "SELECT login FROM connexion WHERE login='".$connec->get_pseudo()."'";
                         if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                             return 0;
@@ -218,7 +220,7 @@
                     ////////////////////////////////////////
                     $sql = "INSERT INTO statut (id_statut, libelle)
                             VALUES ('".$status->get_id()."', '".$status->get_status()."')";
-                    if (($this->connection).query($sql) === TRUE) {
+                    if (($this->connection)->query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 1;
