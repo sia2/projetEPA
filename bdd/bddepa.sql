@@ -1,23 +1,23 @@
 -- phpMyAdmin SQL Dump
--- version 3.5.1
+-- version 4.5.2
 -- http://www.phpmyadmin.net
 --
--- Client: localhost
--- Généré le: Mer 27 Avril 2016 à 10:06
--- Version du serveur: 5.5.24-log
--- Version de PHP: 5.4.3
+-- Client :  127.0.0.1
+-- Généré le :  Mer 27 Avril 2016 à 14:44
+-- Version du serveur :  5.7.9
+-- Version de PHP :  5.6.16
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données: `bddepa`
+-- Base de données :  `bddepa`
 --
 
 -- --------------------------------------------------------
@@ -26,6 +26,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `adherent`
 --
 
+DROP TABLE IF EXISTS `adherent`;
 CREATE TABLE IF NOT EXISTS `adherent` (
   `id_adherent` bigint(50) NOT NULL,
   `date` date NOT NULL,
@@ -39,6 +40,7 @@ CREATE TABLE IF NOT EXISTS `adherent` (
 -- Structure de la table `adresse`
 --
 
+DROP TABLE IF EXISTS `adresse`;
 CREATE TABLE IF NOT EXISTS `adresse` (
   `id_adresse` bigint(50) NOT NULL,
   `num_rue` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -54,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `adresse` (
 -- Structure de la table `ca`
 --
 
+DROP TABLE IF EXISTS `ca`;
 CREATE TABLE IF NOT EXISTS `ca` (
   `id_ca` int(11) NOT NULL,
   `date_debut` date NOT NULL,
@@ -71,6 +74,7 @@ CREATE TABLE IF NOT EXISTS `ca` (
 -- Structure de la table `connexion`
 --
 
+DROP TABLE IF EXISTS `connexion`;
 CREATE TABLE IF NOT EXISTS `connexion` (
   `id_connexion` bigint(50) NOT NULL,
   `login` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -85,6 +89,7 @@ CREATE TABLE IF NOT EXISTS `connexion` (
 -- Structure de la table `cotisation`
 --
 
+DROP TABLE IF EXISTS `cotisation`;
 CREATE TABLE IF NOT EXISTS `cotisation` (
   `id_cotisation` int(11) NOT NULL,
   `libelle` text COLLATE utf8_unicode_ci NOT NULL,
@@ -102,6 +107,7 @@ CREATE TABLE IF NOT EXISTS `cotisation` (
 -- Structure de la table `demande_accueil`
 --
 
+DROP TABLE IF EXISTS `demande_accueil`;
 CREATE TABLE IF NOT EXISTS `demande_accueil` (
   `id_demande` int(16) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
@@ -122,7 +128,7 @@ CREATE TABLE IF NOT EXISTS `demande_accueil` (
   `id_etudiant` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_demande`),
   KEY `fk_id_etudiant` (`id_etudiant`)
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=22 ;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
 
 --
 -- Contenu de la table `demande_accueil`
@@ -138,6 +144,7 @@ INSERT INTO `demande_accueil` (`id_demande`, `name`, `prenom`, `age`, `langue`, 
 -- Structure de la table `demande_adhesion`
 --
 
+DROP TABLE IF EXISTS `demande_adhesion`;
 CREATE TABLE IF NOT EXISTS `demande_adhesion` (
   `id_adhesion` bigint(50) NOT NULL,
   `date` date NOT NULL,
@@ -148,41 +155,18 @@ CREATE TABLE IF NOT EXISTS `demande_adhesion` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `document`
---
-
-CREATE TABLE IF NOT EXISTS `document` (
-  `id_document` int(11) NOT NULL AUTO_INCREMENT,
-  `nom_document` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `type_document` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `chemin_r_doc` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `statut` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `id_projet` int(11) NOT NULL,
-  `chemin_a_doc` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `date` date DEFAULT NULL,
-  `taille` double DEFAULT NULL,
-  `id_statut` bigint(55) NOT NULL,
-  `id_dossier` int(11) NOT NULL,
-  PRIMARY KEY (`id_document`),
-  KEY `id_document` (`id_document`),
-  KEY `fk_id_statut` (`id_statut`),
-  KEY `fk_id_dossier` (`id_dossier`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `don`
 --
 
+DROP TABLE IF EXISTS `don`;
 CREATE TABLE IF NOT EXISTS `don` (
   `id_don` int(11) NOT NULL,
-  `objet_don` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `objet_don` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_recu_fiscal` int(11) DEFAULT NULL,
   `id_personne_moral` bigint(50) DEFAULT NULL,
   PRIMARY KEY (`id_don`),
   KEY `id_don` (`id_don`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -190,6 +174,7 @@ CREATE TABLE IF NOT EXISTS `don` (
 -- Structure de la table `dossier`
 --
 
+DROP TABLE IF EXISTS `dossier`;
 CREATE TABLE IF NOT EXISTS `dossier` (
   `id_dossier` int(11) NOT NULL,
   `id_sous_dossier` int(11) DEFAULT NULL,
@@ -206,6 +191,7 @@ CREATE TABLE IF NOT EXISTS `dossier` (
 -- Structure de la table `etudiant`
 --
 
+DROP TABLE IF EXISTS `etudiant`;
 CREATE TABLE IF NOT EXISTS `etudiant` (
   `id_etudiant` int(11) NOT NULL,
   `niveau_etude` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -220,6 +206,7 @@ CREATE TABLE IF NOT EXISTS `etudiant` (
 -- Structure de la table `jalon`
 --
 
+DROP TABLE IF EXISTS `jalon`;
 CREATE TABLE IF NOT EXISTS `jalon` (
   `id_jalon` int(11) NOT NULL AUTO_INCREMENT,
   `niveau` int(11) DEFAULT NULL,
@@ -235,7 +222,7 @@ CREATE TABLE IF NOT EXISTS `jalon` (
   PRIMARY KEY (`id_jalon`),
   KEY `id_jalon` (`id_jalon`),
   KEY `id_projet` (`id_projet`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -243,6 +230,7 @@ CREATE TABLE IF NOT EXISTS `jalon` (
 -- Structure de la table `membrebureau`
 --
 
+DROP TABLE IF EXISTS `membrebureau`;
 CREATE TABLE IF NOT EXISTS `membrebureau` (
   `id_membrebureau` int(11) NOT NULL,
   `date_debut` date NOT NULL,
@@ -257,6 +245,7 @@ CREATE TABLE IF NOT EXISTS `membrebureau` (
 -- Structure de la table `message`
 --
 
+DROP TABLE IF EXISTS `message`;
 CREATE TABLE IF NOT EXISTS `message` (
   `id_message` int(11) NOT NULL,
   `message` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -271,12 +260,13 @@ CREATE TABLE IF NOT EXISTS `message` (
 -- Structure de la table `minibbtable_banned`
 --
 
+DROP TABLE IF EXISTS `minibbtable_banned`;
 CREATE TABLE IF NOT EXISTS `minibbtable_banned` (
   `id` int(10) NOT NULL AUTO_INCREMENT,
   `banip` varchar(15) NOT NULL DEFAULT '',
   `banreason` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -284,6 +274,7 @@ CREATE TABLE IF NOT EXISTS `minibbtable_banned` (
 -- Structure de la table `minibbtable_forums`
 --
 
+DROP TABLE IF EXISTS `minibbtable_forums`;
 CREATE TABLE IF NOT EXISTS `minibbtable_forums` (
   `forum_id` int(10) NOT NULL AUTO_INCREMENT,
   `forum_name` varchar(150) NOT NULL DEFAULT '',
@@ -294,7 +285,7 @@ CREATE TABLE IF NOT EXISTS `minibbtable_forums` (
   `posts_count` int(10) NOT NULL DEFAULT '0',
   `forum_group` varchar(150) NOT NULL DEFAULT '',
   PRIMARY KEY (`forum_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `minibbtable_forums`
@@ -311,6 +302,7 @@ INSERT INTO `minibbtable_forums` (`forum_id`, `forum_name`, `forum_desc`, `forum
 -- Structure de la table `minibbtable_posts`
 --
 
+DROP TABLE IF EXISTS `minibbtable_posts`;
 CREATE TABLE IF NOT EXISTS `minibbtable_posts` (
   `post_id` int(10) NOT NULL AUTO_INCREMENT,
   `forum_id` int(10) NOT NULL DEFAULT '1',
@@ -326,7 +318,7 @@ CREATE TABLE IF NOT EXISTS `minibbtable_posts` (
   KEY `topic_id` (`topic_id`),
   KEY `poster_id` (`poster_id`),
   KEY `poster_ip` (`poster_ip`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=7 ;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `minibbtable_posts`
@@ -342,16 +334,17 @@ INSERT INTO `minibbtable_posts` (`post_id`, `forum_id`, `topic_id`, `poster_id`,
 -- Structure de la table `minibbtable_send_mails`
 --
 
+DROP TABLE IF EXISTS `minibbtable_send_mails`;
 CREATE TABLE IF NOT EXISTS `minibbtable_send_mails` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL DEFAULT '1',
   `topic_id` int(11) NOT NULL DEFAULT '0',
-  `active` int(1) unsigned NOT NULL DEFAULT '1',
+  `active` int(1) UNSIGNED NOT NULL DEFAULT '1',
   `email_code` varchar(10) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `topic_id` (`topic_id`),
   KEY `user_id` (`user_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -359,6 +352,7 @@ CREATE TABLE IF NOT EXISTS `minibbtable_send_mails` (
 -- Structure de la table `minibbtable_topics`
 --
 
+DROP TABLE IF EXISTS `minibbtable_topics`;
 CREATE TABLE IF NOT EXISTS `minibbtable_topics` (
   `topic_id` int(10) NOT NULL AUTO_INCREMENT,
   `topic_title` varchar(255) NOT NULL DEFAULT '',
@@ -380,7 +374,7 @@ CREATE TABLE IF NOT EXISTS `minibbtable_topics` (
   KEY `posts_count` (`posts_count`),
   KEY `topic_last_post_time` (`topic_last_post_time`),
   KEY `topic_views` (`topic_views`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `minibbtable_topics`
@@ -395,6 +389,7 @@ INSERT INTO `minibbtable_topics` (`topic_id`, `topic_title`, `topic_poster`, `to
 -- Structure de la table `minibbtable_users`
 --
 
+DROP TABLE IF EXISTS `minibbtable_users`;
 CREATE TABLE IF NOT EXISTS `minibbtable_users` (
   `user_id` int(10) NOT NULL AUTO_INCREMENT,
   `username` varchar(255) NOT NULL DEFAULT '',
@@ -412,14 +407,14 @@ CREATE TABLE IF NOT EXISTS `minibbtable_users` (
   `user_newpasswd` varchar(32) NOT NULL DEFAULT '',
   `language` char(3) NOT NULL DEFAULT '',
   `activity` int(1) NOT NULL DEFAULT '1',
-  `num_topics` int(10) unsigned NOT NULL DEFAULT '0',
-  `num_posts` int(10) unsigned NOT NULL DEFAULT '0',
+  `num_topics` int(10) UNSIGNED NOT NULL DEFAULT '0',
+  `num_posts` int(10) UNSIGNED NOT NULL DEFAULT '0',
   `user_custom1` varchar(255) NOT NULL DEFAULT '',
   `user_custom2` varchar(255) NOT NULL DEFAULT '',
   `user_custom3` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`user_id`),
   KEY `username` (`username`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `minibbtable_users`
@@ -435,6 +430,7 @@ INSERT INTO `minibbtable_users` (`user_id`, `username`, `user_regdate`, `user_pa
 -- Structure de la table `multimedia`
 --
 
+DROP TABLE IF EXISTS `multimedia`;
 CREATE TABLE IF NOT EXISTS `multimedia` (
   `id_multimedia` int(11) NOT NULL,
   `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -449,13 +445,14 @@ CREATE TABLE IF NOT EXISTS `multimedia` (
 -- Structure de la table `my_users`
 --
 
+DROP TABLE IF EXISTS `my_users`;
 CREATE TABLE IF NOT EXISTS `my_users` (
   `ID` int(10) NOT NULL AUTO_INCREMENT,
   `name` varchar(100) DEFAULT NULL,
   `pass` varchar(100) DEFAULT NULL,
   `email` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 --
 -- Contenu de la table `my_users`
@@ -471,6 +468,7 @@ INSERT INTO `my_users` (`ID`, `name`, `pass`, `email`) VALUES
 -- Structure de la table `paiement`
 --
 
+DROP TABLE IF EXISTS `paiement`;
 CREATE TABLE IF NOT EXISTS `paiement` (
   `id_paiement` int(11) NOT NULL,
   `etat_paiement` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -493,8 +491,9 @@ CREATE TABLE IF NOT EXISTS `paiement` (
 -- Structure de la table `personne_morale`
 --
 
+DROP TABLE IF EXISTS `personne_morale`;
 CREATE TABLE IF NOT EXISTS `personne_morale` (
-  `id_personne_moral` bigint(50) NOT NULL,
+  `id_personne_moral` bigint(50) NOT NULL AUTO_INCREMENT,
   `raisonsociale` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `description` varchar(30) COLLATE utf8_unicode_ci DEFAULT NULL,
   `nom` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -512,6 +511,7 @@ CREATE TABLE IF NOT EXISTS `personne_morale` (
 -- Structure de la table `personne_physique`
 --
 
+DROP TABLE IF EXISTS `personne_physique`;
 CREATE TABLE IF NOT EXISTS `personne_physique` (
   `id_personne_ph` bigint(50) NOT NULL,
   `nom_personne_ph` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -532,6 +532,7 @@ CREATE TABLE IF NOT EXISTS `personne_physique` (
 -- Structure de la table `prelevement`
 --
 
+DROP TABLE IF EXISTS `prelevement`;
 CREATE TABLE IF NOT EXISTS `prelevement` (
   `id_prelevement` int(11) NOT NULL,
   `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -550,6 +551,7 @@ CREATE TABLE IF NOT EXISTS `prelevement` (
 -- Structure de la table `projet`
 --
 
+DROP TABLE IF EXISTS `projet`;
 CREATE TABLE IF NOT EXISTS `projet` (
   `id_projet` int(11) NOT NULL AUTO_INCREMENT,
   `nom_projet` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -560,7 +562,7 @@ CREATE TABLE IF NOT EXISTS `projet` (
   `archivage` varchar(255) COLLATE utf8_unicode_ci DEFAULT 'non',
   PRIMARY KEY (`id_projet`),
   KEY `id_projet` (`id_projet`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -568,6 +570,7 @@ CREATE TABLE IF NOT EXISTS `projet` (
 -- Structure de la table `relance`
 --
 
+DROP TABLE IF EXISTS `relance`;
 CREATE TABLE IF NOT EXISTS `relance` (
   `id_relance` int(11) NOT NULL,
   `temps_relance` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -581,6 +584,7 @@ CREATE TABLE IF NOT EXISTS `relance` (
 -- Structure de la table `reunion_instance`
 --
 
+DROP TABLE IF EXISTS `reunion_instance`;
 CREATE TABLE IF NOT EXISTS `reunion_instance` (
   `id_reunion_instance` int(11) NOT NULL,
   `liste_votant` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -598,6 +602,7 @@ CREATE TABLE IF NOT EXISTS `reunion_instance` (
 -- Structure de la table `reçu_fiscal`
 --
 
+DROP TABLE IF EXISTS `reçu_fiscal`;
 CREATE TABLE IF NOT EXISTS `reçu_fiscal` (
   `id_recu_fiscal` int(11) NOT NULL,
   `num_reçu_fiscal` int(11) NOT NULL,
@@ -611,6 +616,7 @@ CREATE TABLE IF NOT EXISTS `reçu_fiscal` (
 -- Structure de la table `statut`
 --
 
+DROP TABLE IF EXISTS `statut`;
 CREATE TABLE IF NOT EXISTS `statut` (
   `id_statut` bigint(55) NOT NULL,
   `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -624,13 +630,14 @@ CREATE TABLE IF NOT EXISTS `statut` (
 -- Structure de la table `subvention`
 --
 
+DROP TABLE IF EXISTS `subvention`;
 CREATE TABLE IF NOT EXISTS `subvention` (
   `id_subvention` int(11) NOT NULL AUTO_INCREMENT,
   `num_subvention` int(11) NOT NULL,
   `montant_subvention` double NOT NULL DEFAULT '0',
   `beneficiaire` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
   `lieu` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
-  `archivage` varchar(255) NOT NULL,
+  `archivage` varchar(255) NOT NULL DEFAULT 'non',
   `commentaire` varchar(255) NOT NULL,
   `nom_titulaire` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_projet` int(11) NOT NULL,
@@ -639,7 +646,14 @@ CREATE TABLE IF NOT EXISTS `subvention` (
   KEY `id_subvention` (`id_subvention`),
   KEY `fk_id_projet` (`id_projet`),
   KEY `fk_id_personne_moral` (`id_personne_moral`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `subvention`
+--
+
+INSERT INTO `subvention` (`id_subvention`, `num_subvention`, `montant_subvention`, `beneficiaire`, `lieu`, `archivage`, `commentaire`, `nom_titulaire`, `id_projet`, `id_personne_moral`) VALUES
+(6, 0, 0, 'AFRIQUE', NULL, 'non', '', 'total Group', 4, 1);
 
 -- --------------------------------------------------------
 
@@ -647,6 +661,7 @@ CREATE TABLE IF NOT EXISTS `subvention` (
 -- Structure de la table `typepaiement`
 --
 
+DROP TABLE IF EXISTS `typepaiement`;
 CREATE TABLE IF NOT EXISTS `typepaiement` (
   `idtypeP` int(11) NOT NULL,
   `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -670,6 +685,7 @@ INSERT INTO `typepaiement` (`idtypeP`, `libelle`) VALUES
 -- Structure de la table `type_reunion`
 --
 
+DROP TABLE IF EXISTS `type_reunion`;
 CREATE TABLE IF NOT EXISTS `type_reunion` (
   `id_type_reunion` int(11) NOT NULL,
   `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
@@ -693,13 +709,6 @@ ALTER TABLE `cotisation`
   ADD CONSTRAINT `fk_id_recu_fiscal` FOREIGN KEY (`id_recu_fiscal`) REFERENCES `reçu_fiscal` (`id_recu_fiscal`);
 
 --
--- Contraintes pour la table `document`
---
-ALTER TABLE `document`
-  ADD CONSTRAINT `fk_id_dossier` FOREIGN KEY (`id_dossier`) REFERENCES `dossier` (`id_dossier`),
-  ADD CONSTRAINT `fk_id_statut` FOREIGN KEY (`id_statut`) REFERENCES `statut` (`id_statut`);
-
---
 -- Contraintes pour la table `jalon`
 --
 ALTER TABLE `jalon`
@@ -716,13 +725,6 @@ ALTER TABLE `prelevement`
 --
 ALTER TABLE `reunion_instance`
   ADD CONSTRAINT `fk_id_type_reunion` FOREIGN KEY (`id_type_reunion`) REFERENCES `type_reunion` (`id_type_reunion`);
-
---
--- Contraintes pour la table `subvention`
---
-ALTER TABLE `subvention`
-  ADD CONSTRAINT `subvention_ibfk_1` FOREIGN KEY (`id_projet`) REFERENCES `projet` (`id_projet`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_id_personne_moral` FOREIGN KEY (`id_personne_moral`) REFERENCES `personne_morale` (`id_personne_moral`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
