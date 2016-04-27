@@ -39,12 +39,16 @@
     <div class="content-wrapper">	
 		
 		<div class="col-md-6 menu_gauche">
-			<p>
-				Téléphone :
-			</p>
+			<legend class="titres">Téléphone:</legend>
 			<p>
 				(0033) 01 00 00 00 00 
 			</p>
+			<legend class="titres">En transport en commun:</legend>
+			<p>
+				Téléphone :
+			</p>
+			<legend class="titres">En transport en commun:</legend>
+			
 		</div>
 		
 		<div class=" col-md-6 contenu">
