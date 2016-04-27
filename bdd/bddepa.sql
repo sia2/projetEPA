@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: localhost
--- Généré le: Mar 26 Avril 2016 à 22:03
+-- Généré le: Mer 27 Avril 2016 à 10:06
 -- Version du serveur: 5.5.24-log
 -- Version de PHP: 5.4.3
 
@@ -153,21 +153,21 @@ CREATE TABLE IF NOT EXISTS `demande_adhesion` (
 
 CREATE TABLE IF NOT EXISTS `document` (
   `id_document` int(11) NOT NULL AUTO_INCREMENT,
-  `nom_document` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `type_document` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `chemin_r_doc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `statut` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `nom_document` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `type_document` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `chemin_r_doc` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `statut` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `id_projet` int(11) NOT NULL,
-  `chemin_a_doc` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `chemin_a_doc` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
   `date` date DEFAULT NULL,
   `taille` double DEFAULT NULL,
-  `id_statut` int(11) NOT NULL,
+  `id_statut` bigint(55) NOT NULL,
   `id_dossier` int(11) NOT NULL,
   PRIMARY KEY (`id_document`),
   KEY `id_document` (`id_document`),
   KEY `fk_id_statut` (`id_statut`),
   KEY `fk_id_dossier` (`id_dossier`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -475,10 +475,10 @@ CREATE TABLE IF NOT EXISTS `paiement` (
   `id_paiement` int(11) NOT NULL,
   `etat_paiement` varchar(15) COLLATE utf8_unicode_ci DEFAULT NULL,
   `date` date NOT NULL,
-  `montant` double NOT NULL,
+  `montant` double DEFAULT NULL,
   `idtypeP` int(11) DEFAULT NULL,
-  `id_don` int(11) NOT NULL,
-  `id_personne_ph` int(11) NOT NULL,
+  `id_don` int(11) DEFAULT NULL,
+  `id_personne_ph` int(11) DEFAULT NULL,
   `id_subvention` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_paiement`),
   KEY `id_paiement` (`id_paiement`),
@@ -612,7 +612,7 @@ CREATE TABLE IF NOT EXISTS `reçu_fiscal` (
 --
 
 CREATE TABLE IF NOT EXISTS `statut` (
-  `id_statut` int(11) NOT NULL,
+  `id_statut` bigint(55) NOT NULL,
   `libelle` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   PRIMARY KEY (`id_statut`),
   KEY `id_statut` (`id_statut`)
