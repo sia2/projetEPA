@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 27 Avril 2016 à 14:44
+-- Généré le :  Mer 27 Avril 2016 à 21:06
 -- Version du serveur :  5.7.9
--- Version de PHP :  5.6.16
+-- Version de PHP :  7.0.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -34,6 +34,14 @@ CREATE TABLE IF NOT EXISTS `adherent` (
   KEY `id_adherent` (`id_adherent`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Contenu de la table `adherent`
+--
+
+INSERT INTO `adherent` (`id_adherent`, `date`) VALUES
+(1, '2013-06-03'),
+(2, '2015-12-06');
+
 -- --------------------------------------------------------
 
 --
@@ -49,6 +57,16 @@ CREATE TABLE IF NOT EXISTS `adresse` (
   PRIMARY KEY (`id_adresse`),
   KEY `id_adresse` (`id_adresse`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `adresse`
+--
+
+INSERT INTO `adresse` (`id_adresse`, `num_rue`, `nom_rue`, `code_postale`) VALUES
+(1532781271329691, '1', 'FAC', '77160'),
+(1532781297044774, '1', 'FAC', '77160'),
+(1532784729133337, '1', 'FACUL', '92160'),
+(1532795926545188, '2', 'Seine et marne', '92100');
 
 -- --------------------------------------------------------
 
@@ -82,6 +100,17 @@ CREATE TABLE IF NOT EXISTS `connexion` (
   PRIMARY KEY (`id_connexion`),
   KEY `id_connexion` (`id_connexion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `connexion`
+--
+
+INSERT INTO `connexion` (`id_connexion`, `login`, `password`) VALUES
+(2, 'Secretaire', 'secretaire'),
+(4, 'President', 'president'),
+(1532781297044774, 'kermit', 'kermit'),
+(1532784729133337, 'Piss', 'pissss'),
+(1532795926545188, 'ca', 'ca');
 
 -- --------------------------------------------------------
 
@@ -151,6 +180,39 @@ CREATE TABLE IF NOT EXISTS `demande_adhesion` (
   PRIMARY KEY (`id_adhesion`),
   KEY `id_adhesion` (`id_adhesion`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Contenu de la table `demande_adhesion`
+--
+
+INSERT INTO `demande_adhesion` (`id_adhesion`, `date`) VALUES
+(4, '2016-04-27'),
+(1532795926545188, '2016-04-27');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `document`
+--
+
+DROP TABLE IF EXISTS `document`;
+CREATE TABLE IF NOT EXISTS `document` (
+  `id_document` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_document` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `type_document` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `chemin_r_doc` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `statut` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `id_projet` int(11) NOT NULL,
+  `chemin_a_doc` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `taille` double DEFAULT NULL,
+  `id_statut` int(11) NOT NULL,
+  `id_dossier` int(11) NOT NULL,
+  PRIMARY KEY (`id_document`),
+  KEY `id_document` (`id_document`),
+  KEY `fk_id_statut` (`id_statut`),
+  KEY `fk_id_dossier` (`id_dossier`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -526,6 +588,15 @@ CREATE TABLE IF NOT EXISTS `personne_physique` (
   KEY `id_personne_ph` (`id_personne_ph`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+--
+-- Contenu de la table `personne_physique`
+--
+
+INSERT INTO `personne_physique` (`id_personne_ph`, `nom_personne_ph`, `prenom_personne_ph`, `email`, `tel`, `origine`, `sexe`, `profession`, `centre_interet`) VALUES
+(1, 'Juliette', 'Marine', 'juliet@dauphine.fr', '0786391264', 'Mali', 'F', 'Retraite', 'colleur'),
+(2, 'NDIAYE', 'Abdou', 'abdou@abdou.fr', '0786391266', 'SENEGAL', 'M', 'Etudiant', 'Basket'),
+(1532795926545188, 'ComitÃ©', 'Adherent', 'doulahatendiaye@gmail.com', '0765432345', 'Anthony', 'male', 'Secre', 'marqueur');
+
 -- --------------------------------------------------------
 
 --
@@ -623,6 +694,17 @@ CREATE TABLE IF NOT EXISTS `statut` (
   PRIMARY KEY (`id_statut`),
   KEY `id_statut` (`id_statut`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Contenu de la table `statut`
+--
+
+INSERT INTO `statut` (`id_statut`, `libelle`) VALUES
+(3, 'ca'),
+(4, 'Secretaire'),
+(5, 'President'),
+(1532784729133337, 'Inscrit'),
+(1532795926545188, 'Inscrit');
 
 -- --------------------------------------------------------
 
