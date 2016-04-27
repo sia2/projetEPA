@@ -36,7 +36,7 @@ body {
     border-radius: 0px;
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
-	background-color: #9ACD32;
+	background-color: #3CB371;
 }
 
 .progress {
@@ -63,7 +63,7 @@ background-color:#F0677C;
    HEADER SECTION STYLES
  ============================================================ */
 header {
-    background-color: #9ACD32;
+    background-color: #2f2f2f;
     color: #fff;
     padding: 0px;
     text-align: right;
@@ -172,7 +172,7 @@ p {
 /* MENU LINKS SECTION*/
 
 .menu-section {
-    background-color: #9ACD32;
+    background-color: #3CB371;
 }
 
 #menu-top a {
@@ -263,7 +263,7 @@ footer {
     padding: 10px;
     color: #fff;
     font-size: 12px;
-    background-color: #9ACD32;
+    background-color: #2f2f2f;
 }
 
     footer a, footer a:hover {
