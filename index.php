@@ -34,7 +34,35 @@
 <body>
 
 	<!-- MENU SECTION BEGIN-->
-	<?php include("entete.php"); ?>
+	<?php
+	
+	/*
+	function is_session_started()
+{
+    if ( php_sapi_name() !== 'cli' ) {
+        if ( version_compare(phpversion(), '5.4.0', '>=') ) {
+            return session_status() === PHP_SESSION_ACTIVE ? TRUE : FALSE;
+        } else {
+            return session_id() === '' ? FALSE : TRUE;
+        }
+    }
+    return FALSE;
+}
+	
+	
+	
+	
+	if ( is_session_started() === FALSE ) include("entete.php");
+	else include("entete_con.php");
+	*/
+	
+	 include("entete.php"); 
+	?>
+	
+?>
+	
+	
+	
     <!-- MENU SECTION END-->
 	
 	
