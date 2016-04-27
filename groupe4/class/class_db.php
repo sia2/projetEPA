@@ -106,7 +106,7 @@
                               VALUES ('".$physicalPerson->get_id()."', '".$physicalPerson->get_name()."',
                               '".$physicalPerson->get_firstname()."', '".$physicalPerson->get_email()."', '".$physicalPerson->get_tel()."', '".$physicalPerson->get_origine()."', '".$physicalPerson->get_gender()."', '".$physicalPerson->get_profession()."','".$physicalPerson->get_interests()."')";
 
-                      if (($this->connection).query($sql) === TRUE) {
+                      if (($this->connection)->query($sql) === TRUE) {
                         $sql = "SELECT email FROM personne_physique WHERE email='".$physicalPerson->get_email()."'";
                         if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                             return 0;
