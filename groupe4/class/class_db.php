@@ -275,10 +275,11 @@
 
             $json = array();
             $result = mysqli_query($this->connection, $sql);
-            $emparray = array();
+            $emparray = '';
             while($row = mysqli_fetch_assoc($result)) {
-                $emparray[] = $row;
+                $emparray= $row['id_connexion'];
             }
+            /*
             $result = json_encode($emparray);
             $jsonIterator = new RecursiveIteratorIterator(
             new RecursiveArrayIterator(json_decode($result, TRUE)),
@@ -295,9 +296,9 @@
                     }
                 }
             }
-
-            if($id != '') {
-                return $id;
+			*/
+            if($emparray != '') {
+                return $emparray;
             } else {
                 return NULL;
             }
@@ -342,15 +343,15 @@
         function get_status($pseudo, $password) {
 
             $id = $this->get_id_from_account($pseudo, $password);
-
             if($id != '') {
                 $sql = "SELECT libelle FROM statut WHERE id_statut='$id'";
                 $result = mysqli_query($this->connection, $sql);
                 $json = array();
-                $emparray = array();
+                $emparray = '';
                 while($row = mysqli_fetch_assoc($result)) {
-                    $emparray[] = $row;
+                    $emparray = $row['libelle'];
                 }
+				/*
                 $result = json_encode($emparray);
                 $jsonIterator = new RecursiveIteratorIterator(
                 new RecursiveArrayIterator(json_decode($result, TRUE)),
@@ -360,15 +361,16 @@
 
                 foreach ($jsonIterator as $key => $val) {
                     if(is_array($val)) {
-
+                    	$libelle = $val;
                     } else {
                         if($key == 'libelle') {
                             $libelle = $val;
                         }
                     }
                 }
-
-                return $libelle;
+				*/
+                printf($emparray);
+                return $emparray;
             } else {
                 return NULL;
             }
