@@ -34,8 +34,8 @@
 					<div class="row" id="client" >
 					<div class="col-s-3 pull-right" >
 				   		<div class="btn-group">
-	        				<a class="btn btn-primary" href="/projetEPA/groupe4/index.php">Se connecter</a>
-       						<a class="btn btn-primary" href="#">S'inscrire</a>
+	        				<a class="btn btn-primary" href="/projetEPA/groupe4/index.php">Se connecter / S'inscrire</a>
+       						<!-- <a class="btn btn-primary" href="#">S'inscrire</a> -->
    						</div>
    					</div>
    					</div>

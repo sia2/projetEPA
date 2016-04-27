@@ -6,7 +6,7 @@
     error_reporting(0);
 
     //$DEFAULT=$_SERVER['DOCUMENT_ROOT']; /*Default redirection quand le script commence*/
-    $path = "C:/wamp/www/SIA/Documents";
+    $path = "C:/wamp64/www/projetEPA/groupe2/SIA/Documents";
     /*echo 'Lechemin : '.$path.'<br/>';*/
 
     /* si aucun dossier n'a encore été créer on affiche la path courante */
@@ -60,7 +60,7 @@
                 
                     /*echo 'Chemin de la page courante  : '.$_GET['dir'].'<br>';*/
 
-                if($_GET['dir'] != "C:/wamp64/www/SIA/Documents")
+                if($_GET['dir'] != "C:/wamp64/www/projetEPA/groupe2/SIA/Documents")
                 {
                     echo '<br><div class="col-lg-offset-10 col-lg-4 col-md-4 col-sm-4" ><button class="btn btn-primary" type="button" style="margin-bottom: 30px;" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> Ajouter un document </button></div>'; 
                 }
