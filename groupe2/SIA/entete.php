@@ -30,7 +30,7 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a class="menu-top-active" href="index.php">Accueil</a></li>
+                            <li><a class="menu-top-active" href="/projetEPA/index.php">Accueil</a></li>
                             <li><a href="epa.php">A propos de nous</a></li>
                             <li><a href="SIA/index.php">Documents</a></li>
                             <li><a href="/projetEPA/groupe1/minibb/index.php">Forum</a></li>
