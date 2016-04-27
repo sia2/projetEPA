@@ -34,7 +34,7 @@
 
 <body>
 
-	<?php include("entete_con.php"); ?>
+	<?php include("entete.php"); ?>
 	
     <div class="content-wrapper">	
 		

@@ -59,7 +59,7 @@
 	 include("entete.php"); 
 	?>
 	
-?>
+
 	
 	
 	
