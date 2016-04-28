@@ -5,7 +5,7 @@
  * @author ismailialaouisoraya
  */
 
-class MysqlManager1
+class MysqlManager
 {
     private $requete;
     private $reponse;
@@ -110,3 +110,4 @@ class MysqlManager1
    
    
 }
+?>
