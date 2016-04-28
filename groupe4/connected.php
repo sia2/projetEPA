@@ -26,6 +26,7 @@
               if($_SESSION['status'] != 'President' && $_SESSION['status'] != 'Tresorier' && $_SESSION['status'] != 'Secretaire' && $_SESSION['status'] != 'Membre CA') {
         ?>
                 <a class="btn btn-primary" href="../groupe3/FormFr.html">Vous êtes étudiant et souhaitez faire une demande d'accueil</a><br><br>
+                <a class="btn btn-primary" href="../groupe5/liste-projet.php">Liste des projets</a><br><br>
         <?php
               }
                 if(isset($_SESSION['status']) && ($_SESSION['status'] == 'President' || $_SESSION['status'] == 'Secretaire' || $_SESSION['status'] == 'Tresorier' || $_SESSION['status'] == 'Membre CA')) {

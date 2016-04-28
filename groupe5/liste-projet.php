@@ -1,18 +1,22 @@
 <?php 
-session_start();
-include("./fonction.php");
+	session_start();
+	
+	include("./fonction.php");
 
  if(!isset($_SESSION['user']) and !isset($_SESSION['password']) and !isset($_SESSION['status'])) {
 	header('location: ../groupe4/index.php');
 	exit();
 }
 
+/*
 if(!has_right($_SESSION['status'])) {
 	header('location: ../groupe4/index.php');
 	exit();
 }
+*/
 
-connectMaBase();
+//connectMaBase();
+$mysqli = new mysqli('localhost', 'root', '', 'bddepa');
 $bool = false;
 
 $page_sub = "projet.php";
@@ -31,12 +35,12 @@ if (isset($_POST['recherche'])) {
 	$recherche = trim($_POST['recherche']);
 	if (!empty($recherche)) {
 		 
-		$requete= mysql_query("SELECT * FROM projet WHERE nom_projet LIKE '%" . $recherche . "%' and `archivage` LIKE 'non' ORDER BY id_projet") or die(mysql_error());
+		$requete= $mysqli->Qquery("SELECT * FROM projet WHERE nom_projet LIKE '%" . $recherche . "%' and `archivage` LIKE 'non' ORDER BY id_projet") or die(mysql_error());
 	} else {
-		$requete= mysql_query("SELECT * FROM projet WHERE `archivage` LIKE 'non' ORDER BY id_projet") or die(mysql_error());	
+		$requete= $mysqli->query("SELECT * FROM projet WHERE `archivage` LIKE 'non' ORDER BY id_projet");	
 	}
 } else {
-	$requete= mysql_query("SELECT * FROM projet WHERE `archivage` LIKE 'non' ORDER BY id_projet") or die(mysql_error());
+	$requete= $mysqli->query("SELECT * FROM projet WHERE `archivage` LIKE 'non' ORDER BY id_projet");
 }
 ?>
 <!DOCTYPE html>
@@ -165,7 +169,7 @@ if (isset($_POST['recherche'])) {
 						<td>Date de fin du projet</td>
 						<td>Description</td>
 					</tr>
-					<?php while ($personne = mysql_fetch_array($requete)) {
+					<?php while ($personne = mysqli_fetch_assoc($requete)) {
 							echo "<tr>
 								<td><a href='" . $page_sub . "?pj=" . $personne['id_projet'] . "'>" . $personne['nom_projet'] . "</a></td>
 								<td>" . $personne['date_debut_projet'] . "</td>

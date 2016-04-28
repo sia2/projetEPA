@@ -196,7 +196,7 @@
                     ////////////////////////////////////////
                     $sql = "INSERT INTO demande_adhesion (id_adhesion, date)
                             VALUES ('".$membershipDemand->get_id()."', '".$membershipDemand->get_date()."')";
-                    if (($this->connection).query($sql) === TRUE) {
+                    if (($this->connection)->query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 1;
@@ -273,37 +273,36 @@
         * get ID if account exist
         */
         function get_id_from_account($pseudo, $password) {
-            $sql = "SELECT id_connexion FROM connexion WHERE login='$pseudo' AND password='$password'";
-
-            $json = array();
-            $result = mysqli_query($this->connection, $sql);
-            $emparray = '';
-            while($row = mysqli_fetch_assoc($result)) {
-                $emparray= $row['id_connexion'];
-            }
-            /*
-            $result = json_encode($emparray);
-            $jsonIterator = new RecursiveIteratorIterator(
-            new RecursiveArrayIterator(json_decode($result, TRUE)),
-            RecursiveIteratorIterator::SELF_FIRST);
-
-            $id = '';
-
-            foreach ($jsonIterator as $key => $val) {
-                if(is_array($val)) {
-
-                } else {
-                    if($key == 'id_connexion') {
-                        $id = $val;
-                    }
-                }
-            }
-			*/
-            if($emparray != '') {
-                return $emparray;
-            } else {
-                return NULL;
-            }
+        	$sql = "SELECT id_connexion FROM connexion WHERE login='$pseudo' AND password='$password'";
+        	
+        	$json = array();
+        	$result = mysqli_query($this->connection, $sql);
+        	$emparray = array();
+        	while($row = mysqli_fetch_assoc($result)) {
+        		$emparray[] = $row;
+        	}
+        	$result = json_encode($emparray);
+        	$jsonIterator = new RecursiveIteratorIterator(
+        			new RecursiveArrayIterator(json_decode($result, TRUE)),
+        			RecursiveIteratorIterator::SELF_FIRST);
+        	
+        	$id = '';
+        	
+        	foreach ($jsonIterator as $key => $val) {
+        		if(is_array($val)) {
+        	
+        		} else {
+        			if($key == 'id_connexion') {
+        				$id = $val;
+        			}
+        		}
+        	}
+        	
+        	if($id != '') {
+        		return $id;
+        	} else {
+        		return NULL;
+        	}
         }
 
         function get_status_from_id($id) {
@@ -344,38 +343,38 @@
         */
         function get_status($pseudo, $password) {
 
-            $id = $this->get_id_from_account($pseudo, $password);
-            if($id != '') {
-                $sql = "SELECT libelle FROM statut WHERE id_statut='$id'";
-                $result = mysqli_query($this->connection, $sql);
-                $json = array();
-                $emparray = '';
-                while($row = mysqli_fetch_assoc($result)) {
-                    $emparray = $row['libelle'];
-                }
-				/*
-                $result = json_encode($emparray);
-                $jsonIterator = new RecursiveIteratorIterator(
-                new RecursiveArrayIterator(json_decode($result, TRUE)),
-                RecursiveIteratorIterator::SELF_FIRST);
-
-                $libelle = '';
-
-                foreach ($jsonIterator as $key => $val) {
-                    if(is_array($val)) {
-                    	$libelle = $val;
-                    } else {
-                        if($key == 'libelle') {
-                            $libelle = $val;
-                        }
-                    }
-                }
-				*/
-                printf($emparray);
-                return $emparray;
-            } else {
-                return NULL;
-            }
+        	$id = $this->get_id_from_account($pseudo, $password);
+        	
+        	if($id != '') {
+        		$sql = "SELECT libelle FROM statut WHERE id_statut='$id'";
+        		$result = mysqli_query($this->connection, $sql);
+        		$json = array();
+        		$emparray = array();
+        		while($row = mysqli_fetch_assoc($result)) {
+        			$emparray[] = $row;
+        		}
+        		$result = json_encode($emparray);
+        		$jsonIterator = new RecursiveIteratorIterator(
+        				new RecursiveArrayIterator(json_decode($result, TRUE)),
+        				RecursiveIteratorIterator::SELF_FIRST);
+        	
+        		$libelle = '';
+        	
+        		foreach ($jsonIterator as $key => $val) {
+        			if(is_array($val)) {
+        	
+        			} else {
+        				if($key == 'libelle') {
+        					$libelle = $val;
+        				}
+        			}
+        		}
+        	
+        		return $libelle;
+        	} else {
+        		return NULL;
+        	}
+        	
         }
 
         /*
