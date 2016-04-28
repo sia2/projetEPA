@@ -1,20 +1,9 @@
-    <header>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <strong>Email: </strong>epa@epa.fr
-                    &nbsp;&nbsp;
-                    <strong>Support: </strong>(0033) 01 00 00 00 00
-                </div>
 
-            </div>
-        </div>
-    </header>
-    <!-- HEADER END-->
+    <!-- HEADER END
 	
     <div class="navbar navbar-inverse set-radius-zero">
 	
-	<div class="col-md-6">
+	<div class="col-md-12 ds-paiement">
 			 <a class="navbar-brand" href="index.php">
 
                     <img src="assets/img/60.png" />
@@ -29,23 +18,6 @@
 	</div>
 	</div>
 	
-	<div id="bouton-droite" class="col-md-6">
-	<div  id="recherche" >
-					<div class="row" id="client" >
-					<div class="col-s-3 pull-right" >
-				   		<div class="btn-group">
-	        				<a class="btn btn-primary" href="/projetEPA/groupe4/index.php">Se connecter / S'inscrire</a>
-       						<!-- <a class="btn btn-primary" href="#">S'inscrire</a> -->
-   						</div>
-   					</div>
-   					</div>
-					<div class="row" >
-			
-		         	</div>
-		         </div>
-	</div>
-	
-
 	
 
 			
@@ -58,8 +30,8 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a class="menu-top-active" href="index.php">Accueil</a></li>
-							<li role="presentation" class="dropdown">
+                            <li><a class="menu-top-active" href="/projetEPA/index.php">Accueil</a></li>
+                            <li role="presentation" class="dropdown">
 								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
 									A propos de nous <span class="caret"></span>
 								</a>
@@ -72,10 +44,10 @@
 									
 								</ul>
 							</li>
-                            <li><a href="/projetEPA/groupe2/SIA/index.php">Documents</a></li>
+                            <li><a href="SIA/index.php">Documents</a></li>
                             <li><a href="/projetEPA/groupe1/minibb/index.php">Forum</a></li>
                             <li><a href="/projetEPA/groupe2/Paiement/don.php">Don</a></li>
-                            <li><a href="contact.php">Contact</a></li>
+                             <li><a href="contact.php">Contact</a></li>
                        
 
                         </ul>
