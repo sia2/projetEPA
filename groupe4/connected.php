@@ -18,7 +18,9 @@
         <?php
               } else if(isset($_SESSION['membershipDemand']) && $_SESSION['membershipDemand'] != 'exist' && $_SESSION['membership'] == 'exist') {
                   echo "<p>Votre statut au sein de l'association : <b><u>".$_SESSION['status']."</b></u>.</p>";
-                  <a class="btn btn-primary" href="../groupe3/affichagedemande.php>Afficher la liste des demandes d'accueil </a><br><br>
+        ?>
+                  <a class="btn btn-primary" href="../groupe3/affichagedemande.php">Afficher la liste des demandes d'accueil </a><br><br>
+        <?php
               } else if($_SESSION['status'] == 'President'){
 
               } else {
