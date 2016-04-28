@@ -43,7 +43,8 @@ if(!file_exists($uploadfile))
    
    // echo 'La requete : '.$req.'';
     $resultat = $co->execQuery($req);  
-    //echo 'La requete vbhvbjhe: '.$resultat.'';
+	//echo $resultat;
+    
     if($resultat)
     {
         
@@ -53,14 +54,11 @@ if(!file_exists($uploadfile))
         {
             chmod($uploadfile, 0777);
             header('Location:index.php?dir='.$path.'&in=0');
-        }else{
-			echo "Dans else de move_uploaded_file";
-		}
+        }
     }
     else
     {
-        echo 'dans else de if($resultat)';
-		//header('Location:index.php?dir='.$path.'&in=0');
+        echo 'toto';
     }
 }
 else

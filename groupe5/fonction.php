@@ -1,8 +1,8 @@
 ﻿<?php
 function connectMaBase()
 {
-    $base = @mysql_connect ('localhost:', 'root', '');  
-    mysql_select_db ('bddepa', $base);
+    $base = new mysqli('localhost', 'root', '', 'bddepa');  
+    //mysql_select_db ('bddepa', $base);
 }
 
 

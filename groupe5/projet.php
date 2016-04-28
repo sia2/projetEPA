@@ -1,7 +1,7 @@
 <?php 
 session_start();
-
-if(!isset($_SESSION['user']) and !isset($_SESSION['password'] and !isset($_SESSION['status'])) {
+include("./fonction.php");
+if(!isset($_SESSION['user']) and !isset($_SESSION['password']) and !isset($_SESSION['status'])) {
 	header('location: ../groupe4/index.php');
 	exit();
 }
@@ -10,7 +10,7 @@ if(!has_right($_SESSION['status'])) {
 	header('location: ../groupe4/index.php');
 	exit();
 }
-include("./fonction.php");
+
 connectMaBase();
 
 
