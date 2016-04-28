@@ -66,6 +66,9 @@
         <?php
               } else if(isset($_SESSION['membershipDemand']) && $_SESSION['membershipDemand'] != 'exist' && $_SESSION['membership'] == 'exist') {
                   echo "<p>Votre statut au sein de l'association : <b><u>".$_SESSION['status']."</b></u>.</p>";
+        ?>
+                  <a class="btn btn-primary" href="../groupe3/affichagedemande.php">Afficher la liste des demandes d'accueil </a><br><br>
+        <?php
               } else if($_SESSION['status'] == 'President'){
 
               } else {
@@ -73,14 +76,26 @@
               }
               if($_SESSION['status'] != 'President' && $_SESSION['status'] != 'Tresorier' && $_SESSION['status'] != 'Secretaire' && $_SESSION['status'] != 'Membre CA') {
         ?>
+<<<<<<< HEAD
                 <li class="list-group-item"><a  href="../groupe3/FormFr.html">Faire une demande d'accueil</a><br><br></li>
+=======
+                <a class="btn btn-p/FormFr.html">Vous êtes étudiant et souhaitez faire une demande d'accueil</a><br><br>
+                <a class="btn btn-primary" href="../groupe5/liste-projet.php">Gestion des projets</a><br><br>
+>>>>>>> e962e44199d18b373d05076856215dcbcae32792
         <?php
               }
                 if(isset($_SESSION['status']) && ($_SESSION['status'] == 'President' || $_SESSION['status'] == 'Secretaire' || $_SESSION['status'] == 'Tresorier' || $_SESSION['status'] == 'Membre CA')) {
         ?>
+<<<<<<< HEAD
                   <li class="list-group-item"><a  href="membershipDemand.php">Gestion des demandes d'adhésions</a><br><br></li>
                  <li class="list-group-item"> <a  href="membershipList.php">Liste des adhérents</a><br><br></li>
                  <li class="list-group-item"> <a  href="membershipGestion.php">Gestion des adhérents</a><br><br></li>
+=======
+                  <a class="btn btn-info" href="membershipDemand.php">Gestion des demandes d'adhésions</a><br><br>
+                  <a class="btn btn-success" href="membershipList.php">Liste des adhérents</a><br><br>
+                  <a class="btn btn-success" href="membershipGestion.php">Gestion des adhérents</a><br><br>
+                  <a class="btn btn-success" href="../groupe5/liste-projet.php">Gestion de Projet</a><br><br>
+>>>>>>> e962e44199d18b373d05076856215dcbcae32792
         <?php
                 }
                 if($_SESSION['status'] == 'Tresorier') {

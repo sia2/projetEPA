@@ -106,7 +106,7 @@
                               VALUES ('".$physicalPerson->get_id()."', '".$physicalPerson->get_name()."',
                               '".$physicalPerson->get_firstname()."', '".$physicalPerson->get_email()."', '".$physicalPerson->get_tel()."', '".$physicalPerson->get_origine()."', '".$physicalPerson->get_gender()."', '".$physicalPerson->get_profession()."','".$physicalPerson->get_interests()."')";
 
-                      if (($this->connection).query($sql) === TRUE) {
+                      if (($this->connection)->query($sql) === TRUE) {
                         $sql = "SELECT email FROM personne_physique WHERE email='".$physicalPerson->get_email()."'";
                         if(mysqli_num_rows(mysqli_query($this->connection, $sql)) > 0){
                             return 0;
@@ -196,7 +196,7 @@
                     ////////////////////////////////////////
                     $sql = "INSERT INTO demande_adhesion (id_adhesion, date)
                             VALUES ('".$membershipDemand->get_id()."', '".$membershipDemand->get_date()."')";
-                    if (($this->connection).query($sql) === TRUE) {
+                    if (($this->connection)->query($sql) === TRUE) {
                         return 0;
                     } else {
                         return 1;
@@ -273,36 +273,36 @@
         * get ID if account exist
         */
         function get_id_from_account($pseudo, $password) {
-            $sql = "SELECT id_connexion FROM connexion WHERE login='$pseudo' AND password='$password'";
-
-            $json = array();
-            $result = mysqli_query($this->connection, $sql);
-            $emparray = array();
-            while($row = mysqli_fetch_assoc($result)) {
-                $emparray[] = $row;
-            }
-            $result = json_encode($emparray);
-            $jsonIterator = new RecursiveIteratorIterator(
-            new RecursiveArrayIterator(json_decode($result, TRUE)),
-            RecursiveIteratorIterator::SELF_FIRST);
-
-            $id = '';
-
-            foreach ($jsonIterator as $key => $val) {
-                if(is_array($val)) {
-
-                } else {
-                    if($key == 'id_connexion') {
-                        $id = $val;
-                    }
-                }
-            }
-
-            if($id != '') {
-                return $id;
-            } else {
-                return NULL;
-            }
+        	$sql = "SELECT id_connexion FROM connexion WHERE login='$pseudo' AND password='$password'";
+        	
+        	$json = array();
+        	$result = mysqli_query($this->connection, $sql);
+        	$emparray = array();
+        	while($row = mysqli_fetch_assoc($result)) {
+        		$emparray[] = $row;
+        	}
+        	$result = json_encode($emparray);
+        	$jsonIterator = new RecursiveIteratorIterator(
+        			new RecursiveArrayIterator(json_decode($result, TRUE)),
+        			RecursiveIteratorIterator::SELF_FIRST);
+        	
+        	$id = '';
+        	
+        	foreach ($jsonIterator as $key => $val) {
+        		if(is_array($val)) {
+        	
+        		} else {
+        			if($key == 'id_connexion') {
+        				$id = $val;
+        			}
+        		}
+        	}
+        	
+        	if($id != '') {
+        		return $id;
+        	} else {
+        		return NULL;
+        	}
         }
 
         function get_status_from_id($id) {
@@ -343,37 +343,38 @@
         */
         function get_status($pseudo, $password) {
 
-            $id = $this->get_id_from_account($pseudo, $password);
-
-            if($id != '') {
-                $sql = "SELECT libelle FROM statut WHERE id_statut='$id'";
-                $result = mysqli_query($this->connection, $sql);
-                $json = array();
-                $emparray = array();
-                while($row = mysqli_fetch_assoc($result)) {
-                    $emparray[] = $row;
-                }
-                $result = json_encode($emparray);
-                $jsonIterator = new RecursiveIteratorIterator(
-                new RecursiveArrayIterator(json_decode($result, TRUE)),
-                RecursiveIteratorIterator::SELF_FIRST);
-
-                $libelle = '';
-
-                foreach ($jsonIterator as $key => $val) {
-                    if(is_array($val)) {
-
-                    } else {
-                        if($key == 'libelle') {
-                            $libelle = $val;
-                        }
-                    }
-                }
-
-                return $libelle;
-            } else {
-                return NULL;
-            }
+        	$id = $this->get_id_from_account($pseudo, $password);
+        	
+        	if($id != '') {
+        		$sql = "SELECT libelle FROM statut WHERE id_statut='$id'";
+        		$result = mysqli_query($this->connection, $sql);
+        		$json = array();
+        		$emparray = array();
+        		while($row = mysqli_fetch_assoc($result)) {
+        			$emparray[] = $row;
+        		}
+        		$result = json_encode($emparray);
+        		$jsonIterator = new RecursiveIteratorIterator(
+        				new RecursiveArrayIterator(json_decode($result, TRUE)),
+        				RecursiveIteratorIterator::SELF_FIRST);
+        	
+        		$libelle = '';
+        	
+        		foreach ($jsonIterator as $key => $val) {
+        			if(is_array($val)) {
+        	
+        			} else {
+        				if($key == 'libelle') {
+        					$libelle = $val;
+        				}
+        			}
+        		}
+        	
+        		return $libelle;
+        	} else {
+        		return NULL;
+        	}
+        	
         }
 
         /*
@@ -510,10 +511,10 @@
         function accept_membershipDemand($id) {
             $sql = "INSERT INTO adherent (id_adherent, date)
                   VALUES ('".$id."', '".date("Y/m/d")."')";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 // delete from membershipDemand table
                 $sql = "DELETE FROM demande_adhesion WHERE id_adhesion='$id'";
-                if (($this->connection).query($sql) === TRUE) {
+                if (($this->connection)->query($sql) === TRUE) {
                     return 0;
                 } else {
                     return 1;
@@ -528,7 +529,7 @@
         */
         function refuse_membershipDemand($id) {
             $sql = "DELETE FROM demande_adhesion WHERE id_adhesion='$id'";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
@@ -540,7 +541,7 @@
         */
         function remove_membership($id) {
             $sql = "DELETE FROM adherent WHERE id_adherent='$id'";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
@@ -553,7 +554,7 @@
         function update_status_from_id($id, $newStatus) {
           if($newStatus != '') {
             $sql = "UPDATE statut SET libelle='$newStatus' WHERE id_statut='$id'";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
