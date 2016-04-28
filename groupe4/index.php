@@ -39,6 +39,7 @@
             <div class="register">
                 <h3>Vous n'êtes pas encore inscrit ?</h3>
                 <a href="register.php" class="btn btn-success">Inscrivez vous !</a>
+                <a type='button' class='btn btn-success' href="\projetEPA\index.php">Accueil</a>
             </div>
         </div>
     </body>

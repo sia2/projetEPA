@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client :  127.0.0.1
--- Généré le :  Mer 27 Avril 2016 à 21:06
+-- Généré le :  Jeu 28 Avril 2016 à 02:38
 -- Version du serveur :  5.7.9
 -- Version de PHP :  7.0.0
 
@@ -39,8 +39,8 @@ CREATE TABLE IF NOT EXISTS `adherent` (
 --
 
 INSERT INTO `adherent` (`id_adherent`, `date`) VALUES
-(1, '2013-06-03'),
-(2, '2015-12-06');
+(2, '2015-12-06'),
+(1532795926545188, '2016-04-28');
 
 -- --------------------------------------------------------
 
@@ -187,7 +187,7 @@ CREATE TABLE IF NOT EXISTS `demande_adhesion` (
 
 INSERT INTO `demande_adhesion` (`id_adhesion`, `date`) VALUES
 (4, '2016-04-27'),
-(1532795926545188, '2016-04-27');
+(1532781297044774, '2016-04-27');
 
 -- --------------------------------------------------------
 
@@ -703,8 +703,9 @@ INSERT INTO `statut` (`id_statut`, `libelle`) VALUES
 (3, 'ca'),
 (4, 'Secretaire'),
 (5, 'President'),
+(7, 'membre du bureau'),
 (1532784729133337, 'Inscrit'),
-(1532795926545188, 'Inscrit');
+(1532795926545188, 'Adherent');
 
 -- --------------------------------------------------------
 
