@@ -102,8 +102,6 @@
                                                   <b><u>Prénom</u></b> : ".$prenom." <br>
                                                   <b><u>Email</u></b> : ".$email." <br>
                                                   <b><u>Adresse</u></b> : ".$address." <br>
-                                                  <b><u>Ville</u></b> : ".$city." <br>
-                                                  <b><u>Code Postal</u></b> : ".$postalCode." <br>
                                                   <b><u>Téléphone</u></b> : ".$tel." <br>
                                                   <b><u>Sexe</u></b> : ".$gender." <br>
                                                   <b><u>Profession</u></b> : ".$profession." <br>
@@ -116,8 +114,7 @@
                             <b><u>Email :</u></b><br> <input name=".'email'." value=".$email."></input><br>
                             <b><u>Origine :</u></b><br> <input name=".'origine'." value=".$origine."></input><br>
                             <b><u>Adresse :</u></b><br> <input name=".'address'." value=".$address."></input><br>
-                            <b><u>Ville :</u></b><br> <input name=".'city'." value=".$city."></input><br>
-                            <b><u>Code Postal :</u></b><br> <input name=".'postalCode'." value=".$postalCode."></input><br>
+                            
                             <b><u>Téléphone :</u></b><br> <input name=".'tel'." value=".$tel."></input><br>
                             <b><u>Sexe :</u></b><br> <input name=".'gender'." value=".$gender."></input><br>
                             <b><u>Profession :</u></b><br> <input name=".'profession'." value=".$profession."></input><br>

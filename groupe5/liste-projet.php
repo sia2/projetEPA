@@ -1,18 +1,22 @@
 <?php 
-session_start();
-include("./fonction.php");
+  session_start();
+  
+  include("./fonction.php");
 
  if(!isset($_SESSION['user']) and !isset($_SESSION['password']) and !isset($_SESSION['status'])) {
-	header('location: ../groupe4/index.php');
-	exit();
+  header('location: ../groupe4/index.php');
+  exit();
 }
 
+/*
 if(!has_right($_SESSION['status'])) {
-	header('location: ../groupe4/index.php');
-	exit();
+  header('location: ../groupe4/index.php');
+  exit();
 }
+*/
 
-connectMaBase();
+//connectMaBase();
+$mysqli = new mysqli('localhost', 'root', '', 'bddepa');
 $bool = false;
 
 $page_sub = "projet.php";
@@ -28,15 +32,15 @@ $erreurMontant = '';
 $id_projet = '';
 
 if (isset($_POST['recherche'])) {
-	$recherche = trim($_POST['recherche']);
-	if (!empty($recherche)) {
-		 
-		$requete= mysql_query("SELECT * FROM projet WHERE nom_projet LIKE '%" . $recherche . "%' and `archivage` LIKE 'non' ORDER BY id_projet") or die(mysql_error());
-	} else {
-		$requete= mysql_query("SELECT * FROM projet WHERE `archivage` LIKE 'non' ORDER BY id_projet") or die(mysql_error());	
-	}
+  $recherche = trim($_POST['recherche']);
+  if (!empty($recherche)) {
+     
+    $requete= $mysqli->Qquery("SELECT * FROM projet WHERE nom_projet LIKE '%" . $recherche . "%' and `archivage` LIKE 'non' ORDER BY id_projet") or die(mysql_error());
+  } else {
+    $requete= $mysqli->query("SELECT * FROM projet WHERE `archivage` LIKE 'non' ORDER BY id_projet"); 
+  }
 } else {
-	$requete= mysql_query("SELECT * FROM projet WHERE `archivage` LIKE 'non' ORDER BY id_projet") or die(mysql_error());
+  $requete= $mysqli->query("SELECT * FROM projet WHERE `archivage` LIKE 'non' ORDER BY id_projet");
 }
 ?>
 <!DOCTYPE html>
@@ -60,9 +64,9 @@ if (isset($_POST['recherche'])) {
 
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
-	
-	<!--Formulaire-->
-	<link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap.min.css">
+  
+  <!--Formulaire-->
+  <link class="cssdeck" rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.2.2/css/bootstrap.min.css">
 
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
@@ -102,8 +106,8 @@ if (isset($_POST['recherche'])) {
         </div>
       </div>
     </nav>
-	
-	 <!-- Carousel
+  
+   <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -140,44 +144,44 @@ if (isset($_POST['recherche'])) {
       <div class="row">
         
         <div >
-			<h2 class="page-header">Liste des projets </h1>
-			
-			<div class="panel panel-default">
-				<!-- Default panel contents -->
-				<div class="panel-heading" style="padding-bottom:50px">
-				
-					<form class="navbar-form span7" role="search" method="POST" action="<?php echo $page_traite; ?>" style="margin-top:0px">
-						<div class="form-group">
-						  <input type="text" class="form-control" placeholder="Nom du projet" style="height:35px" name="recherche">
-						</div>
-						<button type="submit" class="btn btn-default">Rechercher</button>
-					</form>
-					<button type="button" class="btn btn-default pull-right" style="margin-right:50px" span3><a href="<?php echo $page_sub; ?>">Ajouter un projet</a></button>
+      <h2 class="page-header">Liste des projets </h1>
+      
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading" style="padding-bottom:50px">
+        
+          <form class="navbar-form span7" role="search" method="POST" action="<?php echo $page_traite; ?>" style="margin-top:0px">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Nom du projet" style="height:35px" name="recherche">
+            </div>
+            <button type="submit" class="btn btn-default">Rechercher</button>
+          </form>
+          <button type="button" class="btn btn-default pull-right" style="margin-right:50px" span3><a href="<?php echo $page_sub; ?>">Ajouter un projet</a></button>
 
-				</div>
+        </div>
 
-				<!-- Table -->
-				<table class="table">
-					<tr>
-						<td>Nom du projet</td>
-						<td>Date du début du projet</td>
-						<td>Date de fin du projet</td>
-						<td>Date de fin du projet</td>
-						<td>Description</td>
-					</tr>
-					<?php while ($personne = mysql_fetch_array($requete)) {
-							echo "<tr>
-								<td><a href='" . $page_sub . "?pj=" . $personne['id_projet'] . "'>" . $personne['nom_projet'] . "</a></td>
-								<td>" . $personne['date_debut_projet'] . "</td>
-								<td>" . $personne['date_fin_projet'] . "</td>
-								<td>" . $personne['description'] . "</td>
-							</tr>";
-						}
-					?>
-						
-				</table>
-			</div>
-		</div>
+        <!-- Table -->
+        <table class="table">
+          <tr>
+            <td>Nom du projet</td>
+            <td>Date du début du projet</td>
+            <td>Date de fin du projet</td>
+            <td>Date de fin du projet</td>
+            <td>Description</td>
+          </tr>
+          <?php while ($personne = mysqli_fetch_assoc($requete)) {
+              echo "<tr>
+                <td><a href='" . $page_sub . "?pj=" . $personne['id_projet'] . "'>" . $personne['nom_projet'] . "</a></td>
+                <td>" . $personne['date_debut_projet'] . "</td>
+                <td>" . $personne['date_fin_projet'] . "</td>
+                <td>" . $personne['description'] . "</td>
+              </tr>";
+            }
+          ?>
+            
+        </table>
+      </div>
+    </div>
     </div>
 
     <!-- Bootstrap core JavaScript
