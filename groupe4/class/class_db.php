@@ -511,10 +511,10 @@
         function accept_membershipDemand($id) {
             $sql = "INSERT INTO adherent (id_adherent, date)
                   VALUES ('".$id."', '".date("Y/m/d")."')";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 // delete from membershipDemand table
                 $sql = "DELETE FROM demande_adhesion WHERE id_adhesion='$id'";
-                if (($this->connection).query($sql) === TRUE) {
+                if (($this->connection)->query($sql) === TRUE) {
                     return 0;
                 } else {
                     return 1;
@@ -529,7 +529,7 @@
         */
         function refuse_membershipDemand($id) {
             $sql = "DELETE FROM demande_adhesion WHERE id_adhesion='$id'";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;
@@ -541,7 +541,7 @@
         */
         function remove_membership($id) {
             $sql = "DELETE FROM adherent WHERE id_adherent='$id'";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;

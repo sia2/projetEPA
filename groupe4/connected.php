@@ -37,11 +37,7 @@
                   <a class="btn btn-info" href="membershipDemand.php">Gestion des demandes d'adhésions</a><br><br>
                   <a class="btn btn-success" href="membershipList.php">Liste des adhérents</a><br><br>
                   <a class="btn btn-success" href="membershipGestion.php">Gestion des adhérents</a><br><br>
-<<<<<<< HEAD
                   <a class="btn btn-success" href="../groupe5/liste-projet.php">Gestion de Projet</a><br><br>
-=======
-                  <a class="btn btn-success" href="../groupe5/liste-projet.php">Gestion des projets</a><br><br>
->>>>>>> af867848acbf250bbfda3185eb7bceaaa792e96d
         <?php
                 }
                 if($_SESSION['status'] == 'Tresorier') {
