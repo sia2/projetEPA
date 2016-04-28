@@ -14,19 +14,50 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="css/register.css">
+
+		
+		 <link href="assets/css/bootstrap.css" rel="stylesheet" />
+   
+		<link href="assets/css/font-awesome.css" rel="stylesheet" />
+    
+		<link href="assets/css/style.css" rel="stylesheet" />
+		
+		
+			<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js'></script> 
+		
+		<script type='text/javascript'> 
+		$(function(){ 
+		$(window).scroll(function () {
+		//Au scroll dans la fenetre on déclenche la fonction 
+		if ($(this).scrollTop() > 105) { 
+		//si on a défilé de plus de 150px du haut vers le bas 
+		$('#navigation').addClass("fixNavigation"); //on ajoute la classe "fixNavigation" à <div id="navigation"> 
+		} else {
+		$('#navigation').removeClass("fixNavigation");//sinon on retire la classe "fixNavigation" à <div id="navigation"> 
+		}
+		}); 
+		}); 
+		</script>
+		
+		
     </head>
     <body>
-        <h1><u>Ensemble pour l'Afrique</u></h1>
+	<?php
+	include("entete.php");
+	?>
+	
+	<div class="content-wrapper">
+		 
         <div class="container">
-            <div class="connectionForm">
-                <h3>Connexion</h3>
+            <div class="col-md-6 div-con">
+			<div class="connectionForm">
+                <legend id="" class="titres">Connexion</legend>
                 <form action="connection_handler.php" method="post">
                     <br>Pseudo<br>
                     <input class="formInput" type="text" name="pseudo">
                     <br>Mot de passe<br>
-                    <input class="formInput" type="password" name="password"><br>
+                    <input class="formInput" type="password" name="password">
+					<br> <br>
                     <input class="formInput btn btn-primary dropdown-toggle registerButton" type="submit" value="Connexion">
                 </form>
                 <?php
@@ -36,10 +67,25 @@
                     }
                 ?>
             </div>
-            <div class="register">
-                <h3>Vous n'êtes pas encore inscrit ?</h3>
+		</div>
+		
+		<div class="col-md-6 div-inscrit">
+			<div class="register">
+                 <legend id="" class="titres">Vous n'êtes pas encore inscrit ?</legend>
                 <a href="register.php" class="btn btn-success">Inscrivez vous !</a>
             </div>
-        </div>
+		</div>
+            
+		</div>
+		
+		
+		
+	 </div>
+	 
+	 
+	 <?php
+	include("footer.php");
+	?>
+
     </body>
 </html>

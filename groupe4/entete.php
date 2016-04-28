@@ -58,24 +58,24 @@
                 <div class="col-md-12">
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
-                            <li><a class="menu-top-active" href="index.php">Accueil</a></li>
+                            <li><a class="menu-top-active" href="connected.php">Accueil</a></li>
 							<li role="presentation" class="dropdown">
-								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="connected.php" role="button" aria-haspopup="true" aria-expanded="false">
 									A propos de nous <span class="caret"></span>
 								</a>
 								<ul class="dropdown-menu">
 									
-									<li class="list-group-item liste"><a href="epa.php #mot_directrice">Mot de la directrice</a></li>
-									<li class="list-group-item liste"><a href="epa.php #membres">Membres</a></li>
-									<li class="list-group-item liste"><a href="epa.php #projets">Projets</a></li>
-									<li class="list-group-item liste"><a href="epa.php #partenaires">Partenaires</a></li>
+									<li class="list-group-item liste"><a href="/projetEPA/epa.php #mot_directrice">Mot de la directrice</a></li>
+									<li class="list-group-item liste"><a href="/projetEPA/epa.php #membres">Membres</a></li>
+									<li class="list-group-item liste"><a href="/projetEPA/epa.php #projets">Projets</a></li>
+									<li class="list-group-item liste"><a href="/projetEPA/epa.php #partenaires">Partenaires</a></li>
 									
 								</ul>
 							</li>
                             <li><a href="/projetEPA/groupe2/SIA/index.php">Documents</a></li>
                             <li><a href="/projetEPA/groupe1/minibb/index.php">Forum</a></li>
                             <li><a href="/projetEPA/groupe2/Paiement/don.php">Don</a></li>
-                            <li><a href="contact.php">Contact</a></li>
+                            <li><a href="/projetEPA/contact.php">Contact</a></li>
                        
 
                         </ul>

@@ -31,7 +31,19 @@
                     <div class="navbar-collapse collapse ">
                         <ul id="menu-top" class="nav navbar-nav navbar-right">
                             <li><a class="menu-top-active" href="/projetEPA/index.php">Accueil</a></li>
-                            <li><a href="epa.php">A propos de nous</a></li>
+                            <li role="presentation" class="dropdown">
+								<a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+									A propos de nous <span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu">
+									
+									<li class="list-group-item liste"><a href="epa.php #mot_directrice">Mot de la directrice</a></li>
+									<li class="list-group-item liste"><a href="epa.php #membres">Membres</a></li>
+									<li class="list-group-item liste"><a href="epa.php #projets">Projets</a></li>
+									<li class="list-group-item liste"><a href="epa.php #partenaires">Partenaires</a></li>
+									
+								</ul>
+							</li>
                             <li><a href="SIA/index.php">Documents</a></li>
                             <li><a href="/projetEPA/groupe1/minibb/index.php">Forum</a></li>
                             <li><a href="/projetEPA/groupe2/Paiement/don.php">Don</a></li>

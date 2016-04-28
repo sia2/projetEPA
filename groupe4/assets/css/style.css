@@ -123,6 +123,16 @@ p {
 	padding: 0 0 0 0;
 }
 
+.liste-forum{
+	color: #337ab7;
+	background-color: #ddd;
+	border-color: #337ab7;
+}
+
+.pied{
+	margin-top: 500px;
+}
+
 /* USER SETTINGS DIV */
 .user-settings-wrapper .nav > li > a {
     position: relative;

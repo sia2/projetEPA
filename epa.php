@@ -46,40 +46,86 @@
 			<li><a href="#">Partenaires</a></li>
 			-->
 			
-			 
+			<ul class="list-group">
 
-    <ul class="list-group">
+				<li class="list-group-item"><a href="#mot_directrice">Mot de la directrice</a></li>
 
-      <li class="list-group-item"><a href="#">Mot de la directrice</a></li>
+				<li class="list-group-item"><a href="#membres">Membres</a></li>
 
-      <li class="list-group-item"><a href="#">Membres</a></li>
+				<li class="list-group-item"><a href="#projets">Projets</a></li>
 
-      <li class="list-group-item"><a href="#">Projets</a></li>
+				<li class="list-group-item"><a href="#partenaires">Partenaires</a></li>
+				
+				
+				
 
-      <li class="list-group-item"><a href="#">Partenaires</a></li>
-
-    </ul>
-
- 
-			
+			</ul>
 			
 		</div>
 		
+		
 		<div class=" col-md-6 contenu">
+	
+			<legend  class="titres">L'association</legend>
 
-		<p>Agir ensemble pour l'Afrique est notre ambition.
+				<p>Agir ensemble pour l'Afrique est notre ambition.
 
-Elle est née d’une prise de conscience collective (étudiants de la Cité Internationale Universitaire et habitués de la chapelle des Franciscains sise dans le 14ème arrondissement de Paris) devant la gravité des violences survenues au Rwanda en 1994, puis en Côte d'ivoire en 1999.
+					Elle est née d’une prise de conscience collective (étudiants de la Cité Internationale Universitaire et habitués de la chapelle des Franciscains sise dans le 14ème arrondissement de Paris) devant la gravité des violences survenues au Rwanda en 1994, puis en Côte d'ivoire en 1999.
 
-Pour conjurer le sentiment d'impuissance et de culpabilité ressenti en pareille circonstance, le meilleur moyen était de nous engager dans le projet de développement durable de l'Afrique.
+					Pour conjurer le sentiment d'impuissance et de culpabilité ressenti en pareille circonstance, le meilleur moyen était de nous engager dans le projet de développement durable de l'Afrique.
 
-Des textes fondateurs sont venus consolider notre volonté d'agir ensemble pour l'Afrique :
+					Des textes fondateurs sont venus consolider notre volonté d'agir ensemble pour l'Afrique :
 
--       le Message de Gorée sur la purification de la mémoire  (SCEAM, Dakar octobre 2003, cf. lien en annexe),
+					-       le Message de Gorée sur la purification de la mémoire  (SCEAM, Dakar octobre 2003, cf. lien en annexe),
 
--       le Rapport d'information du Sénat sur l'accueil « immédiat et chaleureux » des étudiants et stagiaires étrangers en France, notamment les primo-arrivants individuels (Sénat 2006 cf. lien en annexe),
+					-       le Rapport d'information du Sénat sur l'accueil « immédiat et chaleureux » des étudiants et stagiaires étrangers en France, notamment les primo-arrivants individuels (Sénat 2006 cf. lien en annexe),
 
--       la loi ESS (économie sociale et solidaire du 31 juillet 2014, dite loi Hamon (cf. lien en annexe), qui ouvre de nouvelles perspectives pour le développement des projets associatifs, et vient conforter nos intuitions.</p>
+					-       la loi ESS (économie sociale et solidaire du 31 juillet 2014, dite loi Hamon (cf. lien en annexe), qui ouvre de nouvelles perspectives pour le développement des projets associatifs, et vient conforter nos intuitions.
+					<br> 
+				
+					</br>
+				</p>
+
+			<legend id="mot_directrice" class="titres">Mot de la directrice</legend>
+				<p>
+					Ici le mot de la directrice
+			
+
+					<br> 
+				
+					</br>
+				</p>
+		
+			<legend id="membres" class="titres">Les membres</legend>
+				<p>
+					Les membres ici
+			
+				
+					<br> 
+				
+					</br>
+				</p>
+		
+			<legend id="projets" class="titres">Les projets</legend>
+				<p>
+					Les projets ici
+			
+					<br> 
+				
+					</br>
+				</p>
+		
+	
+		
+		
+			<legend id="partenaires" class="titres">Les partenaires</legend>
+				<p>
+					Les partenaires ici
+					<br> 
+				
+					</br>
+				</p>
+			
 		
 		</div>
 
@@ -93,7 +139,10 @@ Des textes fondateurs sont venus consolider notre volonté d'agir ensemble pour 
 	
     <!-- CONTENT-WRAPPER SECTION END-->
 	
- <?php include("footer.php"); ?>
+	<div class="pied">
+	<?php include("footer.php"); ?>
+	</div>
+	
     <!-- FOOTER SECTION END-->
 	
     <!-- JAVASCRIPT AT THE BOTTOM TO REDUCE THE LOADING TIME  -->
