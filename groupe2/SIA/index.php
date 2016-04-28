@@ -6,7 +6,7 @@
     error_reporting(0);
 
     //$DEFAULT=$_SERVER['DOCUMENT_ROOT']; /*Default redirection quand le script commence*/
-    $path = "C:/wamp64/www/projetEPA/groupe2/SIA/Documents";
+    $path = "C:/wamp64/www/projeEPA/SIA/Documents";
     /*echo 'Lechemin : '.$path.'<br/>';*/
 
     /* si aucun dossier n'a encore été créer on affiche la path courante */
@@ -18,7 +18,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ensemble pour l'Afrique</title>
+        <title> Explorer fichiers </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -27,32 +27,13 @@
         <script src="js/bootstrap.min.js"></script>
         <script src="js/jquery.tablesorter.min.js"></script>
         <script src="js/jquery.tablesorter.widgets.min.js"></script>
-		
-		<!--stype added-->
-		
-		
-   
-    
-    
-    <link href="assets/css/style.css" rel="stylesheet" />
-		<!--stype added end-->
         
     </head>
     <body>
-	<!--change-->  
-		<?php include("entete.php"); ?>
-	<!--fin change -->
-	
         <div class="container">
            <!-- <a href="javascript:;" onClick="window.open('Documents/Divers/crozier_Acteurs_et_systemes.pdf');"> Documents </a>-->
-		 
-		   
-				
             <div class="col-lg-offset-10 col-lg-4 col-md-4 col-sm-4 ">
                 <br><br><br>
-				
-				
-	
                 <button class="btn btn-primary" type="button" style="margin-bottom: 30px;" data-toggle="modal" data-target="#myRep">
                 <i class="glyphicon glyphicon-plus"></i> Ajouter un répertoire </button></div>
                 
@@ -60,7 +41,7 @@
                 
                     /*echo 'Chemin de la page courante  : '.$_GET['dir'].'<br>';*/
 
-                if($_GET['dir'] = "C:/wamp64/www/projetEPA/groupe2/SIA/Documents")
+                if($_GET['dir'] != "C:/wamp64/www/projetEPA/SIA/Documents")
                 {
                     echo '<br><div class="col-lg-offset-10 col-lg-4 col-md-4 col-sm-4" ><button class="btn btn-primary" type="button" style="margin-bottom: 30px;" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> Ajouter un document </button></div>'; 
                 }
@@ -256,9 +237,5 @@
                 if (confirm("Etes-vous sur de vouloir supprimer ce document?")) { document.location = delUrl;}
             }
         </script>
-		
-		<!--change-->  
-		<?php include("footer.php"); ?>
-	<!--fin change -->
     </body>
 </html>

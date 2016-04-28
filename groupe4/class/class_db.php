@@ -554,7 +554,7 @@
         function update_status_from_id($id, $newStatus) {
           if($newStatus != '') {
             $sql = "UPDATE statut SET libelle='$newStatus' WHERE id_statut='$id'";
-            if (($this->connection).query($sql) === TRUE) {
+            if (($this->connection)->query($sql) === TRUE) {
                 return 0;
             } else {
                 return 1;

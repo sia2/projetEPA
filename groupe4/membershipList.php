@@ -98,8 +98,6 @@
                                                   <b><u>Prénom</u></b> : ".$prenom." <br>
                                                   <b><u>Email</u></b> : ".$email." <br>
                                                   <b><u>Adresse</u></b> : ".$address." <br>
-                                                  <b><u>Ville</u></b> : ".$city." <br>
-                                                  <b><u>Code Postal</u></b> : ".$postalCode." <br>
                                                   <b><u>Téléphone</u></b> : ".$tel." <br>
                                                   <b><u>Sexe</u></b> : ".$gender." <br>
                                                   <b><u>Profession</u></b> : ".$profession." <br>
